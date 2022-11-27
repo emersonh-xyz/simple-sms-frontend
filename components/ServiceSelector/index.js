@@ -14,7 +14,7 @@ export default function ServiceSelector({ props }) {
       <div className="p-10 bg-base-200">
         <div class="container px-5 mx-auto ">
           <div class="text-center ">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font  mb-4">
               Getting Started
             </h1>
             <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
