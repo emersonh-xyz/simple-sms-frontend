@@ -1,15 +1,22 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import data from "../../data/services.json";
 
 export default function CheckoutContainer() {
   const [searchTerm, setSearchTerm] = useState("");
   const [service, setService] = useState("");
 
+  data.sort(function (a, b) {
+    a = a.service_name.toLowerCase();
+    b = b.service_name.toLowerCase();
+
+    return a < b ? -1 : a > b ? 1 : 0;
+  });
+
   return (
     <>
-      <div className="p-10 mt-2 bg-base-200">
-        <div class="container px-5 mx-auto mt-10">
+      <div className="p-10 bg-base-200">
+        <div class="container px-5 mx-auto ">
           <div class="text-center ">
             <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">
               Getting Started
@@ -19,7 +26,9 @@ export default function CheckoutContainer() {
               checkout. Afterwards you'll be redirected to your virtual phone to
               monitor incoming messages.
             </p>
-
+            <div class="flex mt-6 justify-center">
+              <div class="w-48 h-1 rounded-full bg-primary inline-flex"></div>
+            </div>
             <div className="w-full flex flex-col justify-center items-center mt-5">
               <ul className="steps steps-vertical lg:steps-horizontal ">
                 <li className="step step-primary">Select Service</li>
@@ -28,10 +37,6 @@ export default function CheckoutContainer() {
                 </li>
                 <li className="step">Await Code</li>
               </ul>
-            </div>
-
-            <div class="flex mt-6 justify-center">
-              <div class="w-48 h-1 rounded-full bg-primary inline-flex"></div>
             </div>
           </div>
         </div>
