@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import CheckoutContainer from "../components/CheckoutContainer";
+import Feature from "../components/Feature";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 
@@ -15,7 +16,10 @@ export default function Home() {
 
       <main>
         <Navbar />
+
         <CheckoutContainer />
+
+        <Feature />
       </main>
 
       <Footer />
