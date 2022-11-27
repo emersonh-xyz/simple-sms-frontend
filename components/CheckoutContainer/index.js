@@ -8,20 +8,37 @@ export default function CheckoutContainer() {
 
   return (
     <>
-      <div className="bg-base-100 p-10">
-        <div className="w-full flex flex-col justify-center items-center mt-5">
-          <ul className="steps steps-vertical lg:steps-horizontal ">
-            <li className="step step-primary">Select Service</li>
-            <li className={service !== "" ? "step step-primary" : "step"}>
-              Checkout
-            </li>
-            <li className="step">Await Code</li>
-          </ul>
+      <div className="p-10 mt-2 bg-base-200">
+        <div class="container px-5 mx-auto mt-10">
+          <div class="text-center ">
+            <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 mb-4">
+              Getting Started
+            </h1>
+            <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
+              Start by selecting the service you plan to use and proceed to
+              checkout. Afterwards you'll be redirected to your virtual phone to
+              monitor incoming messages.
+            </p>
+
+            <div className="w-full flex flex-col justify-center items-center mt-5">
+              <ul className="steps steps-vertical lg:steps-horizontal ">
+                <li className="step step-primary">Select Service</li>
+                <li className={service !== "" ? "step step-primary" : "step"}>
+                  Checkout
+                </li>
+                <li className="step">Await Code</li>
+              </ul>
+            </div>
+
+            <div class="flex mt-6 justify-center">
+              <div class="w-48 h-1 rounded-full bg-primary inline-flex"></div>
+            </div>
+          </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row w-full justify-center items-center mt-5 ">
-          <div className="">
-            <div className="card w-96 h-fit border-2 bg-base-100 ">
+        <div className="flex flex-col lg:flex-row w-full justify-center items-center mt-10 ">
+          <div className="p-10">
+            <div className="card drop-shadow-lg bg-base-100 w-96 h-fit ">
               <div className="card-body ">
                 <input
                   type="text"
@@ -31,44 +48,69 @@ export default function CheckoutContainer() {
                     setSearchTerm(e.target.value);
                   }}
                 />
-                <ul className="p-2 bg-base-200 max-h-44 rounded-box text-lg overflow-auto">
-                  {data
-                    .filter((item) => {
-                      return searchTerm.toLowerCase() === ""
-                        ? item
-                        : item.service_name
-                            .toLowerCase()
-                            .includes(searchTerm.toLowerCase());
-                    })
-                    .map((val, index) => {
-                      return (
-                        <div key={index} onClick={() => setService(val)}>
-                          <li
-                            className={
-                              service === val
-                                ? "p-2 bg-primary rounded-lg"
-                                : "p-2"
-                            }
-                          >
-                            <a className={service === val ? "text-white" : ""}>
-                              {val.service_name}
-                            </a>
-                          </li>
-                        </div>
-                      );
-                    })}
-                </ul>
+                <div className="h-48 overflow-x-auto rounded-md">
+                  <table className="table w-full">
+                    <thead>
+                      <tr>
+                        <th>Service</th>
+                        <th>Price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {data
+                        .filter((item) => {
+                          return searchTerm.toLowerCase() === ""
+                            ? item
+                            : item.service_name
+                                .toLowerCase()
+                                .includes(searchTerm.toLowerCase());
+                        })
+                        .map((val, index) => {
+                          return (
+                            <tr
+                              key={index}
+                              className={
+                                service === val
+                                  ? "active hover:text-primary hover:cursor-pointer"
+                                  : "hover:text-primary hover:cursor-pointer"
+                              }
+                              onClick={() => setService(val)}
+                            >
+                              <th className="flex">
+                                <img
+                                  className="w-5 h-5 mr-1 align-middle"
+                                  src="https://smsactivate.s3.eu-central-1.amazonaws.com/assets/ico/dr0.webp"
+                                />
+                                <span>{val.service_name}</span>
+                              </th>
+                              <th className="text-xs">{val.price}¢</th>
+                            </tr>
+                          );
+                        })}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
 
           {service !== "" && (
             <div>
-              <div className="card w-96 border-2 shadow-xl h-fit bg-base-100 ml-5">
-                <div className="card-body">
-                  <h2 className="card-title">Order Confirmation</h2>
-                  <p>Selected Service: {service.service_name}</p>
-                  <p>Price: {service.price}¢</p>
+              <div className="card drop-shadow-lg bg-base-100 w-96 h-fit ml-5 ">
+                <div className="card-body mx-auto">
+                  <h2 className="card-title mx-auto text-center">
+                    Verify Order Details
+                  </h2>
+
+                  <img
+                    className="mx-auto w-20 h-20"
+                    src="https://smsactivate.s3.eu-central-1.amazonaws.com/assets/ico/dr0.webp"
+                  />
+
+                  <span className="text-center font-bold">
+                    {service.service_name} | 00{service.price}¢
+                  </span>
+
                   <div className="card-actions ">
                     <button className="btn border-none bg-[#008CFF] text-white">
                       <svg

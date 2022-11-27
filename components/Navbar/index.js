@@ -3,7 +3,7 @@ export default function Navbar() {
     <>
       <div className="navbar ">
         <div className="flex-1">
-          <a className="ml-10 backdrop:normal-case text-2xl font-sans">
+          <a className="ml-20 justify-start text-xl backdrop:normal-case ">
             Simple SMS
           </a>
         </div>
