@@ -1,5 +1,6 @@
+import Image from "next/image";
 import React, { useState } from "react";
-import { data } from "../../data/data";
+import data from "../../data/services.json";
 
 export default function CheckoutContainer() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -36,62 +37,72 @@ export default function CheckoutContainer() {
         </div>
 
         <div className="flex flex-col lg:flex-row w-full justify-center items-center mt-10 ">
-          <div className="p-10">
-            <div className="card drop-shadow-lg bg-base-100 w-96 h-fit ">
-              <div className="card-body ">
-                <input
-                  type="text"
-                  placeholder="Search for services..."
-                  className="input input-bordered w-full max-w-xs"
-                  onChange={(e) => {
-                    setSearchTerm(e.target.value);
-                  }}
-                />
-                <div className="h-48 overflow-x-auto rounded-md">
-                  <table className="table w-full">
-                    <thead>
-                      <tr>
-                        <th>Service</th>
-                        <th>Price</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {data
-                        .filter((item) => {
-                          return searchTerm.toLowerCase() === ""
-                            ? item
-                            : item.service_name
-                                .toLowerCase()
-                                .includes(searchTerm.toLowerCase());
-                        })
-                        .map((val, index) => {
-                          return (
-                            <tr
-                              key={index}
-                              className={
-                                service === val
-                                  ? "active hover:text-primary hover:cursor-pointer"
-                                  : "hover:text-primary hover:cursor-pointer"
-                              }
-                              onClick={() => setService(val)}
-                            >
-                              <th className="flex">
-                                <span>{val.service_name}</span>
-                              </th>
-                              <th className="text-xs">$0.99 USD</th>
-                            </tr>
-                          );
-                        })}
-                    </tbody>
-                  </table>
-                </div>
+          <div className="card drop-shadow-lg bg-base-100 ">
+            <div className="card-body">
+              <input
+                type="text"
+                placeholder="Search for services..."
+                className="input input-bordered w-full max-w-xs"
+                onChange={(e) => {
+                  setSearchTerm(e.target.value);
+                }}
+              />
+              <div className="h-56 overflow-auto rounded-md">
+                <table className="table w-full">
+                  <thead>
+                    <tr>
+                      <th>Service</th>
+                      <th>Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {data
+                      .filter((item) => {
+                        return searchTerm.toLowerCase() === ""
+                          ? item
+                          : item.service_name
+                              .toLowerCase()
+                              .includes(searchTerm.toLowerCase());
+                      })
+                      .map((val, index) => {
+                        return (
+                          <tr
+                            key={index}
+                            className={
+                              service === val
+                                ? "active hover:text-primary hover:cursor-pointer"
+                                : "hover:text-primary hover:cursor-pointer"
+                            }
+                            onClick={() => setService(val)}
+                          >
+                            <th>
+                              <a className="flex items-center">
+                                <Image
+                                  src={`data:image/webp;base64,${val.service_logo_encoded}`}
+                                  alt="Service Logo"
+                                  width={20}
+                                  height={20}
+                                  className="mr-2"
+                                ></Image>
+                                <p className="align-middle">
+                                  {" "}
+                                  {val.service_name}
+                                </p>
+                              </a>
+                            </th>
+                            <th className="text-xs">$0.99 USD</th>
+                          </tr>
+                        );
+                      })}
+                  </tbody>
+                </table>
               </div>
             </div>
           </div>
 
           {service !== "" && (
             <div>
-              <div className="card drop-shadow-lg bg-base-100 w-96 ml-5 ">
+              <div className="card drop-shadow-lg bg-base-100 ml-5 w-96">
                 <div className="card-body ">
                   <ul className="menu mx-center bg-base-100 w-full">
                     <li className="">
@@ -113,6 +124,14 @@ export default function CheckoutContainer() {
                       <a>$0.99 USD</a>
                     </li>
                   </ul>
+
+                  <Image
+                    src={`data:image/webp;base64,${service.service_logo_encoded}`}
+                    alt="Service Logo"
+                    width={75}
+                    height={75}
+                    className="absolute top-20 right-10"
+                  ></Image>
                   <div className="divider mt-0"></div>
                   <div className="card-actions ">
                     <button className="btn w-full border-none bg-[#008CFF] text-white">
