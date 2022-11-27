@@ -1,11 +1,30 @@
 import Head from "next/head";
-import Image from "next/image";
-import CheckoutContainer from "../components/CheckoutContainer";
+import { useEffect, useState } from "react";
 import Feature from "../components/Feature";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import ServiceSelector from "../components/ServiceSelector";
+import rawJSON from "../data/services.json";
 
 export default function Home() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    // Sort the data on first load;
+    function sortData() {
+      rawJSON.sort(function (a, b) {
+        a = a.service_name.toLowerCase();
+        b = b.service_name.toLowerCase();
+
+        return a < b ? -1 : a > b ? 1 : 0;
+      });
+    }
+
+    sortData();
+
+    setData(rawJSON);
+  }, []);
+
   return (
     <div className="flex flex-col h-screen justify-between">
       <Head>
@@ -17,7 +36,8 @@ export default function Home() {
       <main>
         <Navbar />
 
-        <CheckoutContainer />
+        {/* Main Service selection card */}
+        <ServiceSelector props={data} />
 
         <Feature />
       </main>
