@@ -4,7 +4,6 @@ import { data } from "../../data/data";
 export default function CheckoutContainer() {
   const [searchTerm, setSearchTerm] = useState("");
   const [service, setService] = useState("");
-  console.log(data);
 
   return (
     <>
@@ -77,13 +76,9 @@ export default function CheckoutContainer() {
                               onClick={() => setService(val)}
                             >
                               <th className="flex">
-                                <img
-                                  className="w-5 h-5 mr-1 align-middle"
-                                  src="https://smsactivate.s3.eu-central-1.amazonaws.com/assets/ico/dr0.webp"
-                                />
                                 <span>{val.service_name}</span>
                               </th>
-                              <th className="text-xs">{val.price}¢</th>
+                              <th className="text-xs">$0.99 USD</th>
                             </tr>
                           );
                         })}
@@ -96,25 +91,34 @@ export default function CheckoutContainer() {
 
           {service !== "" && (
             <div>
-              <div className="card drop-shadow-lg bg-base-100 w-96 h-fit ml-5 ">
-                <div className="card-body mx-auto">
-                  <h2 className="card-title mx-auto text-center">
-                    Verify Order Details
-                  </h2>
+              <div className="card drop-shadow-lg bg-base-100 w-96 ml-5 ">
+                <div className="card-body ">
+                  <ul className="menu mx-center bg-base-100 w-full">
+                    <li className="">
+                      <span className="text-2xl text-black hover:bg-base-100">
+                        Verify Order Details
+                      </span>
+                    </li>
 
-                  <img
-                    className="mx-auto w-20 h-20"
-                    src="https://smsactivate.s3.eu-central-1.amazonaws.com/assets/ico/dr0.webp"
-                  />
-
-                  <span className="text-center font-bold">
-                    {service.service_name} | 00{service.price}¢
-                  </span>
-
+                    <li className="menu-title">
+                      <span>Service</span>
+                    </li>
+                    <li>
+                      <a>{service.service_name}</a>
+                    </li>
+                    <li className="menu-title">
+                      <span>Total</span>
+                    </li>
+                    <li>
+                      <a>$0.99 USD</a>
+                    </li>
+                  </ul>
+                  <div className="divider mt-0"></div>
                   <div className="card-actions ">
-                    <button className="btn border-none bg-[#008CFF] text-white">
+                    <button className="btn w-full border-none bg-[#008CFF] text-white">
                       <svg
                         id="Layer_1"
+                        o
                         data-name="Layer 1"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 512 512"
