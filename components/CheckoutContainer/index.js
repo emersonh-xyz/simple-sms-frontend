@@ -36,8 +36,8 @@ export default function CheckoutContainer() {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row w-full justify-center items-center mt-10 ">
-          <div className="card drop-shadow-lg bg-base-100 ">
+        <div className="flex flex-col lg:flex-row w-full justify-center mx-auto mt-10 ">
+          <div className="card drop-shadow-lg bg-base-100 w-96">
             <div className="card-body">
               <input
                 type="text"
@@ -47,7 +47,7 @@ export default function CheckoutContainer() {
                   setSearchTerm(e.target.value);
                 }}
               />
-              <div className="h-56 overflow-auto rounded-md">
+              <div className="overflow-auto rounded-md max-h-56 shadow-xl">
                 <table className="table w-full">
                   <thead>
                     <tr>
@@ -128,10 +128,11 @@ export default function CheckoutContainer() {
                   <Image
                     src={`data:image/webp;base64,${service.service_logo_encoded}`}
                     alt="Service Logo"
-                    width={75}
-                    height={75}
-                    className="absolute top-20 right-10"
+                    width={70}
+                    height={70}
+                    className="absolute  top-24 right-16 rounded-full ring-4 ring-neutral ring-offset-base-100 "
                   ></Image>
+
                   <div className="divider mt-0"></div>
                   <div className="card-actions ">
                     <button className="btn w-full border-none bg-[#008CFF] text-white">
