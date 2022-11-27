@@ -19,8 +19,8 @@ export default function ServiceSelector({ props }) {
             </h1>
             <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
               Start by selecting the service you plan to use and proceed to
-              checkout. Afterwards you'll be redirected to your virtual phone to
-              monitor incoming messages.
+              checkout. Afterwards you will be redirected to your virtual phone
+              to monitor incoming messages.
             </p>
             <div class="flex mt-6 justify-center">
               <div class="w-48 h-1 rounded-full bg-primary inline-flex"></div>
