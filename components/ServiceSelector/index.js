@@ -26,7 +26,7 @@ export default function ServiceSelector({ props }) {
               <div class="w-48 h-1 rounded-full bg-primary inline-flex"></div>
             </div>
             <div className="w-full flex flex-col justify-center items-center mt-5">
-              <ul className="steps steps-vertical lg:steps-horizontal ">
+              <ul className="steps steps-horizontal ">
                 <li className="step step-primary">Select Service</li>
                 <li className={service !== "" ? "step step-primary" : "step"}>
                   Checkout
@@ -37,8 +37,8 @@ export default function ServiceSelector({ props }) {
           </div>
         </div>
 
-        <div className="flex flex-col lg:flex-row w-full justify-center mx-auto mt-10 ">
-          <div className="card drop-shadow-lg bg-base-100 w-96">
+        <div className="md:flex md:justify-center mt-8 ">
+          <div className="card drop-shadow-lg bg-base-100 ">
             <div className="card-body">
               <input
                 type="text"
@@ -102,7 +102,7 @@ export default function ServiceSelector({ props }) {
           </div>
 
           {/* If our service isn't blank then render the order details */}
-          {service !== "" && <OrderDetails props={service} />}
+          {service !== "" && <OrderDetails props={service} className="mt-40" />}
         </div>
       </div>
     </>

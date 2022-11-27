@@ -5,7 +5,7 @@ export default function OrderDetails({ props }) {
 
   return (
     <div>
-      <div className="card drop-shadow-lg bg-base-100 ml-5 w-96">
+      <div className="card drop-shadow-lg bg-base-100 md:ml-5 md:mt-0 mt-5">
         <div className="card-body ">
           <ul className="menu mx-center bg-base-100 w-full">
             <li className="">
