@@ -87,7 +87,6 @@ export default function ServiceSelector({ props }) {
                                   className="mr-2"
                                 ></Image>
                                 <p className="align-middle">
-                                  {" "}
                                   {val.service_name}
                                 </p>
                               </a>
