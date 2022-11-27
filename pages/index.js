@@ -20,8 +20,8 @@ export default function Home() {
       });
     }
 
+    // Call sort data and update our data state
     sortData();
-
     setData(rawJSON);
   }, []);
 
