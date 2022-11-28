@@ -38,7 +38,7 @@ export default function ServiceSelector({ props }) {
         </div>
 
         <div className="md:flex md:justify-center mt-8 ">
-          <div className="card drop-shadow-lg bg-base-100 ">
+          <div className="card w-96 drop-shadow-lg bg-base-100 ">
             <div className="card-body">
               <input
                 type="text"
@@ -48,7 +48,7 @@ export default function ServiceSelector({ props }) {
                   setSearchTerm(e.target.value);
                 }}
               />
-              <div className="overflow-auto rounded-md max-h-56 shadow-xl">
+              <div className="overflow-x-auto rounded-md max-h-56 shadow-xl">
                 <table className="table w-full">
                   <thead>
                     <tr>
@@ -102,7 +102,7 @@ export default function ServiceSelector({ props }) {
           </div>
 
           {/* If our service isn't blank then render the order details */}
-          {service !== "" && <OrderDetails props={service} className="mt-40" />}
+          {service !== "" && <OrderDetails props={service} className="" />}
         </div>
       </div>
     </>
