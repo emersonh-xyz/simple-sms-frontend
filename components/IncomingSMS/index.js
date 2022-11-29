@@ -1,7 +1,12 @@
+/* eslint-disable @next/next/no-img-element */
+import { faClock } from "@fortawesome/free-regular-svg-icons";
 import {
+  faBolt,
   faCancel,
   faClipboard,
   faHashtag,
+  faMobile,
+  faMobileAlt,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,13 +16,10 @@ export default function IncomingSMS() {
     <div className="card w-96 drop-shadow-lg bg-base-100">
       <div className="card-body">
         <div className="card-title drop-shadow-xl">
-          <p className="text-2xl font-bold btn">(123) 456-789</p>
+          <p className="text-3xl font-bold text-center">(123) 456-789</p>
         </div>
 
-        <div></div>
-
-        <div className="divider ">Extracted Code</div>
-
+        <div className="divider ">Extracted Codes</div>
         {/* <div className=" border-2 text-center">
           <div className="animate-pulse mx-center">
             Waiting for new messages...
@@ -26,20 +28,22 @@ export default function IncomingSMS() {
 
         {/*Extracted codes container*/}
 
-        <div className="container">
-          <div className="border-2 text-center p-5 rounded-md">
-            <div className="indicator w-full">
-              <span className="indicator-item badge">new</span>
-              <div className="border-2 rounded-md border-success w-full">
+        <div className="container bg-base-300 drop-shadow-xl rounded-lg">
+          <div className="text-center p-5 rounded-md">
+            <div className=" indicator w-full">
+              <span className="indicator-item badge badge-sm badge-secondary">
+                new
+              </span>
+              <div className="rounded-md w-full bg-base-100 drop-shadow-xl ">
                 <p>#3030</p>
               </div>
             </div>
 
-            <div className="mx-center rounded-md border-2 border-success mt-2 ">
+            <div className="mx-center rounded-md mt-2 bg-base-100 drop-shadow-xl ">
               <p>#5030</p>
             </div>
 
-            <div className="mx-center rounded-md border-2 border-success mt-2 ">
+            <div className="mx-center rounded-md mt-2 bg-base-100 drop-shadow-xl ">
               <p>#2030</p>
             </div>
           </div>
@@ -48,31 +52,18 @@ export default function IncomingSMS() {
         <div className="divider ">Raw Messages</div>
 
         {/*Raw messages container*/}
-        <div className="container">
-          <div className="border-2 rounded-md bg-base-100 text-center p-5">
+        <div className="container bg-base-300 drop-shadow-xl rounded-lg">
+          <div className="rounded-md text-center p-5">
             {/* <div className="animate-pulse ">Waiting for new messages...</div> */}
-            <div className="mx-center rounded-md border-2 border-success mt-2">
-              Your code is: #2030
+            <div className="rounded-md bg-base-100 drop-shadow-xl hover:scale-105">
+              Your code is: #3030
             </div>
-          </div>
-        </div>
-        <div className="divider ">Order Details</div>
-        <div className="card-actions grid justify-start">
-          <img
-            className="absolute right-8"
-            src="data:image/webp;base64,UklGRmQBAABXRUJQVlA4IFgBAACwCwCdASpAAEAAPmUskEWkIqGYDv58QAZEsgBqYsbePfJ2gnE396+6rtAbYDxJd8A/XTrY/Qv8sH2XfJuCaBgSBfjKyrcxcIM/MsQRQGgyQwAHPCyP/lNoB/eodRC+2mP9VaePFgAA/v2tD9j2QGHXy8T3V7e/2cdLeIfyTb8P+xvfOq/KjvATmQ8zTZmPT2cGMgbHABwkYnheC2+B+BCDYFCGknZsXbbv2pJ0pSG8ehVHnjrXDgFeti463c0AYeJlqjozfSFh/6s+NmKDsmhCBWPM3u22fYYNBGu2FsVybQi241hlX1sV5KNvU3IkjtXsw6e/e/5pqnJ53Ocs73OKxyV+Ykt6EYNJCty1Qj0mAiybsv1Cp96FtSYSNDsrnQff//DxHKX/4etF+17Dta00N07sdySkY8s1ljheOTROMbbZGHu2D1Bo3uTfFvx5/FANTjJnPigAAA=="
-          />
-
-          <div>
-            <p className="">(123) 456-789</p>
-            <p className="">Service: Netflix</p>
-            <p className="">Expires in: 20:00</p>
-            <p className="">Order: #xxxx-222-3333-4444</p>
-          </div>
-
-          <div className="mx-left btn btn-sm">
-            <FontAwesomeIcon className="mr-1" icon={faCancel} />
-            Cancel
+            <div className="rounded-md mt-2 bg-base-100 drop-shadow-xl hover:scale-105">
+              Your verifcation code is: #5030
+            </div>
+            <div className="rounded-md mt-2 bg-base-100 drop-shadow-xl hover:scale-105">
+              Enter your verifcation code of: #2030
+            </div>
           </div>
         </div>
       </div>

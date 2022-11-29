@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import OrderDetails from "../OrderDetails";
+import CheckoutDetails from "../CheckoutDetails";
 
 export default function ServiceSelector({ props }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -102,7 +102,7 @@ export default function ServiceSelector({ props }) {
           </div>
 
           {/* If our service isn't blank then render the order details */}
-          {service !== "" && <OrderDetails props={service} className="" />}
+          {service !== "" && <CheckoutDetails props={service} className="" />}
         </div>
       </div>
     </>
