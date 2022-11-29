@@ -31,16 +31,14 @@ const Order = ({ props }) => {
       <Head></Head>
 
       <main>
-        <Navbar className="bg-base-100" />
+        <Navbar />
 
-        <div className="p-20 bg-base-200 flex justify-center">
+        <div className="p-48 bg-base-200 flex justify-center">
           <IncomingSMS />
           <div className="ml-20">
             <OrderDetails />
           </div>
         </div>
-
-        <div className="p-20 bg-base-200 flex flex-row"></div>
       </main>
 
       <Footer />
