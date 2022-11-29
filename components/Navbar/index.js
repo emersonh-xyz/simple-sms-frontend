@@ -1,7 +1,7 @@
 export default function Navbar() {
   return (
     <>
-      <div className="navbar ">
+      <div className="navbar bg-base-300">
         <div className="flex-1">
           <a className="flex font-medium ">
             <p className="ml-8">Simple SMS</p>

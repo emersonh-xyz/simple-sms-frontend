@@ -43,13 +43,14 @@ export default function ServiceSelector({ props }) {
               <input
                 type="text"
                 placeholder="Search for services..."
-                className="input input-bordered w-full max-w-xs"
+                className="animate-pulse input input-bordered w-full max-w-xs"
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
                 }}
               />
-              <div className="overflow-x-auto rounded-md max-h-56 drop-shadow-l">
-                <table className="table table-zebra w-full">
+
+              <div className="overflow-x-auto rounded-md max-h-96 drop-shadow-lg ">
+                <table className="table table-zebra w-full ">
                   <thead>
                     <tr>
                       <th>Service</th>
@@ -72,8 +73,8 @@ export default function ServiceSelector({ props }) {
                             key={index}
                             className={
                               service === val
-                                ? "active hover:text-primary hover:cursor-pointer"
-                                : "hover:text-primary hover:cursor-pointer"
+                                ? "active hover:text-warning hover:cursor-pointer"
+                                : "hover:text-warning hover:cursor-pointer"
                             }
                             onClick={() => setService(val)}
                           >
@@ -84,7 +85,7 @@ export default function ServiceSelector({ props }) {
                                   alt="Service Logo"
                                   width={20}
                                   height={20}
-                                  className="mr-2"
+                                  className="mr-2 rounded-full"
                                 ></Image>
                                 <p className="align-middle">
                                   {val.service_name}
