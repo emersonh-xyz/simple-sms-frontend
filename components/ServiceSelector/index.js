@@ -48,8 +48,8 @@ export default function ServiceSelector({ props }) {
                   setSearchTerm(e.target.value);
                 }}
               />
-              <div className="overflow-x-auto rounded-md max-h-56 shadow-xl">
-                <table className="table w-full">
+              <div className="overflow-x-auto rounded-md max-h-56 drop-shadow-l">
+                <table className="table table-zebra w-full">
                   <thead>
                     <tr>
                       <th>Service</th>

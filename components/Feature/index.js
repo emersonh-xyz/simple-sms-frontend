@@ -1,9 +1,9 @@
 export default function Feature() {
   return (
-    <section className="text-gray-600 body-font">
+    <section className="body-font">
       <div className="container px-5 py-24 mx-auto">
         <div className="text-center mb-20">
-          <h1 className="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">
+          <h1 className="sm:text-3xl text-2xl font-medium text-center title-font  mb-4">
             Raw Denim Heirloom Man Braid
           </h1>
           <p className="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
@@ -21,7 +21,7 @@ export default function Feature() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="3"
-                className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
+                className=" w-6 h-6 flex-shrink-0 mr-4"
                 viewBox="0 0 24 24"
               >
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
@@ -40,7 +40,7 @@ export default function Feature() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="3"
-                className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
+                className=" w-6 h-6 flex-shrink-0 mr-4"
                 viewBox="0 0 24 24"
               >
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
@@ -59,7 +59,7 @@ export default function Feature() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="3"
-                className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
+                className=" w-6 h-6 flex-shrink-0 mr-4"
                 viewBox="0 0 24 24"
               >
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
@@ -78,7 +78,7 @@ export default function Feature() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="3"
-                className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
+                className=" w-6 h-6 flex-shrink-0 mr-4"
                 viewBox="0 0 24 24"
               >
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
@@ -114,7 +114,7 @@ export default function Feature() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="3"
-                className="text-indigo-500 w-6 h-6 flex-shrink-0 mr-4"
+                className=" w-6 h-6 flex-shrink-0 mr-4"
                 viewBox="0 0 24 24"
               >
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>

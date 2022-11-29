@@ -11,11 +11,9 @@ export default function CheckoutDetails({ props }) {
     <div>
       <div className="card drop-shadow-lg bg-base-100 md:ml-5 md:mt-0 mt-5 ">
         <div className="card-body ">
-          <ul className="menu mx-center bg-base-100 w-full">
+          <ul className="menu mx-center w-full ">
             <li className="">
-              <span className="text-2xl text-black hover:bg-base-100">
-                Verify Order Details
-              </span>
+              <span className="text-2xl">Verify Order Details</span>
             </li>
 
             <li className="menu-title">
