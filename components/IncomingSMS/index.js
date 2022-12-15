@@ -30,7 +30,7 @@ export default function IncomingSMS() {
 
         <div className="container bg-base-300 drop-shadow-xl rounded-lg">
           <div className="text-center p-5 rounded-md">
-            <div className=" indicator w-full">
+            {/* <div className=" indicator w-full">
               <span className="indicator-item badge badge-sm badge-secondary">
                 new
               </span>
@@ -45,6 +45,9 @@ export default function IncomingSMS() {
 
             <div className="mx-center rounded-md mt-2 bg-base-100 drop-shadow-xl ">
               <p>#2030</p>
+            </div> */}
+            <div className="animate-pulse mx-center">
+              Waiting for new messages...
             </div>
           </div>
         </div>
@@ -54,8 +57,8 @@ export default function IncomingSMS() {
         {/*Raw messages container*/}
         <div className="container bg-base-300 drop-shadow-xl rounded-lg">
           <div className="rounded-md text-center p-5">
-            {/* <div className="animate-pulse ">Waiting for new messages...</div> */}
-            <div className="rounded-md bg-base-100 drop-shadow-xl hover:scale-105">
+            <div className="animate-pulse ">Waiting for new messages...</div>
+            {/* <div className="rounded-md bg-base-100 drop-shadow-xl hover:scale-105">
               Your code is: #3030
             </div>
             <div className="rounded-md mt-2 bg-base-100 drop-shadow-xl hover:scale-105">
@@ -63,7 +66,7 @@ export default function IncomingSMS() {
             </div>
             <div className="rounded-md mt-2 bg-base-100 drop-shadow-xl hover:scale-105">
               Enter your verifcation code of: #2030
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
