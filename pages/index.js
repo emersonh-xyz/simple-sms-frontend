@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState, useRef } from "react";
-import { uuid } from "uuidv4";
+import { v4 } from "uuidv4";
 import Feature from "../components/Feature";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -15,10 +15,9 @@ export default function Home(props) {
   const [isOrderConfirmed, setOrderConfirmed] = useState(false);
   
   let socketRef = useRef();
+  let venmoRef = useRef();
 
   const router = useRouter();
-
-  let venmo;
 
   // TODO: Invalid Payment event: invalid-payment
 
@@ -30,8 +29,10 @@ export default function Home(props) {
 
   // Start a new venmo order
   let startVenmoOrder = (price, service) => {
-    const orderId = uuid();
-    venmo = new VenmoClientAPI();
+    const orderId = v4();
+    venmoRef.current = new VenmoClientAPI();
+
+    let venmo = venmoRef.current;
     venmo.generatePaymentLink(
       "simple-sms",
       price,
@@ -57,7 +58,7 @@ export default function Home(props) {
     socket.on("order-confirmed", (data) => {
       console.log(`Order confirmed ${data}`);
       setOrderConfirmed(true);
-      venmo.closePaymentWindow();
+      venmoRef.current.closePaymentWindow();
       // router.push(`order/${}`)
     });
 
