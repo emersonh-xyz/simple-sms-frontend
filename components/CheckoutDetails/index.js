@@ -2,8 +2,10 @@ import { faCancel } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { useState } from "react";
+import { uuid } from "uuidv4";
+import VenmoClientAPI from "../../src/VenmoClientAPI";
 
-export default function CheckoutDetails({ props }) {
+export default function CheckoutDetails({ props, startVenmoOrder }) {
   const service = props;
   const [isVenmoCheckout, setVenmoCheckout] = useState(false);
 
@@ -47,16 +49,13 @@ export default function CheckoutDetails({ props }) {
                 }}
                 className="btn btn-wide border-none bg-error  text-white"
               >
-                <FontAwesomeIcon
-                  className="mr-1"
-                  icon={faCancel}
-                ></FontAwesomeIcon>
                 Cancel Transaction
               </button>
             ) : (
               <button
                 onClick={() => {
                   setVenmoCheckout(true);
+                  startVenmoOrder(99, service.service_name);
                 }}
                 className="btn w-full border-none bg-[#008CFF] text-white"
               >
