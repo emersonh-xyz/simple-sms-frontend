@@ -2,7 +2,6 @@ import { faCancel } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import { useState } from "react";
-import { uuid } from "uuidv4";
 import VenmoClientAPI from "../../src/VenmoClientAPI";
 
 export default function CheckoutDetails({ props, startVenmoOrder }) {
