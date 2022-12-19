@@ -1,19 +1,19 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useEffect, useState, useRef } from "react";
-import { v4 } from "uuidv4";
+import { useEffect, useRef, useState } from "react";
+import { io } from "socket.io-client";
+import { v4 as uuidv4 } from "uuid";
 import Feature from "../components/Feature";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import ServiceSelector from "../components/ServiceSelector";
 import rawJSON from "../data/services.json";
 import VenmoClientAPI from "../src/VenmoClientAPI";
-import { io } from "socket.io-client";
 
 export default function Home(props) {
   const [data, setData] = useState([]);
   const [isOrderConfirmed, setOrderConfirmed] = useState(false);
-  
+
   let socketRef = useRef();
   let venmoRef = useRef();
 
@@ -29,7 +29,7 @@ export default function Home(props) {
 
   // Start a new venmo order
   let startVenmoOrder = (price, service) => {
-    const orderId = v4();
+    const orderId = uuidv4();
     venmoRef.current = new VenmoClientAPI();
 
     let venmo = venmoRef.current;
@@ -43,10 +43,10 @@ export default function Home(props) {
     // console.log(socket);
     socketRef.current.emit("new-order", orderId);
     venmo.openPaymentWindow();
-  }
+  };
 
   useEffect(() => {
-    socketRef.current = io('http://localhost:3001');
+    socketRef.current = io("http://localhost:3001");
     let socket = socketRef.current;
 
     // ** Invalid Payment event: invalid-payment

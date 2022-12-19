@@ -17,15 +17,6 @@ const Order = ({ props }) => {
   const router = useRouter();
   const { uuid } = router.query;
 
-  const Countdown = () => {
-    return (
-      <span className="countdown font-mono text-2xl mx-auto text-error">
-        <span style={{ "--value": 20 }}></span>:
-        <span style={{ "--value": 0 }}></span>
-      </span>
-    );
-  };
-
   return (
     <div className="flex flex-col h-screen justify-between ">
       <Head></Head>
