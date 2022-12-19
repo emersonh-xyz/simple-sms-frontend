@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useState } from "react";
 import CheckoutDetails from "../CheckoutDetails";
 
-export default function ServiceSelector({ props }) {
+export default function ServiceSelector({ props, startVenmoOrder }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [service, setService] = useState("");
 
@@ -73,8 +73,8 @@ export default function ServiceSelector({ props }) {
                             key={index}
                             className={
                               service === val
-                                ? "active hover:text-warning hover:cursor-pointer"
-                                : "hover:text-warning hover:cursor-pointer"
+                                ? "active hover:text-primary hover:cursor-pointer"
+                                : "hover:text-primary hover:cursor-pointer"
                             }
                             onClick={() => setService(val)}
                           >
@@ -103,7 +103,13 @@ export default function ServiceSelector({ props }) {
           </div>
 
           {/* If our service isn't blank then render the order details */}
-          {service !== "" && <CheckoutDetails props={service} className="" />}
+          {service !== "" && (
+            <CheckoutDetails
+              props={service}
+              startVenmoOrder={startVenmoOrder}
+              className=""
+            />
+          )}
         </div>
       </div>
     </>

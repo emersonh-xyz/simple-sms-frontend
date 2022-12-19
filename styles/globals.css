@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Default background to fix coloring*/
 body {
   background-color: hsl(var(--b2));
 }
