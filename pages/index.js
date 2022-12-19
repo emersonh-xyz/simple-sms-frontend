@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { uuid } from "uuidv4";
 import Feature from "../components/Feature";
 import Footer from "../components/Footer";
@@ -8,12 +8,13 @@ import Navbar from "../components/Navbar";
 import ServiceSelector from "../components/ServiceSelector";
 import rawJSON from "../data/services.json";
 import VenmoClientAPI from "../src/VenmoClientAPI";
+import { io } from "socket.io-client";
 
 export default function Home(props) {
   const [data, setData] = useState([]);
   const [isOrderConfirmed, setOrderConfirmed] = useState(false);
-
-  const socket = props.socket.current;
+  
+  let socketRef = useRef();
 
   const router = useRouter();
 
@@ -28,7 +29,7 @@ export default function Home(props) {
   // TODO: Error getting number event: error-getting-number
 
   // Start a new venmo order
-  function startVenmoOrder(price, service) {
+  let startVenmoOrder = (price, service) => {
     const orderId = uuid();
     venmo = new VenmoClientAPI();
     venmo.generatePaymentLink(
@@ -37,11 +38,16 @@ export default function Home(props) {
       `Order:${service}:${orderId}`
     );
 
-    socket.emit("new-order", orderId);
+    // window.socketObject = socket;
+    // console.log(socket);
+    socketRef.current.emit("new-order", orderId);
     venmo.openPaymentWindow();
   }
 
   useEffect(() => {
+    socketRef.current = io('http://localhost:3001');
+    let socket = socketRef.current;
+
     // ** Invalid Payment event: invalid-payment
     socket.on("invalid-payment", () => {
       console.log("Invalid payment");
