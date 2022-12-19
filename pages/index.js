@@ -37,6 +37,7 @@ export default function Home(props) {
       `Order:${service}:${orderId}`
     );
 
+    socket.emit("new-order", orderId);
     venmo.openPaymentWindow();
   }
 
@@ -88,10 +89,6 @@ export default function Home(props) {
         <Navbar />
 
         {/* Main Service selection card */}
-        <ServiceSelector props={data} startVenmoOrder={startVenmoOrder} />
-        <Feature />
-
-        {/* Pop-up if order confirmation goes through */}
         {isOrderConfirmed && (
           <div>
             <p className="text-primary text-xl">
@@ -99,6 +96,10 @@ export default function Home(props) {
             </p>
           </div>
         )}
+        <ServiceSelector props={data} startVenmoOrder={startVenmoOrder} />
+        <Feature />
+
+        {/* Pop-up if order confirmation goes through */}
       </main>
 
       <Footer />
