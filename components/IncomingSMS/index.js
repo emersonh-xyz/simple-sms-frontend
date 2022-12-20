@@ -1,30 +1,25 @@
-/* eslint-disable @next/next/no-img-element */
-import { faClock } from "@fortawesome/free-regular-svg-icons";
-import {
-  faBolt,
-  faCancel,
-  faClipboard,
-  faHashtag,
-  faMobile,
-  faMobileAlt,
-  faPhone,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 
-export default function IncomingSMS() {
+export default function IncomingSMS({
+  phoneNumber,
+  expirationDate,
+  service,
+  messages,
+}) {
+  const [hasMessages, setHasMessages] = useState(false);
+
+  // prettier-ignore
+  let updatedNumber = `+${phoneNumber.substring(0, 1)} (${phoneNumber.substring(1,4)}) 
+  ${phoneNumber.substring(4,7)}-${phoneNumber.substring(7)}`;
+
   return (
     <div className="card w-96 drop-shadow-lg bg-base-100">
       <div className="card-body">
         <div className="card-title drop-shadow-xl">
-          <p className="text-3xl font-bold text-center">(123) 456-789</p>
+          <p className="text-3xl font-bold text-center">{updatedNumber}</p>
         </div>
 
         <div className="divider ">Extracted Codes</div>
-        {/* <div className=" border-2 text-center">
-          <div className="animate-pulse mx-center">
-            Waiting for new messages...
-          </div>
-        </div> */}
 
         {/*Extracted codes container*/}
 

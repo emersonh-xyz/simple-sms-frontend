@@ -2,6 +2,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
+import { themeChange } from "theme-change";
 import { v4 as uuidv4 } from "uuid";
 import Feature from "../components/Feature";
 import Footer from "../components/Footer";
@@ -13,15 +14,23 @@ import VenmoClientAPI from "../src/VenmoClientAPI";
 export default function Home(props) {
   const [data, setData] = useState([]);
   const [isOrderConfirmed, setOrderConfirmed] = useState(false);
+  const [isPhoneNumberReady, setPhoneNumberReady] = useState(false);
+  const [isOrderRefunded, setOrderRefunded] = useState(false);
+  const [orderId, setOrderId] = useState();
 
+  // !! THESE REFS ARE OP
   let socketRef = useRef();
   let venmoRef = useRef();
+  let orderIdRef = useRef();
 
   const router = useRouter();
 
-  // TODO: Invalid Payment event: invalid-payment
+  useEffect(() => {
+    themeChange(false);
+    // 👆 false parameter is required for react project
+  }, []);
 
-  // TODO: Refunded event: refunded
+  // TODO: Invalid Payment event: invalid-payment
 
   // TODO: Refund Error event: refund-error
 
@@ -29,29 +38,35 @@ export default function Home(props) {
 
   // Start a new venmo order
   let startVenmoOrder = (price, service) => {
-    const orderId = uuidv4();
+    let _orderId = uuidv4();
+
+    // Use a ref here because its fucking dumb
+    orderIdRef.current = _orderId;
+
+    setOrderId(_orderId);
     venmoRef.current = new VenmoClientAPI();
 
     let venmo = venmoRef.current;
     venmo.generatePaymentLink(
       "simple-sms",
       price,
-      `Order:${service}:${orderId}`
+      `Order:${service}:${_orderId}`
     );
 
-    // window.socketObject = socket;
-    // console.log(socket);
-    socketRef.current.emit("new-order", orderId);
+    // Start a new order
+    socketRef.current.emit("new-order", _orderId);
     venmo.openPaymentWindow();
   };
 
   useEffect(() => {
-    socketRef.current = io("http://localhost:3001");
+    socketRef.current = io(
+      "https://wars-crops-than-tonight.trycloudflare.com/"
+    );
     let socket = socketRef.current;
 
     // ** Invalid Payment event: invalid-payment
     socket.on("invalid-payment", () => {
-      console.log("Invalid payment");
+      console.log("Invalid payment error has occcured");
     });
 
     // ** Order Confirmed event: order-confirmed
@@ -62,9 +77,22 @@ export default function Home(props) {
       // router.push(`order/${}`)
     });
 
+    // ** Number Ready Event event: order-phone-number
+    socket.on("order-phone-number", (phoneNumber) => {
+      router.push(`order/${orderIdRef.current}`);
+    });
+
+    // ** Refunded event: refunded
+    socket.on("refunded", () => {
+      setOrderRefunded(true);
+      // TODO: Display how much is being refunded
+      console.log("Order has been refunded.");
+    });
+
     return () => {
       socket.removeAllListeners("invalid-payment");
       socket.removeAllListeners("order-confirmed");
+      socket.removeAllListeners("order-phone-number");
       socket.disconnect();
     };
   }, []);
@@ -98,11 +126,50 @@ export default function Home(props) {
         {/* Main Service selection card */}
         {isOrderConfirmed && (
           <div>
-            <p className="text-primary text-xl">
-              Your order has been confirmed!!
-            </p>
+            <div className="modal modal-open modal-bottom sm:modal-middle">
+              <div className="modal-box">
+                <h3 className="font-bold text-lg">
+                  <p className="font-bold text-lg">Order: #{orderId}</p>
+                  Your order has been confirmed!
+                </h3>
+
+                <p className="py-4 animate-pulse">
+                  {isPhoneNumberReady
+                    ? "Your number is ready! Redirecting..."
+                    : "You will be redirected once your number is ready..."}
+                </p>
+              </div>
+            </div>
           </div>
         )}
+
+        {isOrderRefunded && (
+          <div>
+            {/* Put this part before </body> tag */}
+            <input
+              type="checkbox"
+              id="order-refunded-modal"
+              className="modal-toggle"
+            />
+            <div className="modal modal-open modal-bottom sm:modal-middle">
+              <div className="modal-box">
+                <h3 className="font-bold text-lg">
+                  There was a problem completing your order.
+                </h3>
+                <p className="py-4">
+                  Your order <span className="font-bold">#{orderId}</span> has
+                  been refunded
+                </p>
+                <div className="modal-action ">
+                  <label htmlFor="order-refunded-modal" className="btn">
+                    Close
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
         <ServiceSelector props={data} startVenmoOrder={startVenmoOrder} />
         <Feature />
 
