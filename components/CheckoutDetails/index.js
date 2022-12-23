@@ -45,6 +45,7 @@ export default function CheckoutDetails({ props, startVenmoOrder }) {
               <button
                 onClick={() => {
                   location.reload();
+                  
                 }}
                 className="btn btn-wide border-none bg-error  text-white"
               >

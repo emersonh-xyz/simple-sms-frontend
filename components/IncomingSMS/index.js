@@ -6,11 +6,12 @@ export default function IncomingSMS({
   service,
   messages,
 }) {
+
   const [hasMessages, setHasMessages] = useState(false);
 
   // prettier-ignore
-  let updatedNumber = `+${phoneNumber.substring(0, 1)} (${phoneNumber.substring(1,4)}) 
-  ${phoneNumber.substring(4,7)}-${phoneNumber.substring(7)}`;
+  let updatedNumber = `+${phoneNumber.substring(0, 1)} (${phoneNumber.substring(1, 4)}) 
+  ${phoneNumber.substring(4, 7)}-${phoneNumber.substring(7)}`;
 
   return (
     <div className="card w-96 drop-shadow-lg bg-base-100">
@@ -25,25 +26,51 @@ export default function IncomingSMS({
 
         <div className="container bg-base-300 drop-shadow-xl rounded-lg">
           <div className="text-center p-5 rounded-md">
-            {/* <div className=" indicator w-full">
-              <span className="indicator-item badge badge-sm badge-secondary">
-                new
-              </span>
-              <div className="rounded-md w-full bg-base-100 drop-shadow-xl ">
-                <p>#3030</p>
-              </div>
-            </div>
 
-            <div className="mx-center rounded-md mt-2 bg-base-100 drop-shadow-xl ">
-              <p>#5030</p>
-            </div>
+            {messages.length > 0 ?
 
-            <div className="mx-center rounded-md mt-2 bg-base-100 drop-shadow-xl ">
-              <p>#2030</p>
-            </div> */}
-            <div className="animate-pulse mx-center">
-              Waiting for new messages...
-            </div>
+              <>
+
+                {messages.map((message, index) => {
+
+                  if (index == 0) {
+                    return (
+                      <div key={index} className="indicator w-full">
+
+                        <span className="indicator-item badge badge-sm badge-secondary">
+                          new
+                        </span>
+
+                        <div className="rounded-md bg-base-100 drop-shadow-xl w-full ">
+                          <p>{message.code}</p>
+                        </div>
+
+                      </div>
+                    )
+                  } else {
+
+                    return (
+                      <div key={index} className="rounded-md mt-2 bg-base-100 drop-shadow-xl ">
+                        <p>{message.code}</p>
+                      </div>
+                    )
+                  }
+
+                })}
+
+              </>
+
+              :
+
+              <>
+                <div className="animate-pulse mx-center">
+                  Waiting for new messages...
+                </div>
+              </>
+
+            }
+
+
           </div>
         </div>
 
@@ -52,16 +79,41 @@ export default function IncomingSMS({
         {/*Raw messages container*/}
         <div className="container bg-base-300 drop-shadow-xl rounded-lg">
           <div className="rounded-md text-center p-5">
-            <div className="animate-pulse ">Waiting for new messages...</div>
-            {/* <div className="rounded-md bg-base-100 drop-shadow-xl hover:scale-105">
-              Your code is: #3030
-            </div>
-            <div className="rounded-md mt-2 bg-base-100 drop-shadow-xl hover:scale-105">
-              Your verifcation code is: #5030
-            </div>
-            <div className="rounded-md mt-2 bg-base-100 drop-shadow-xl hover:scale-105">
-              Enter your verifcation code of: #2030
-            </div> */}
+
+            {messages.length > 0 ?
+
+              <>
+
+                {messages.map((message, index) => {
+
+
+                  if (index == 0) {
+                    return (
+                      <div key={index} className="rounded-md bg-base-100 drop-shadow-xl">
+                        {message.fullText}
+                      </div>
+                    )
+                  }
+
+                  return (
+                    <div key={index} className="rounded-md bg-base-100 drop-shadow-xl mt-2">
+                      {message.fullText}
+                    </div>
+                  )
+
+                })}
+
+
+
+              </>
+              :
+              <>
+                <div className="animate-pulse ">Waiting for new messages...</div>
+              </>
+
+            }
+
+
           </div>
         </div>
       </div>

@@ -1,9 +1,4 @@
-import {
-  faCancel,
-  faInfo,
-  faInfoCircle,
-  faWarning,
-} from "@fortawesome/free-solid-svg-icons";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -22,14 +17,14 @@ const Order = ({ props }) => {
   const [expirationDate, setExpirationDate] = useState();
   const [service, setService] = useState();
   const [messages, setMessages] = useState([]);
-  const [orderData, setOrderData] = useState();
+  const [isLoading, setLoading] = useState(true);
 
   // TODO: Initialize new socket connection
   let socketRef = useRef();
 
   useEffect(() => {
     socketRef.current = io(
-      "https://wars-crops-than-tonight.trycloudflare.com/"
+      "https://salaries-mentor-pd-bedford.trycloudflare.com/"
     );
     let socket = socketRef.current;
 
@@ -41,12 +36,11 @@ const Order = ({ props }) => {
       setExpirationDate(data.expiresAt);
       setService(data.service);
       setMessages(data.messages);
+      setLoading(false)
     });
 
     //on: new-messages
-    socket.on("new-message", (data) => {
-      setMessages([data, ...messages]);
-    });
+
   }, []);
 
   useEffect(() => {
@@ -54,12 +48,25 @@ const Order = ({ props }) => {
     socketRef.current.emit("get-order", uuid);
   }, [uuid]);
 
+  useEffect(() => {
+
+    socketRef.current.on("new-message", (data) => {
+      setMessages([data, ...messages]);
+    });
+
+    return () => {
+      socketRef.current.removeAllListeners("new-message")
+    }
+
+  }, [messages])
+
   return (
-    <div className="flex flex-col h-screen justify-between ">
+    <div className="flex flex-col ">
       <Head></Head>
 
-      <main>
-        <Navbar />
+      <Navbar />
+
+      {!isLoading ?
 
         <div className="p-48 bg-base-200 flex justify-center">
           <IncomingSMS
@@ -78,7 +85,17 @@ const Order = ({ props }) => {
             />
           </div>
         </div>
-      </main>
+
+        :
+        <div className="grid place-items-center h-screen">
+
+          <div className="">
+
+            <FontAwesomeIcon className="text-3xl font-bold animate-spin " icon={faSpinner} />
+          </div>
+        </div>
+      }
+
 
       <Footer />
     </div>
