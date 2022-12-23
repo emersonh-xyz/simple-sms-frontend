@@ -124,7 +124,7 @@ export default function Home(props) {
         <Navbar />
 
         {/* Main Service selection card */}
-        {!isOrderConfirmed && (
+        {isOrderConfirmed && (
 
           <div>
 
