@@ -9,6 +9,10 @@ export default function OrderDetails({
   service,
   messages,
   orderId,
+  isOrderRefundable,
+  setOrderRefundable,
+  isOrderExpired,
+  setOrderExpired
 }) {
 
   let updatedNumber = `+${phoneNumber.substring(0, 1)} (${phoneNumber.substring(1, 4)}) ${phoneNumber.substring(4, 7)}-${phoneNumber.substring(7)}`;
@@ -24,6 +28,8 @@ export default function OrderDetails({
       if (totalSeconds < 0) {
         clearInterval(interval);
         setTimeRemaining("Order Expired")
+        setOrderRefundable(false);
+        setOrderExpired(true)
         return;
       }
 
@@ -40,6 +46,8 @@ export default function OrderDetails({
     <div>
 
       <div className="card w-96 bg-base-100 drop-shadow-xl relative">
+
+
         <div className="card-body">
           <div className="card-title drop-shadow-xl">
             <p className="text-3xl font-bold ">Order Details</p>
@@ -62,7 +70,7 @@ export default function OrderDetails({
           </div>
 
           <div className="card-action justify-start">
-            <div className="card-action btn btn-error btn-sm w-fit">Cancel Order</div>
+            <div className={isOrderRefundable ? "btn btn-error btn-sm" : "btn btn-disabled btn-sm"}>Cancel Order</div>
           </div>
 
         </div>

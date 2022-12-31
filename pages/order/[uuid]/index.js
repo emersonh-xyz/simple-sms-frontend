@@ -8,6 +8,7 @@ import Footer from "../../../components/Footer";
 import IncomingSMS from "../../../components/IncomingSMS";
 import Navbar from "../../../components/Navbar";
 import OrderDetails from "../../../components/OrderDetails";
+import { config } from "../../../src/config";
 
 const Order = ({ props }) => {
   const router = useRouter();
@@ -18,13 +19,15 @@ const Order = ({ props }) => {
   const [service, setService] = useState();
   const [messages, setMessages] = useState([]);
   const [isLoading, setLoading] = useState(true);
+  const [isOrderRefundable, setOrderRefundable] = useState(true);
+  const [isOrderExpired, setOrderExpired] = useState(false);
 
   // TODO: Initialize new socket connection
   let socketRef = useRef();
 
   useEffect(() => {
     socketRef.current = io(
-      "https://salaries-mentor-pd-bedford.trycloudflare.com/"
+      config.webSocketURL
     );
     let socket = socketRef.current;
 
@@ -52,6 +55,7 @@ const Order = ({ props }) => {
 
     socketRef.current.on("new-message", (data) => {
       setMessages([data, ...messages]);
+      setOrderRefundable(false);
     });
 
     return () => {
@@ -61,10 +65,11 @@ const Order = ({ props }) => {
   }, [messages])
 
   return (
-    <div className="flex flex-col ">
-      <Head></Head>
+    <div className="flex flex-col h-screen justify-between">
+
 
       <Navbar />
+
 
       {!isLoading ?
 
@@ -74,6 +79,7 @@ const Order = ({ props }) => {
             expirationDate={expirationDate}
             service={service}
             messages={messages}
+            isOrderExpired={isOrderExpired}
           />
           <div className="ml-20">
             <OrderDetails
@@ -82,6 +88,10 @@ const Order = ({ props }) => {
               service={service}
               messages={messages}
               orderId={uuid}
+              isOrderRefundable={isOrderRefundable}
+              setOrderRefundable={setOrderRefundable}
+              isOrderExpired={isOrderExpired}
+              setOrderExpired={setOrderExpired}
             />
           </div>
         </div>

@@ -9,9 +9,10 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import ServiceSelector from "../components/ServiceSelector";
 import rawJSON from "../data/services.json";
+import { config } from "../src/config";
 import VenmoClientAPI from "../src/VenmoClientAPI";
 
-export default function Home(props) {
+export default function Home() {
   const [data, setData] = useState([]);
   const [isOrderConfirmed, setOrderConfirmed] = useState(false);
   const [isPhoneNumberReady, setPhoneNumberReady] = useState(false);
@@ -24,11 +25,6 @@ export default function Home(props) {
   let orderIdRef = useRef();
 
   const router = useRouter();
-
-  useEffect(() => {
-    themeChange(false);
-    // 👆 false parameter is required for react project
-  }, []);
 
   // TODO: Invalid Payment event: invalid-payment
 
@@ -60,7 +56,7 @@ export default function Home(props) {
 
   useEffect(() => {
     socketRef.current = io(
-      "https://salaries-mentor-pd-bedford.trycloudflare.com/"
+      config.webSocketURL
     );
     let socket = socketRef.current;
 

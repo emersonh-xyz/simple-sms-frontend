@@ -18,20 +18,6 @@ export default function Navbar() {
         <div className="flex-none">
           <p className="hover:border-b-2 mr-8">Login</p>
           <p className="hover:border-b-2 mr-8">About</p>
-          <div
-            className=""
-            onClick={() => {
-              if (theme === "light") {
-                setTheme("dark");
-                window.localStorage.setItem("theme", "dark");
-              } else {
-                setTheme("light");
-                window.localStorage.setItem("theme", "light");
-              }
-            }}
-          >
-            sdsdsd
-          </div>
         </div>
       </div>
     </>

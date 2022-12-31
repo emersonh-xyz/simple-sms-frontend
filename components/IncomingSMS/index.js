@@ -5,6 +5,7 @@ export default function IncomingSMS({
   expirationDate,
   service,
   messages,
+  isOrderExpired
 }) {
 
   const [hasMessages, setHasMessages] = useState(false);
@@ -15,9 +16,19 @@ export default function IncomingSMS({
 
   return (
     <div className="card w-96 drop-shadow-lg bg-base-100">
+      {isOrderExpired &&
+
+        <div className="alert alert-error shadow-xl ">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current flex-shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span className=" text-xl">This order has expired.</span>
+          </div>
+        </div>
+      }
       <div className="card-body">
         <div className="card-title drop-shadow-xl">
-          <p className="text-3xl font-bold text-center">{updatedNumber}</p>
+          <div className="text-3xl font-bold text-center">{updatedNumber}</div>
+
         </div>
 
         <div className="divider ">Extracted Codes</div>
