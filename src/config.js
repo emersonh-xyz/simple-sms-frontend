@@ -1,5 +1,5 @@
 const config = {
-    webSocketURL: "https://temp-contests-generic-prisoners.trycloudflare.com/"
+    webSocketURL: "http://localhost:3001"
 }
 
 export { config }

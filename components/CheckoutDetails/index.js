@@ -1,6 +1,6 @@
 import { faCancel } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Image from "next/image";
+import { Icon } from '@iconify-icon/react';
 import { useState } from "react";
 import VenmoClientAPI from "../../src/VenmoClientAPI";
 
@@ -31,13 +31,7 @@ export default function CheckoutDetails({ props, startVenmoOrder }) {
             </li>
           </ul>
 
-          <Image
-            src={`data:image/webp;base64,${service.service_logo_encoded}`}
-            alt="Service Logo"
-            width={70}
-            height={70}
-            className="absolute top-24 right-16 rounded-full "
-          ></Image>
+          <Icon width={70} height={70} icon={service.service_icon} className="absolute top-24 right-16 rounded-full " />
 
           <div className="divider mt-0"></div>
           <div className="card-actions">
