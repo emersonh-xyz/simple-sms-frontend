@@ -92,6 +92,7 @@ const Order = ({ props }) => {
               setOrderRefundable={setOrderRefundable}
               isOrderExpired={isOrderExpired}
               setOrderExpired={setOrderExpired}
+              socketRef={socketRef}
             />
           </div>
         </div>
