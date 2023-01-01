@@ -63,9 +63,7 @@ export default function ServiceSelector({ props, startVenmoOrder }) {
                       .filter((item) => {
                         return searchTerm.toLowerCase() === ""
                           ? item
-                          : item.service_name
-                            .toLowerCase()
-                            .includes(searchTerm.toLowerCase());
+                          : (item.service_name.toLowerCase().includes(searchTerm.toLowerCase())) || item.is_other;
                       })
                       .map((val, index) => {
                         return (
