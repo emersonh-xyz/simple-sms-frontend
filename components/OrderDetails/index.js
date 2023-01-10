@@ -12,7 +12,8 @@ export default function OrderDetails({
   isOrderRefundable,
   setOrderRefundable,
   isOrderExpired,
-  setOrderExpired
+  setOrderExpired,
+  socketRef
 }) {
 
   let updatedNumber = `+${phoneNumber.substring(0, 1)} (${phoneNumber.substring(1, 4)}) ${phoneNumber.substring(4, 7)}-${phoneNumber.substring(7)}`;
@@ -70,7 +71,7 @@ export default function OrderDetails({
           </div>
 
           <div className="card-action justify-start">
-            <div className={isOrderRefundable ? "btn btn-error btn-sm" : "btn btn-disabled btn-sm"}>Cancel Order</div>
+            <div className={isOrderRefundable ? "btn btn-error btn-sm" : "btn btn-disabled btn-sm"} onClick={() => { socketRef.current.emit('cancel-order', orderId) }}>Cancel Order</div>
           </div>
 
         </div>

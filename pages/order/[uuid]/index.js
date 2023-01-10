@@ -52,17 +52,19 @@ const Order = ({ props }) => {
   }, [uuid]);
 
   useEffect(() => {
+    if (messages.length > 0) {
+      setOrderRefundable(false);
+    }
 
     socketRef.current.on("new-message", (data) => {
       setMessages([data, ...messages]);
-      setOrderRefundable(false);
     });
 
     return () => {
-      socketRef.current.removeAllListeners("new-message")
+      socketRef.current.off("new-message")
     }
 
-  }, [messages])
+  }, [messages]);
 
   return (
     <div className="flex flex-col h-screen justify-between">
@@ -92,6 +94,7 @@ const Order = ({ props }) => {
               setOrderRefundable={setOrderRefundable}
               isOrderExpired={isOrderExpired}
               setOrderExpired={setOrderExpired}
+              socketRef={socketRef}
             />
           </div>
         </div>

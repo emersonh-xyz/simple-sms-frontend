@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { Icon } from '@iconify-icon/react';
 import React, { useState } from "react";
 import CheckoutDetails from "../CheckoutDetails";
 
@@ -63,9 +63,7 @@ export default function ServiceSelector({ props, startVenmoOrder }) {
                       .filter((item) => {
                         return searchTerm.toLowerCase() === ""
                           ? item
-                          : item.service_name
-                            .toLowerCase()
-                            .includes(searchTerm.toLowerCase());
+                          : (item.service_name.toLowerCase().includes(searchTerm.toLowerCase())) || item.is_other;
                       })
                       .map((val, index) => {
                         return (
@@ -80,13 +78,7 @@ export default function ServiceSelector({ props, startVenmoOrder }) {
                           >
                             <th>
                               <a className="flex items-center">
-                                <Image
-                                  src={`data:image/webp;base64,${val.service_logo_encoded}`}
-                                  alt="Service Logo"
-                                  width={20}
-                                  height={20}
-                                  className="mr-2 rounded-full"
-                                ></Image>
+                                <Icon width={20} height={20} icon={val.service_icon} className="mr-2 rounded-full" />
                                 <p className="align-middle">
                                   {val.service_name}
                                 </p>

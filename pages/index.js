@@ -97,6 +97,8 @@ export default function Home() {
     // Sort the data alphabetically on first load;
     function sortServicesAlphabetically() {
       rawJSON.sort(function (a, b) {
+        if (a.is_other) return 1;
+        if (b.is_other) return -1;
         a = a.service_name.toLowerCase();
         b = b.service_name.toLowerCase();
         return a < b ? -1 : a > b ? 1 : 0;
