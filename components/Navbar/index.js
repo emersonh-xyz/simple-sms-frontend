@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
@@ -11,13 +12,13 @@ export default function Navbar() {
     <>
       <div className="navbar bg-base-300">
         <div className="flex-1">
-          <a className="flex font-medium ">
-            <p className="ml-8">Simple SMS</p>
-          </a>
+
+          <Link className="flex font-medium ml-4 hover:text-neutral" href="/">Simple SMS</Link>
+
         </div>
         <div className="flex-none">
           <p className="hover:border-b-2 mr-8">Login</p>
-          <p className="hover:border-b-2 mr-8">About</p>
+          <p className="hover:border-b-2 mr-4">About</p>
         </div>
       </div>
     </>

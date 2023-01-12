@@ -2,12 +2,11 @@ import { Icon } from '@iconify-icon/react';
 import React, { useState } from "react";
 import CheckoutDetails from "../CheckoutDetails";
 
-export default function ServiceSelector({ props, startVenmoOrder }) {
+export default function ServiceSelector({ serviceList, startVenmoOrder }) {
+
   const [searchTerm, setSearchTerm] = useState("");
   const [service, setService] = useState("");
 
-  // Import all service data from props
-  const data = props;
 
   return (
     <>
@@ -39,11 +38,11 @@ export default function ServiceSelector({ props, startVenmoOrder }) {
 
         <div className="md:flex md:justify-center mt-8 ">
           <div className="card w-96 drop-shadow-lg bg-base-100 ">
-            <div className="card-body">
+            <div className="card-body" >
               <input
                 type="text"
                 placeholder="Search for services..."
-                className="animate-pulse input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full max-w-xs"
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
                 }}
@@ -59,7 +58,7 @@ export default function ServiceSelector({ props, startVenmoOrder }) {
                   </thead>
                   <tbody>
                     {/* Map over all data and filter by search results */}
-                    {data
+                    {serviceList
                       .filter((item) => {
                         return searchTerm.toLowerCase() === ""
                           ? item
@@ -71,8 +70,8 @@ export default function ServiceSelector({ props, startVenmoOrder }) {
                             key={index}
                             className={
                               service === val
-                                ? "active hover:text-primary hover:cursor-pointer"
-                                : "hover:text-primary hover:cursor-pointer"
+                                ? "active text-warning hover:cursor-pointer"
+                                : "hover:text-white hover:cursor-pointer"
                             }
                             onClick={() => setService(val)}
                           >
@@ -97,7 +96,7 @@ export default function ServiceSelector({ props, startVenmoOrder }) {
           {/* If our service isn't blank then render the order details */}
           {service !== "" && (
             <CheckoutDetails
-              props={service}
+              service={service}
               startVenmoOrder={startVenmoOrder}
               className=""
             />

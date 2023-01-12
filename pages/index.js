@@ -177,7 +177,7 @@ export default function Home() {
           </div>
         )}
 
-        <ServiceSelector props={data} startVenmoOrder={startVenmoOrder} />
+        <ServiceSelector serviceList={data} startVenmoOrder={startVenmoOrder} />
         <Feature />
 
         {/* Pop-up if order confirmation goes through */}
