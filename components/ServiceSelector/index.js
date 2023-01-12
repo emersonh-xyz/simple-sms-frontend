@@ -2,13 +2,11 @@ import { Icon } from '@iconify-icon/react';
 import React, { useState } from "react";
 import CheckoutDetails from "../CheckoutDetails";
 
-export default function ServiceSelector({ props, startVenmoOrder }) {
+export default function ServiceSelector({ serviceList, startVenmoOrder }) {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [service, setService] = useState("");
 
-  // Import all service data from props
-  const data = props;
 
   return (
     <>
@@ -60,7 +58,7 @@ export default function ServiceSelector({ props, startVenmoOrder }) {
                   </thead>
                   <tbody>
                     {/* Map over all data and filter by search results */}
-                    {data
+                    {serviceList
                       .filter((item) => {
                         return searchTerm.toLowerCase() === ""
                           ? item
