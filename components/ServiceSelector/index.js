@@ -70,8 +70,8 @@ export default function ServiceSelector({ serviceList, startVenmoOrder }) {
                             key={index}
                             className={
                               service === val
-                                ? "active hover:text-primary hover:cursor-pointer"
-                                : "hover:text-primary hover:cursor-pointer"
+                                ? "active text-success hover:cursor-pointer"
+                                : "hover:text-success hover:cursor-pointer"
                             }
                             onClick={() => setService(val)}
                           >
