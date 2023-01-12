@@ -38,7 +38,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder }) {
 
         <div className="md:flex md:justify-center mt-8 ">
           <div className="card w-96 drop-shadow-lg bg-base-100 ">
-            <div className="card-body">
+            <div className="card-body" >
               <input
                 type="text"
                 placeholder="Search for services..."
@@ -70,8 +70,8 @@ export default function ServiceSelector({ serviceList, startVenmoOrder }) {
                             key={index}
                             className={
                               service === val
-                                ? "active text-success hover:cursor-pointer"
-                                : "hover:text-success hover:cursor-pointer"
+                                ? "active text-warning hover:cursor-pointer"
+                                : "hover:text-white hover:cursor-pointer"
                             }
                             onClick={() => setService(val)}
                           >
