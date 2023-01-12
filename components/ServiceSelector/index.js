@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import CheckoutDetails from "../CheckoutDetails";
 
 export default function ServiceSelector({ props, startVenmoOrder }) {
+
   const [searchTerm, setSearchTerm] = useState("");
   const [service, setService] = useState("");
 
@@ -43,7 +44,7 @@ export default function ServiceSelector({ props, startVenmoOrder }) {
               <input
                 type="text"
                 placeholder="Search for services..."
-                className="animate-pulse input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full max-w-xs"
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
                 }}
@@ -97,7 +98,7 @@ export default function ServiceSelector({ props, startVenmoOrder }) {
           {/* If our service isn't blank then render the order details */}
           {service !== "" && (
             <CheckoutDetails
-              props={service}
+              service={service}
               startVenmoOrder={startVenmoOrder}
               className=""
             />

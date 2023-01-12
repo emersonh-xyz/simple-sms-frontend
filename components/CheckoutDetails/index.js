@@ -4,34 +4,37 @@ import { Icon } from '@iconify-icon/react';
 import { useState } from "react";
 import VenmoClientAPI from "../../src/VenmoClientAPI";
 
-export default function CheckoutDetails({ props, startVenmoOrder }) {
-  const service = props;
+export default function CheckoutDetails({ service, startVenmoOrder }) {
   const [isVenmoCheckout, setVenmoCheckout] = useState(false);
 
   return (
     <div>
       <div className="card drop-shadow-lg bg-base-100 md:ml-5 md:mt-0 mt-5 ">
         <div className="card-body ">
-          <ul className="menu mx-center w-full ">
-            <li className="">
-              <span className="text-2xl">Verify Order Details</span>
+          <ul className="mx-center w-full ">
+
+            <li className="text-2xl mb-4">
+              Verify Order Details
             </li>
 
-            <li className="menu-title">
+            <li className="text-sm base-300 font-bold mt-2">
               <span>Service</span>
             </li>
+
             <li>
-              <a>{service.service_name}</a>
+              {service.service_name}
             </li>
-            <li className="menu-title">
-              <span>Total</span>
+
+            <li className="text-sm base-300 font-bold mt-2">
+              Total
             </li>
+
             <li>
-              <a>$0.99 USD</a>
+              $0.99 USD
             </li>
           </ul>
 
-          <Icon width={70} height={70} icon={service.service_icon} className="absolute top-24 right-16 rounded-full " />
+          <Icon width={70} height={70} icon={service.service_icon} className="absolute top-20 right-20 rounded-full " />
 
           <div className="divider mt-0"></div>
           <div className="card-actions">
@@ -39,7 +42,7 @@ export default function CheckoutDetails({ props, startVenmoOrder }) {
               <button
                 onClick={() => {
                   location.reload();
-                  
+
                 }}
                 className="btn btn-wide border-none bg-error  text-white"
               >
@@ -51,7 +54,7 @@ export default function CheckoutDetails({ props, startVenmoOrder }) {
                   setVenmoCheckout(true);
                   startVenmoOrder(99, service.service_name);
                 }}
-                className="btn w-full border-none bg-[#008CFF] text-white"
+                className="btn btn-wide border-none bg-[#008CFF] text-white"
               >
                 <svg
                   id="Layer_1"
@@ -68,7 +71,10 @@ export default function CheckoutDetails({ props, startVenmoOrder }) {
                 </svg>
                 Checkout with Venmo
               </button>
+
             )}
+
+
           </div>
         </div>
       </div>
