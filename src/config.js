@@ -1,5 +1,6 @@
 const config = {
-    webSocketURL: "http://localhost:3001"
+    webSocketURL: " https://api.super-epic-poggers-server.ml/"
 }
 
 export { config }
+
