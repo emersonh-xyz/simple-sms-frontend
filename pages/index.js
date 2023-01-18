@@ -75,7 +75,7 @@ export default function Home() {
 
     // ** Number Ready Event event: order-phone-number
     socket.on("order-phone-number", (phoneNumber) => {
-      router.push(`order/${orderIdRef.current}`);
+      window.location.href = `/order/${orderIdRef.current}`;
     });
 
     // ** Refunded event: refunded
