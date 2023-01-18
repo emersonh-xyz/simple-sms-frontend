@@ -8,6 +8,7 @@ import Feature from "../components/Feature";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import ServiceSelector from "../components/ServiceSelector";
+import WaveBanner from "../components/WaveBanner";
 import rawJSON from "../data/services.json";
 import { config } from "../src/config";
 import VenmoClientAPI from "../src/VenmoClientAPI";
@@ -23,6 +24,7 @@ export default function Home() {
   let socketRef = useRef();
   let venmoRef = useRef();
   let orderIdRef = useRef();
+  let serviceSelectorRef = useRef(null)
 
   const router = useRouter();
 
@@ -111,18 +113,15 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="flex flex-col h-screen justify-between">
+    <div className="">
       <Head>
         <title>Simple SMS</title>
-
-
-
       </Head>
 
       <>
 
 
-        {/* Main Service selection card */}
+        {/* Banner popup */}
         {isOrderConfirmed && (
 
           <div>
@@ -181,7 +180,8 @@ export default function Home() {
           )
         }
 
-        <ServiceSelector serviceList={data} startVenmoOrder={startVenmoOrder} />
+        <WaveBanner serviceSelectorRef={serviceSelectorRef} />
+        <ServiceSelector serviceSelectorRef={serviceSelectorRef} serviceList={data} startVenmoOrder={startVenmoOrder} />
         <Feature />
 
         {/* Pop-up if order confirmation goes through */}
