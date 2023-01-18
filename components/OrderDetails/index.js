@@ -17,12 +17,13 @@ export default function OrderDetails({
   setOrderRefundable,
   isOrderExpired,
   setOrderExpired,
-  socketRef
+  socketRef,
 }) {
 
   let updatedNumber = `+${phoneNumber.substring(0, 1)} (${phoneNumber.substring(1, 4)}) ${phoneNumber.substring(4, 7)}-${phoneNumber.substring(7)}`;
 
   const [timeRemaining, setTimeRemaining] = useState("...");
+  const [isCancelPending, setIsCancelPending] = useState(false);
 
   useEffect(() => {
 
@@ -44,9 +45,16 @@ export default function OrderDetails({
       setTimeRemaining(`${minutes}:${seconds.toString().padStart(2, "0")}`);
     }, 1000);
 
+    socketRef.current.on("order-cancellation-error", ({ err }) => {
+      setIsCancelPending(false);
+    })
 
     return () => clearInterval(interval);
-  });
+  }, []);
+
+  useEffect(() => {
+    setIsCancelPending(false);
+  }, [isOrderExpired]);
 
   return (
     <div>
@@ -84,7 +92,7 @@ export default function OrderDetails({
           </div>
 
           <div className="card-action justify-start">
-            <div className={isOrderRefundable && !isOrderExpired ? "btn btn-error btn-sm" : "btn btn-disabled btn-sm"} onClick={() => { socketRef.current.emit('cancel-order', orderId) }}>Cancel Order</div>
+            <div className={(isOrderRefundable && !isOrderExpired && !isCancelPending) ? "btn btn-error btn-sm" : "btn btn-disabled btn-sm"} onClick={() => { setIsCancelPending(true); socketRef.current.emit('cancel-order', orderId) }}>{isCancelPending ? "Cancelling Order..." : "Cancel Order"}</div>
             <a href="google.com" className="flex text-xs mt-2 hover:underline">Have an issue with your order?</a>
           </div>
 
