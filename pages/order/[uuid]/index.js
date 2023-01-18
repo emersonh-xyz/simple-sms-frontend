@@ -62,7 +62,9 @@ const Order = ({ props }) => {
 
   useEffect(() => {
     // emit: get-order
-    socketRef.current.emit("get-order", uuid);
+    if (uuid) {
+      socketRef.current.emit("get-order", uuid);
+    }
   }, [uuid]);
 
   useEffect(() => {
