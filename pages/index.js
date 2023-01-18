@@ -120,7 +120,7 @@ export default function Home() {
       </Head>
 
       <>
-        <Navbar />
+
 
         {/* Main Service selection card */}
         {isOrderConfirmed && (

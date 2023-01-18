@@ -19,7 +19,7 @@ export default function Feature() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="3"
-                className="text-primary w-6 h-6 flex-shrink-0 mr-4"
+                className="text-secondary w-6 h-6 flex-shrink-0 mr-4"
                 viewBox="0 0 24 24"
               >
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>

@@ -10,32 +10,34 @@ export default function ServiceSelector({ serviceList, startVenmoOrder }) {
 
   return (
     <>
-      <div className="p-10 bg-base-200">
-        <div class="container px-5 mx-auto ">
-          <div class="text-center ">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font  mb-4">
-              Getting Started
+      <div className="bg-base-200">
+        <div class="p-20 w-full" style={{ background: "linear-gradient(90deg, #03C988 0%, #00337C 100%)" }}>
+          <div class="ml-20">
+            <h1 class="text-3xl font-medium title-font text-white text-left">
+              simple-sms.io
             </h1>
-            <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
-              Start by selecting the service you plan to use and proceed to
-              checkout. Afterwards you will be redirected to your virtual phone
-              to monitor incoming messages.
+            <h1></h1>
+            <p class="text-base font-medium mx-auto text-left text-white">
+              Premium disposable phone numbers
             </p>
-            <div class="flex mt-6 justify-center">
-              <div class="w-48 h-1 rounded-full bg-primary inline-flex"></div>
-            </div>
-            <div className="w-full flex flex-col justify-center items-center mt-5">
-              <ul className="steps steps-horizontal ">
-                <li className="step step-primary">Select Service</li>
-                <li className={service !== "" ? "step step-primary" : "step"}>
-                  Checkout
-                </li>
-                <li className="step">Await Code</li>
-              </ul>
-            </div>
+            <p class="text-base mx-auto text-left mt-5 text-white">
+              Premium disposable phone numbers
+            </p>
+
           </div>
         </div>
-
+        <div class="flex mt-6 justify-center">
+          <div class="w-48 h-1 rounded-full bg-primary inline-flex"></div>
+        </div>
+        <div className="w-full flex flex-col justify-center items-center mt-5">
+          <ul className="steps steps-horizontal ">
+            <li className="step step-primary">Select Service</li>
+            <li className={service !== "" ? "step step-primary" : "step"}>
+              Checkout
+            </li>
+            <li className="step">Await Code</li>
+          </ul>
+        </div>
         <div className="md:flex md:justify-center mt-8 ">
           <div className="card w-96 drop-shadow-lg bg-base-100 ">
             <div className="card-body" >

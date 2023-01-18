@@ -51,6 +51,11 @@ const Order = ({ props }) => {
       setOrderExpired(true);
     })
 
+    socket.on("order-not-found", () => {
+      window.location.href = ("/404")
+      console.log("hello world")
+    })
+
     //on: new-messages
 
   }, []);
