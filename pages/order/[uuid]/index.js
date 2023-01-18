@@ -47,6 +47,10 @@ const Order = ({ props }) => {
 
     });
 
+    socket.on("order-cancelled", (data) => {
+      setOrderExpired(true);
+    })
+
     //on: new-messages
 
   }, []);
