@@ -2,7 +2,11 @@ import {
   faClock, faGlobe, faMobileAlt
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Icon } from '@iconify-icon/react';
 import { useEffect, useState } from "react";
+import serviceList from "../../data/services.json";
+
+
 export default function OrderDetails({
   phoneNumber,
   expirationDate,
@@ -20,8 +24,8 @@ export default function OrderDetails({
 
   const [timeRemaining, setTimeRemaining] = useState("...");
 
-
   useEffect(() => {
+
     let interval = setInterval(() => {
 
       let totalSeconds = Math.floor((expirationDate - Date.now()) / 1000)
@@ -40,6 +44,7 @@ export default function OrderDetails({
       setTimeRemaining(`${minutes}:${seconds.toString().padStart(2, "0")}`);
     }, 1000);
 
+
     return () => clearInterval(interval);
   });
 
@@ -57,6 +62,13 @@ export default function OrderDetails({
 
           <div className="divider"></div>
           <div className="mb-2">
+
+            <Icon
+              className="absolute top-40 right-10"
+              width={80}
+              height={80}
+              icon={serviceList.find(element => element.service_name == service).service_icon} />
+
             <div className="tooltip tooltip-right" data-tip={`Your disposable phone number for ${service}`}>
               <p><FontAwesomeIcon className="mr-1" icon={faMobileAlt} />{updatedNumber}</p>
             </div>
@@ -64,14 +76,16 @@ export default function OrderDetails({
             <p><FontAwesomeIcon className="mr-1" icon={faGlobe} />{service}</p>
 
 
+
             <div className="tooltip tooltip-right" data-tip="Time remaining on your order">
-              <p><FontAwesomeIcon className="mr-1" icon={faClock} />{timeRemaining}</p>
+              <p><FontAwesomeIcon className="mr-1" icon={faClock} />{!isOrderExpired ? timeRemaining : "Expired"}</p>
             </div>
 
           </div>
 
           <div className="card-action justify-start">
-            <div className={isOrderRefundable ? "btn btn-error btn-sm" : "btn btn-disabled btn-sm"} onClick={() => { socketRef.current.emit('cancel-order', orderId) }}>Cancel Order</div>
+            <div className={isOrderRefundable && !isOrderExpired ? "btn btn-error btn-sm" : "btn btn-disabled btn-sm"} onClick={() => { socketRef.current.emit('cancel-order', orderId) }}>Cancel Order</div>
+            <a href="google.com" className="flex text-xs mt-2 hover:underline">Have an issue with your order?</a>
           </div>
 
         </div>

@@ -4,7 +4,7 @@ export default function Feature() {
       <div className="container px-5 py-24 mx-auto">
         <div className="text-center mb-20">
           <h1 className="sm:text-3xl text-2xl font-medium text-center title-font  mb-4">
-            We have built Simple SMS to be a secure and easy to use service.
+            Simple SMS is a secure and easy to use service.
           </h1>
           <div class="flex mt-6 justify-center">
             <div class="w-64 h-1 rounded-full bg-primary inline-flex"></div>
