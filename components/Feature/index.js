@@ -1,7 +1,10 @@
 export default function Feature() {
   return (
-    <section className="body-font">
+    <section className="body-font bg-base-200">
+
       <div className="container px-5 py-24 mx-auto">
+
+
         <div className="text-center mb-20">
           <h1 className="sm:text-3xl text-2xl font-medium text-center title-font  mb-4">
             Simple SMS is a secure and easy to use service.
@@ -19,7 +22,7 @@ export default function Feature() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="3"
-                className="text-primary w-6 h-6 flex-shrink-0 mr-4"
+                className="text-secondary w-6 h-6 flex-shrink-0 mr-4"
                 viewBox="0 0 24 24"
               >
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
@@ -38,7 +41,7 @@ export default function Feature() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="3"
-                className="text-primary w-6 h-6 flex-shrink-0 mr-4"
+                className="text-secondary w-6 h-6 flex-shrink-0 mr-4"
                 viewBox="0 0 24 24"
               >
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
@@ -95,7 +98,7 @@ export default function Feature() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="3"
-                className="text-primary w-6 h-6 flex-shrink-0 mr-4"
+                className="text-secondary w-6 h-6 flex-shrink-0 mr-4"
                 viewBox="0 0 24 24"
               >
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
@@ -112,7 +115,7 @@ export default function Feature() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="3"
-                className="text-primary w-6 h-6 flex-shrink-0 mr-4"
+                className="text-secondary w-6 h-6 flex-shrink-0 mr-4"
                 viewBox="0 0 24 24"
               >
                 <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>

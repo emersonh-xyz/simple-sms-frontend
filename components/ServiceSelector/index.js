@@ -2,7 +2,7 @@ import { Icon } from '@iconify-icon/react';
 import React, { useState } from "react";
 import CheckoutDetails from "../CheckoutDetails";
 
-export default function ServiceSelector({ serviceList, startVenmoOrder }) {
+export default function ServiceSelector({ serviceList, startVenmoOrder, serviceSelectorRef }) {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [service, setService] = useState("");
@@ -10,34 +10,21 @@ export default function ServiceSelector({ serviceList, startVenmoOrder }) {
 
   return (
     <>
-      <div className="p-10 bg-base-200">
-        <div class="container px-5 mx-auto ">
-          <div class="text-center ">
-            <h1 class="sm:text-3xl text-2xl font-medium title-font  mb-4">
-              Getting Started
-            </h1>
-            <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-500s">
-              Start by selecting the service you plan to use and proceed to
-              checkout. Afterwards you will be redirected to your virtual phone
-              to monitor incoming messages.
-            </p>
-            <div class="flex mt-6 justify-center">
-              <div class="w-48 h-1 rounded-full bg-primary inline-flex"></div>
-            </div>
-            <div className="w-full flex flex-col justify-center items-center mt-5">
-              <ul className="steps steps-horizontal ">
-                <li className="step step-primary">Select Service</li>
-                <li className={service !== "" ? "step step-primary" : "step"}>
-                  Checkout
-                </li>
-                <li className="step">Await Code</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <section ref={serviceSelectorRef} className="bg-base-100 p-30">
 
-        <div className="md:flex md:justify-center mt-8 ">
-          <div className="card w-96 drop-shadow-lg bg-base-100 ">
+        <div className="w-full flex flex-col justify-center items-center ">
+          <div>
+          </div>
+          <ul className="steps">
+            <li className="step step-secondary">Select Service</li>
+            <li className={service !== "" ? "step step-secondary" : "step"}>
+              Checkout
+            </li>
+            <li className="step">Await Code</li>
+          </ul>
+        </div>
+        <div className="md:flex md:justify-center mt-8 mb-10 ">
+          <div className="card w-96 drop-shadow-lg bg-base-300 ">
             <div className="card-body" >
               <input
                 type="text"
@@ -70,8 +57,8 @@ export default function ServiceSelector({ serviceList, startVenmoOrder }) {
                             key={index}
                             className={
                               service === val
-                                ? "active text-primary hover:cursor-pointer"
-                                : "hover:text-primary hover:cursor-pointer"
+                                ? "active hover:cursor-pointer"
+                                : "hover:scale-95 hover:cursor-pointer"
                             }
                             onClick={() => setService(val)}
                           >
@@ -102,7 +89,15 @@ export default function ServiceSelector({ serviceList, startVenmoOrder }) {
             />
           )}
         </div>
-      </div>
+
+
+        <div class="custom-shape-divider-bottom-1674078160">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+          </svg>
+        </div>
+
+      </section>
     </>
   );
 }
