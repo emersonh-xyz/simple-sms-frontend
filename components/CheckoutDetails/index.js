@@ -10,7 +10,7 @@ export default function CheckoutDetails({ service, startVenmoOrder, venmoRef }) 
   return (
     <div>
       <div className="card drop-shadow-lg bg-base-300 md:ml-5 md:mt-0 mt-5 ">
-        <div className="card-body ">
+        <div className="card-body">
           <ul className="mx-center w-full ">
 
             <li className="text-2xl mb-4">
