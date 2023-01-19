@@ -59,6 +59,37 @@ export default function OrderDetails({
   return (
     <div>
 
+      {/* Cancel order modal */}
+      <input type="checkbox" id="cancel-order-modal" className="modal-toggle" />
+      <div className="modal">
+        <div className="modal-box">
+          <h3 className="font-bold text-sm">Order: {orderId}</h3>
+          {!isOrderExpired ?
+
+            <div>
+              <p className="py-4">Are you sure you want to refund this order?</p>
+              <p className="">You will no longer be able to use this number for new accounts. </p>
+              <div className="modal-action">
+                <div className={(isOrderRefundable && !isOrderExpired && !isCancelPending) ? "btn btn-error" : "btn btn-disabled"} onClick={() => { setIsCancelPending(true); socketRef.current.emit('cancel-order', orderId) }}>{isCancelPending ? "Cancelling Order..." : "Cancel Order"}</div>
+                <label htmlFor="cancel-order-modal" className="btn">Nevermind</label>
+              </div>
+            </div>
+
+            :
+            <div>
+              <p className="py-4">This order was succesfully cancelled.</p>
+              <p className="">You will receive your refund back to your original payment method shortly.</p>
+              <div className="modal-action">
+                <label htmlFor="cancel-order-modal" className="btn">Close</label>
+              </div>
+            </div>
+          }
+
+        </div>
+      </div>
+
+
+
       <div className="card w-96 bg-base-100 drop-shadow-xl relative">
 
 
@@ -92,7 +123,7 @@ export default function OrderDetails({
           </div>
 
           <div className="card-action justify-start">
-            <div className={(isOrderRefundable && !isOrderExpired && !isCancelPending) ? "btn btn-error btn-sm" : "btn btn-disabled btn-sm"} onClick={() => { setIsCancelPending(true); socketRef.current.emit('cancel-order', orderId) }}>{isCancelPending ? "Cancelling Order..." : "Cancel Order"}</div>
+            <label htmlFor="cancel-order-modal" className={isOrderRefundable && !isOrderExpired ? "btn btn-error btn-sm" : "btn btn-disabled btn-sm"}>Cancel Order</label>
             <a href="google.com" className="flex text-xs mt-2 hover:underline">Have an issue with your order?</a>
           </div>
 

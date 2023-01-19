@@ -13,8 +13,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
       <section ref={serviceSelectorRef} className="bg-base-100 p-30">
 
         <div className="w-full flex flex-col justify-center items-center ">
-          <div>
-          </div>
+          <p className=" font-thin text-2xl">Select your service below </p>
           <ul className="steps">
             <li className="step step-secondary">Select Service</li>
             <li className={service !== "" ? "step step-secondary" : "step"}>

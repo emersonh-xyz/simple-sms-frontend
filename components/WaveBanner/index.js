@@ -12,13 +12,13 @@ export default function WaveBanner({ serviceSelectorRef }) {
 
             <div className="absolute left-60">
                 <div className="text-white ">
-                    <p className="text-3xl font-medium">simple-sms.io</p>
-                    <p className="text-xl font-thin">Premium disposable phone numbers</p>
-                    <p className="mt-2 mb-2">Start by selecting the service you plan to use and proceed to checkout. Afterwards you will be redirected to your virtual phone to monitor incoming messages.</p>
+                    <p className="text-4xl font-medium">simple-sms.io</p>
+                    <p className="text-2xl font-thin">Premium disposable phone numbers</p>
+
                 </div>
 
                 <div className="mt-2">
-                    <button onClick={() => executeScroll()} class="text-white border border-white hover:bg-white hover:text-black px-6 py-2 rounded-full outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button"
+                    <button onClick={() => executeScroll()} class="text-white border border-white hover:scale-95 px-6 py-2 rounded-full outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button"
                     >
                         Get Started
                     </button>
