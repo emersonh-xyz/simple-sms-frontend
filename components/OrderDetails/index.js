@@ -123,7 +123,7 @@ export default function OrderDetails({
           </div>
 
           <div className="card-action justify-start">
-            <label htmlFor="cancel-order-modal" className={isOrderRefundable && !isOrderExpired ? "btn btn-error btn-sm" : "btn btn-disabled btn-sm"}>Cancel Order</label>
+            <label htmlFor="cancel-order-modal" className={(isOrderRefundable && !isOrderExpired && !isCancelPending) ? "btn btn-error btn-sm" : "btn btn-disabled btn-sm"}>{isCancelPending ? "Cancelling Order..." : "Cancel Order"}</label>
             <a href="google.com" className="flex text-xs mt-2 hover:underline">Have an issue with your order?</a>
           </div>
 
