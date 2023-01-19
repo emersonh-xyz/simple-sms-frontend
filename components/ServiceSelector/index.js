@@ -69,7 +69,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
                                 </p>
                               </a>
                             </th>
-                            <th className="text-xs">$0.99 USD</th>
+                            <th className="text-xs">${(val.service_price / 100).toFixed(2)} USD</th>
                           </tr>
                         );
                       })}
