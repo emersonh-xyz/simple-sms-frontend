@@ -4,7 +4,7 @@ import { Icon } from '@iconify-icon/react';
 import { useState } from "react";
 import VenmoClientAPI from "../../src/VenmoClientAPI";
 
-export default function CheckoutDetails({ service, startVenmoOrder }) {
+export default function CheckoutDetails({ service, startVenmoOrder, venmoRef }) {
   const [isVenmoCheckout, setVenmoCheckout] = useState(false);
 
   return (
@@ -30,7 +30,7 @@ export default function CheckoutDetails({ service, startVenmoOrder }) {
             </li>
 
             <li>
-              $0.99 USD
+              ${(service.service_price / 100).toFixed(2)} USD
             </li>
           </ul>
 
@@ -41,8 +41,8 @@ export default function CheckoutDetails({ service, startVenmoOrder }) {
             {isVenmoCheckout ? (
               <button
                 onClick={() => {
+                  venmoRef.current.closePaymentWindow();
                   location.reload();
-
                 }}
                 className="btn btn-wide border-none bg-error  text-white"
               >
@@ -52,7 +52,7 @@ export default function CheckoutDetails({ service, startVenmoOrder }) {
               <button
                 onClick={() => {
                   setVenmoCheckout(true);
-                  startVenmoOrder(99, service.service_name);
+                  startVenmoOrder(service.service_price, service.service_name);
                 }}
                 className="btn btn-wide border-none bg-[#008CFF] text-white"
               >

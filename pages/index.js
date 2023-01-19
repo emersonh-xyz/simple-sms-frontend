@@ -181,7 +181,7 @@ export default function Home() {
         }
 
         <WaveBanner serviceSelectorRef={serviceSelectorRef} />
-        <ServiceSelector serviceSelectorRef={serviceSelectorRef} serviceList={data} startVenmoOrder={startVenmoOrder} />
+        <ServiceSelector serviceSelectorRef={serviceSelectorRef} serviceList={data} startVenmoOrder={startVenmoOrder} venmoRef={venmoRef} />
         <Feature />
 
         {/* Pop-up if order confirmation goes through */}
