@@ -9,6 +9,7 @@ export default function IncomingSMS({
 }) {
 
   const [hasMessages, setHasMessages] = useState(false);
+  const [isCopied, setIsCopied] = useState(false);
 
   // prettier-ignore
   let updatedNumber = `+${phoneNumber.substring(0, 1)} (${phoneNumber.substring(1, 4)}) 
@@ -21,7 +22,7 @@ export default function IncomingSMS({
 
       <div className="card-body">
         <div className="card-title drop-shadow-xl">
-          <div className="text-3xl font-bold mx-auto">{updatedNumber}</div>
+          <div className="tooltip text-3xl font-bold mx-auto hover:cursor-pointer" data-tip={isCopied ? "Copied!" : "Click to copy to clipboard"} onClick={() => { setIsCopied(true); navigator.clipboard.writeText(phoneNumber); }} onMouseLeave={() => { setIsCopied(false); }}>{updatedNumber}</div>
 
         </div>
 

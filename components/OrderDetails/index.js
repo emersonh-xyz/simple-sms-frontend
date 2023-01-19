@@ -33,9 +33,9 @@ export default function OrderDetails({
 
       if (totalSeconds < 0) {
         clearInterval(interval);
-        setTimeRemaining("Order Expired")
+        setTimeRemaining("Expired")
         setOrderRefundable(false);
-        setOrderExpired(true)
+        // setOrderExpired(true)
         return;
       }
 

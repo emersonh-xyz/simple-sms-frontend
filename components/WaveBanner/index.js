@@ -12,7 +12,7 @@ export default function WaveBanner({ serviceSelectorRef }) {
 
             <div className="absolute left-60">
                 <div className="text-white ">
-                    <p className="text-4xl font-medium">simple-sms.io</p>
+                    <p className="text-4xl font-medium">Simple SMS</p>
                     <p className="text-2xl font-thin">Premium disposable phone numbers</p>
 
                 </div>
