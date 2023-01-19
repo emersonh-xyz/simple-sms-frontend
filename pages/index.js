@@ -151,33 +151,33 @@ export default function Home() {
         )
         }
 
-        {
-          isOrderRefunded && (
-            <div>
-              {/* Put this part before </body> tag */}
-              <input
-                type="checkbox"
-                id="order-refunded-modal"
-                className="modal-toggle"
-              />
-              <div className="modal modal-open modal-bottom sm:modal-middle">
-                <div className="modal-box">
-                  <h3 className="font-bold text-lg">
-                    There was a problem completing your order.
-                  </h3>
-                  <p className="py-4">
-                    Your order <span className="font-bold">#{orderId}</span> has
-                    been refunded
-                  </p>
-                  <div className="modal-action ">
-                    <label htmlFor="order-refunded-modal" className="btn">
-                      Close
-                    </label>
-                  </div>
+        {isOrderRefunded && (
+          <div>
+            {/* Put this part before </body> tag */}
+            <input
+              type="checkbox"
+              id="order-refunded-modal"
+              className="modal-toggle"
+            />
+            <div className="modal modal-open modal-bottom sm:modal-middle">
+              <div className="modal-box">
+                <h3 className="font-bold text-lg">
+                  There was a problem completing your order.
+                </h3>
+                <p className="py-4">
+                  Your order <span className="font-bold">#{orderId}</span> has
+                  been refunded
+                </p>
+                <div className="modal-action">
+                  <label onClick={() => location.reload()} htmlFor="order-refunded-modal" className="btn">
+                    Close
+                  </label>
+
                 </div>
               </div>
             </div>
-          )
+          </div>
+        )
         }
 
         <WaveBanner serviceSelectorRef={serviceSelectorRef} />
