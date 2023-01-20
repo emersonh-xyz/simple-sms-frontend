@@ -47,7 +47,7 @@ export default function IncomingSMS({
                           new
                         </span>
 
-                        <div className="rounded-md bg-base-100 drop-shadow-xl w-full ">
+                        <div className="tooltip tooltip-left hover:cursor-pointer rounded-md bg-base-100 drop-shadow-xl w-full " data-tip={isCopied ? "Copied!" : "Click to copy"} onClick={() => { setIsCopied(true); navigator.clipboard.writeText(message.code); }} onMouseLeave={() => { setIsCopied(false); }}>
                           <p>{message.code}</p>
                         </div>
 
@@ -56,7 +56,7 @@ export default function IncomingSMS({
                   } else {
 
                     return (
-                      <div key={index} className="rounded-md mt-2 bg-base-100 drop-shadow-xl ">
+                      <div key={index} className="tooltip tooltip-left hover:cursor-pointer rounded-md mt-2 bg-base-100 drop-shadow-xl w-full" data-tip={isCopied ? "Copied!" : "Click to copy"} onClick={() => { setIsCopied(true); navigator.clipboard.writeText(message.code); }} onMouseLeave={() => { setIsCopied(false); }}>
                         <p>{message.code}</p>
                       </div>
                     )
