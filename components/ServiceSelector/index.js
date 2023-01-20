@@ -2,7 +2,7 @@ import { Icon } from '@iconify-icon/react';
 import React, { useState } from "react";
 import CheckoutDetails from "../CheckoutDetails";
 
-export default function ServiceSelector({ serviceList, startVenmoOrder, serviceSelectorRef, venmoRef }) {
+export default function ServiceSelector({ serviceList, startVenmoOrder, serviceSelectorRef, venmoRef, isOrderConfirmed }) {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [service, setService] = useState("");
@@ -85,6 +85,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
               service={service}
               startVenmoOrder={startVenmoOrder}
               venmoRef={venmoRef}
+              isOrderConfirmed={isOrderConfirmed}
               className=""
 
             />
