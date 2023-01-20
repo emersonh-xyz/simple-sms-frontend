@@ -9,8 +9,8 @@ export default function Feature() {
           <h1 className="sm:text-3xl text-2xl font-medium text-center title-font  mb-4">
             Simple SMS is a secure and easy to use service.
           </h1>
-          <div class="flex mt-6 justify-center">
-            <div class="w-64 h-1 rounded-full bg-primary inline-flex"></div>
+          <div className="flex mt-6 justify-center">
+            <div className="w-64 h-1 rounded-full bg-primary inline-flex"></div>
           </div>
         </div>
         <div className="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
