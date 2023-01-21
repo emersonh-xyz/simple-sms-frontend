@@ -14,15 +14,16 @@ export default function WaveBanner({ serviceSelectorRef }) {
 
             <div className="absolute left-60">
                 <div className="text-white ">
-                    <p className="text-4xl font-thin">Simple SMS</p>
-                    <p className="text-md mt-1">Premium disposable/temporary phone numbers for service registration.</p>
+                    <p className="text-4xl font-medium">Simple SMS</p>
+                    <p className="text-md mt-1 font-thin">Easily select from 100+ services, monitor texts, secure checkout & money-back guarantee.</p>
+                    <p className="text-md font-thin">User-friendly, affordable premium SMS number provider.</p>
 
                 </div>
 
                 <div className="mt-4">
                     <button onClick={() => executeScroll()} className="text-white border-2 font-medium border-white hover:scale-95 hover:bg-white hover:text-black px-6 py-2 rounded-full outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button"
                     >
-                        Purchase SMS
+                        Purchase Number
                     </button>
                     <button onClick={() => executeScroll()} className="text-[#eab308] border-2 border-[#eab308] font-medium  hover:bg-[#eab308] hover:text-black hover:scale-95 px-6 py-2 rounded-full outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 ml-2" type="button"
                     >
