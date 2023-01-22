@@ -44,7 +44,7 @@ export default function CheckoutDetails({ service, startVenmoOrder, venmoRef, is
                 <button
                   className="flex justify-evenly btn btn-wide border-none bg-[#08a337] hover:bg-[#08a337] text-white"
                 >
-                  Order Complete
+                  Payment Received
                 </button>
               ) : (
                 <button
