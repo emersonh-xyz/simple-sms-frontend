@@ -36,6 +36,8 @@ export default function Home() {
 
   // Start a new venmo order
   let startVenmoOrder = (price, service) => {
+    if (!socketRef.current.connected) return false; // Do not let an order get created if we're not connected to the backend
+
     let _orderId = uuidv4();
 
     // Use a ref here because its fucking dumb
@@ -54,6 +56,8 @@ export default function Home() {
     // Start a new order
     socketRef.current.emit("new-order", _orderId);
     venmo.openPaymentWindow();
+
+    return true;
   };
 
   useEffect(() => {
