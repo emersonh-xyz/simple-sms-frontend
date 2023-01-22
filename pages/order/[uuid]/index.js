@@ -34,7 +34,7 @@ const Order = ({ props }) => {
     // on: order
     socket.on("order", (data) => {
       console.log("Order processed");
-      console.log(data);
+      // console.log(data);
       setPhoneNumber(data.number);
       setExpirationDate(data.expiresAt);
       setService(data.service);
