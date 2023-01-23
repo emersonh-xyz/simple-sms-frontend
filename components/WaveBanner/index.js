@@ -1,10 +1,11 @@
 import { Icon } from "@iconify-icon/react";
-export default function WaveBanner({ serviceSelectorRef }) {
+import { useEffect } from "react";
+export default function WaveBanner({ serviceSelectorRef, featureRef }) {
 
 
 
-    const executeScroll = () => serviceSelectorRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
+    const executeScrollOnServiceSelector = () => serviceSelectorRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const executeScrollOnFeature = () => featureRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
 
     return (
@@ -12,25 +13,24 @@ export default function WaveBanner({ serviceSelectorRef }) {
 
 
 
-            <div className="absolute left-20">
+            <div className="absolute left-20 ">
                 <div className="text-white ">
-                    <p className="text-xl font-medium ">Simple SMS</p>
+                    <p className="text-xl font-medium transform transition-all duration-150 ease-out scale-100">Simple SMS</p>
                 </div>
             </div>
 
             <p className="text-4xl font-medium text-center ">The premium <a className="text-primary">all-in-one</a> SMS number provider</p>
             <p className="text-md font-thin mt-2">Effortlessly purchase affordable phone numbers with our user-friendly, elegant interface. </p>
 
-            <button onClick={() => executeScroll()} className=" mt-2 text-white border-2 font-medium border-white hover:scale-95 hover:bg-white hover:text-black px-4 py-2 text-sm rounded-full outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button"
+            <button onClick={() => executeScrollOnServiceSelector()} className="inline-flex items-center mt-2 text-white border-2 font-medium border-white hover:scale-95 hover:bg-white hover:text-black px-4 py-2 text-sm rounded-full outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button"
             >
-                Purchase Number
+                <Icon className="mr-1" icon="ic:baseline-shopping-cart"></Icon>Purchase Number
             </button>
-
 
 
             <div className="absolute right-20">
 
-                <button onClick={() => executeScroll()} className="text-[#eab308] border-2 border-[#eab308] font-medium  hover:bg-[#eab308] hover:text-black hover:scale-95 px-4 py-2 text-sm  rounded-full outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 ml-2" type="button"
+                <button onClick={() => executeScrollOnFeature()} className="text-[#eab308] border-2 border-[#eab308] font-medium  hover:bg-[#eab308] hover:text-black hover:scale-95 px-4 py-2 text-sm  rounded-full outline-none focus:outline-none mr-1 ease-linear transition-all duration-150 ml-2" type="button"
                 >
                     About
                 </button>

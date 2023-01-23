@@ -1,7 +1,7 @@
 import { Icon } from "@iconify-icon/react";
-export default function Feature() {
+export default function Feature({ featureRef }) {
   return (
-    <section className="body-font bg-base-200">
+    <section ref={featureRef} className="body-font bg-base-200">
 
       <div class="p-8">
         <div class="flex felx-col items-center justify-center">

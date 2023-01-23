@@ -25,6 +25,7 @@ export default function Home() {
   let venmoRef = useRef();
   let orderIdRef = useRef();
   let serviceSelectorRef = useRef(null)
+  let featureRef = useRef(null)
 
   const router = useRouter();
 
@@ -193,9 +194,9 @@ export default function Home() {
         )
         }
 
-        <WaveBanner serviceSelectorRef={serviceSelectorRef} />
+        <WaveBanner serviceSelectorRef={serviceSelectorRef} featureRef={featureRef} />
         <ServiceSelector serviceSelectorRef={serviceSelectorRef} serviceList={data} startVenmoOrder={startVenmoOrder} venmoRef={venmoRef} isOrderConfirmed={isOrderConfirmed} />
-        <Feature />
+        <Feature featureRef={featureRef} />
 
         {/* Pop-up if order confirmation goes through */}
       </>
