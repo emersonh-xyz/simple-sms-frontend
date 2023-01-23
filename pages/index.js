@@ -121,7 +121,8 @@ export default function Home() {
       <Head>
         <title>Home - Simple SMS</title>
         <meta name="description" content="Simple SMS is a service to quickly and easily receive sms verification codes at temporary phone numbers."></meta>
-        <meta property="og:title" content="Home - Simple SMS" />
+        <meta property="og:title" content="Simple SMS - Premium phone numbers at your disposal" />
+        <meta property="og:site_name" content="Simple SMS" ></meta>
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://simple-sms.io" />
         <meta property="og:image" content="https://cdn.discordapp.com/attachments/751108166284214352/1066915335665631232/logo.png" />
