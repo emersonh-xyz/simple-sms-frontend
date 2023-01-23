@@ -13,16 +13,16 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
       <section ref={serviceSelectorRef} className="bg-base-100 p-30 pb-10">
 
         <div className="w-full flex flex-col justify-center items-center ">
-          <p className=" font-thin text-2xl">Select your service below </p>
+          <p className="  text-2xl mb-5">Select your service below </p>
           <ul className="steps">
-            <li className="step step-primary">Select Service</li>
-            <li className={service !== "" ? "step step-primary" : "step"}>
+            <li className="step step-primary font-thin">Select Service</li>
+            <li className={service !== "" ? "step step-primary font-thin" : "step font-thin"}>
               Checkout
             </li>
-            <li className="step">Await Code</li>
+            <li className="step font-thin">Await Code</li>
           </ul>
         </div>
-        <div className="md:flex md:justify-center mt-8 mb-10 ">
+        <div className="md:flex md:justify-center mt-5 mb-10 ">
           <div className="card w-96 drop-shadow-lg bg-base-300 ">
             <div className="card-body" >
               <input
