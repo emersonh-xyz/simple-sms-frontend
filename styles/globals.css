@@ -14,7 +14,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 310px;
+  min-height: 250px;
   padding: 40px 20vw;
 }
 
@@ -26,6 +26,7 @@ section {
   overflow: hidden;
   line-height: 0;
   transform: rotate(180deg);
+  pointer-events: none;
 }
 
 .custom-shape-divider-bottom-1674077680 svg {
@@ -33,10 +34,12 @@ section {
   display: block;
   width: calc(100% + 1.3px);
   height: 125px;
+  pointer-events: none;
 }
 
 .custom-shape-divider-bottom-1674077680 .shape-fill {
   fill: #272935;
+  pointer-events: none;
 }
 
 .wave-gradient {
@@ -73,6 +76,8 @@ section {
   display: block;
   width: calc(137% + 1.3px);
   height: 133px;
+  pointer-events: none;
+
 }
 
 .custom-shape-divider-bottom-1674078160 .shape-fill {
