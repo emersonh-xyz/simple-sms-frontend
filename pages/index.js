@@ -119,7 +119,14 @@ export default function Home() {
   return (
     <div className="">
       <Head>
-        <title>Simple SMS</title>
+        <title>Home - Simple SMS</title>
+        <meta name="description" content="Simple SMS is a service to quickly and easily receive sms verification codes at temporary phone numbers."></meta>
+        <meta property="og:title" content="Home - Simple SMS" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="http://simple-sms.io" />
+        <meta property="og:image" content="https://cdn.discordapp.com/attachments/751108166284214352/1066915335665631232/logo.png" />
+        <meta property="og:description" content="Simple SMS is a service to quickly and easily receive sms verification codes at temporary phone numbers." />
+        <meta name="theme-color" content="#fbbf24"></meta>
       </Head>
 
       <>
@@ -185,7 +192,7 @@ export default function Home() {
         }
 
         <WaveBanner serviceSelectorRef={serviceSelectorRef} />
-        <ServiceSelector serviceSelectorRef={serviceSelectorRef} serviceList={data} startVenmoOrder={startVenmoOrder} venmoRef={venmoRef} isOrderConfirmed={isOrderConfirmed}/>
+        <ServiceSelector serviceSelectorRef={serviceSelectorRef} serviceList={data} startVenmoOrder={startVenmoOrder} venmoRef={venmoRef} isOrderConfirmed={isOrderConfirmed} />
         <Feature />
 
         {/* Pop-up if order confirmation goes through */}
