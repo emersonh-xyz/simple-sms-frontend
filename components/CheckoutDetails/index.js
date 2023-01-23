@@ -98,6 +98,10 @@ export default function CheckoutDetails({ service, startVenmoOrder, venmoRef, is
             )}
 
 
+
+          </div>
+          <div className="text-sm w-64">
+            By clicking Checkout with Venmo, you agree to our <a href="/tos" className="underline text-primary">Terms and Conditions</a>
           </div>
         </div>
       </div>
