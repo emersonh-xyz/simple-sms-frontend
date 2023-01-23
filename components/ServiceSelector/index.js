@@ -1,6 +1,5 @@
 import { Icon } from '@iconify-icon/react';
 import React, { useRef, useState } from "react";
-import { isMobile } from 'react-device-detect';
 import CheckoutDetails from "../CheckoutDetails";
 
 export default function ServiceSelector({ serviceList, startVenmoOrder, serviceSelectorRef, venmoRef, isOrderConfirmed }) {
@@ -13,7 +12,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
       <section ref={serviceSelectorRef} className="bg-base-100 p-30 pb-10">
 
         <div className="w-full flex flex-col justify-center items-center ">
-          <p className="  text-2xl mb-5">Select your service below </p>
+          <p className=" text-2xl mb-5">Select your service below </p>
           <ul className="steps">
             <li className="step step-primary font-thin">Select Service</li>
             <li className={service !== "" ? "step step-primary font-thin" : "step font-thin"}>
@@ -61,10 +60,6 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
                             }
                             onClick={() => {
                               setService(val);
-                              if (isMobile) {
-                                window.scrollBy(0, 200)
-                              }
-
                             }}
                           >
                             <th>
