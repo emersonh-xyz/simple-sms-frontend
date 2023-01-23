@@ -63,7 +63,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
                             }}
                           >
                             <th>
-                              <a href="#" className="flex items-center">
+                              <a href="#checkout" className="flex items-center">
                                 <Icon width={20} height={20} icon={val.service_icon} className="mr-2 rounded-full" />
                                 <p className="align-middle">
                                   {val.service_name}
@@ -88,6 +88,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
               venmoRef={venmoRef}
               isOrderConfirmed={isOrderConfirmed}
               className=""
+              id="checkout"
             />
           )}
         </div>
