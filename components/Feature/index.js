@@ -59,7 +59,7 @@ export default function Feature() {
             Support Discord
           </h2>
           <p class="font-light mb-3 text-sm">
-            Don't hesitate to reach out to us on our Discord channel for any assistance you may need.
+            Do not hesitate to reach out to us on our Discord channel for any assistance you may need.
           </p>
           <a href="/discord" className="text-indigo-500 flex items-center hover:text-indigo-600" href="/">
             Join our Discord
