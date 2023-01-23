@@ -4,7 +4,7 @@ import { Icon } from '@iconify-icon/react';
 import { useState } from "react";
 import VenmoClientAPI from "../../src/VenmoClientAPI";
 
-export default function CheckoutDetails({ service, startVenmoOrder, venmoRef, isOrderConfirmed }) {
+export default function CheckoutDetails({ service, startVenmoOrder, venmoRef, isOrderConfirmed, checkoutDetailsRef }) {
   const [isVenmoCheckout, setVenmoCheckout] = useState(false);
   const [cancelButtonHovered, setCancelButtonHovered] = useState(false);
   const [shouldShowConnectionError, setShouldShowConnectionError] = useState(false);
