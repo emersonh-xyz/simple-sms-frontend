@@ -11,7 +11,7 @@ export default function Feature({ featureRef }) {
             About
           </span>
         </div>
-        <h1 class="text-4xl font-medium text-center mt-6">
+        <h1 class="text-md w-full lg:text-4xl font-medium text-center mt-6">
           Simple SMS is a secure and easy to use service.
         </h1>
         <p class="text-center mt-6 text-lg font-light ">
