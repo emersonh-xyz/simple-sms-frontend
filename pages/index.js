@@ -117,7 +117,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="">
+    <div >
       <Head>
         <title>Home - Simple SMS</title>
         <meta name="description" content="Get premium phone numbers for SMS verification with over 100 services. Securely purchase with Venmo and enjoy full refunds with our reliable service."></meta>
@@ -128,6 +128,7 @@ export default function Home() {
         <meta property="og:image" content="https://cdn.discordapp.com/attachments/751108166284214352/1066915335665631232/logo.png" />
         <meta property="og:description" content="Get premium phone numbers for SMS verification with over 100 services. Securely purchase with Venmo and enjoy full refunds with our reliable website service." />
         <meta name="theme-color" content="#fbbf24"></meta>
+        <link rel="icon" href="/static/favicon.png" />
       </Head>
 
       <>
