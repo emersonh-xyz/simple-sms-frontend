@@ -6,7 +6,7 @@ export default function Feature({ featureRef }) {
       <div class="p-8">
         <div class="flex felx-col items-center justify-center">
           <span
-            class="rounded-full bg-primary px-2 py-1 text-white uppercase text-sm"
+            class="rounded-full bg-primary px-2 py-1 text-gray-900  text-sm"
           >
             About
           </span>

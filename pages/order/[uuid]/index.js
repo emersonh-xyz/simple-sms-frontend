@@ -83,7 +83,7 @@ const Order = ({ props }) => {
   }, [messages]);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col h-screen">
 
 
       <Navbar />
@@ -101,7 +101,7 @@ const Order = ({ props }) => {
 
       {!isLoading ?
 
-        <div className="p-48 bg-base-200 flex justify-center">
+        <div className="p-48 bg-base-200 flex h-screen place-items-center mx-auto">
           <IncomingSMS
             phoneNumber={phoneNumber}
             expirationDate={expirationDate}
