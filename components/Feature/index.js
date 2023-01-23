@@ -15,7 +15,7 @@ export default function Feature() {
           Simple SMS is a secure and easy to use service.
         </h1>
         <p class="text-center mt-6 text-lg font-light text-gray-500">
-          "Premium SMS numbers, easy checkout, 100% refund guarantee."
+          Premium SMS numbers, easy checkout, 100% refund guarantee.
         </p>
       </div>
 
