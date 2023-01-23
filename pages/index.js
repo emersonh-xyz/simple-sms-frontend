@@ -120,13 +120,13 @@ export default function Home() {
     <div className="">
       <Head>
         <title>Home - Simple SMS</title>
-        <meta name="description" content="Simple SMS is a service to quickly and easily receive sms verification codes at temporary phone numbers."></meta>
+        <meta name="description" content="Get premium phone numbers for SMS verification with over 100 services. Securely purchase with Venmo and enjoy full refunds with our reliable service."></meta>
         <meta property="og:title" content="Simple SMS - Premium phone numbers at your disposal" />
         <meta property="og:site_name" content="Simple SMS" ></meta>
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://simple-sms.io" />
         <meta property="og:image" content="https://cdn.discordapp.com/attachments/751108166284214352/1066915335665631232/logo.png" />
-        <meta property="og:description" content="Simple SMS is a service to quickly and easily receive sms verification codes at temporary phone numbers." />
+        <meta property="og:description" content="Get premium phone numbers for SMS verification with over 100 services. Securely purchase with Venmo and enjoy full refunds with our reliable website service." />
         <meta name="theme-color" content="#fbbf24"></meta>
       </Head>
 
