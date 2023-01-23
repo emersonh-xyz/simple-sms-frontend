@@ -62,7 +62,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
                             onClick={() => setService(val)}
                           >
                             <th>
-                              <a className="flex items-center">
+                              <a href="#" className="flex items-center">
                                 <Icon width={20} height={20} icon={val.service_icon} className="mr-2 rounded-full" />
                                 <p className="align-middle">
                                   {val.service_name}
