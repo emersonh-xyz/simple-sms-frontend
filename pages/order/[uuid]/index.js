@@ -64,6 +64,10 @@ const Order = ({ props }) => {
     // emit: get-order
     if (uuid) {
       socketRef.current.emit("get-order", uuid);
+      
+      socketRef.current.on('connect', () => {
+        socketRef.current.emit("get-order", uuid);
+      });
     }
   }, [uuid]);
 
