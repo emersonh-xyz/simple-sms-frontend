@@ -22,8 +22,8 @@ export default function WaveBanner({ serviceSelectorRef, featureRef }) {
                 </div>
 
 
-                <p className="md:text-2xl text-sm font-medium md:text-center">The premium <a href="#" className="text-primary">all-in-one</a> SMS number provider</p>
-                <p className="md:text-md text-xs font-thin mt-2 md:text-center">Effortlessly purchase affordable phone numbers with our user-friendly, elegant interface. </p>
+                <p className="md:text-3xl text-sm font-medium md:text-center">The premium <a href="#" className="text-primary">all-in-one</a> SMS number provider</p>
+                <p className="md:text-lg text-sm font-thin md:text-center">Effortlessly purchase affordable phone numbers with our user-friendly, elegant interface. </p>
 
                 <div className="md:text-center">
                     <button onClick={() => executeScrollOnServiceSelector()} className="inline-flex items-center mt-2 text-white border-2 font-medium border-white hover:scale-95 hover:bg-white hover:text-black px-4 py-2 text-sm rounded-full outline-none focus:outline-none mr-1 ease-linear transition-all duration-150" type="button"
