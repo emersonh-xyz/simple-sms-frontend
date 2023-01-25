@@ -12,7 +12,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
       <section ref={serviceSelectorRef} className="bg-base-100 p-30 pb-40">
 
         <div className="w-full flex flex-col justify-center items-center ">
-          <p className="text-2xl mb-5">Select your service below </p>
+          <p className=" lg:text-2xl text-xl mb-5">Select your service below </p>
           <ul className="steps">
             <li className="step step-primary font-thin">Select Service</li>
             <li className={service !== "" ? "step step-primary font-thin" : "step font-thin"}>
