@@ -9,6 +9,10 @@ body {
   color: white;
 }
 
+html,body{
+  overflow-x: hidden;
+}
+
 section {
   position: relative;
   display: flex;
