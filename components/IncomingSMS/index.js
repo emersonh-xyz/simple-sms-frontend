@@ -2,10 +2,7 @@ import { useState } from "react";
 
 export default function IncomingSMS({
   phoneNumber,
-  expirationDate,
-  service,
   messages,
-  isOrderExpired
 }) {
 
   const [hasMessages, setHasMessages] = useState(false);
@@ -18,19 +15,20 @@ export default function IncomingSMS({
   return (
 
 
-    <div className="card drop-shadow-lg bg-base-300 h-fit w-70 m-auto mt-5 mb-5 md:mt-0">
+    <div className="card drop-shadow-lg bg-base-300 mt-5 mb-5 md:mt-0 h-fit ">
       <div className="card-body">
         <div className="card-title drop-shadow-xl">
-          <div className="tooltip text-3xl font-bold mx-auto hover:cursor-pointer" data-tip={isCopied ? "Copied!" : "Click to copy to clipboard"} onClick={() => { setIsCopied(true); navigator.clipboard.writeText(phoneNumber); }} onMouseLeave={() => { setIsCopied(false); }}>{updatedNumber}</div>
+          <div className="tooltip text-3xl mx-auto hover:cursor-pointer" data-tip={isCopied ? "Copied!" : "Click to copy to clipboard"} onClick={() => { setIsCopied(true); navigator.clipboard.writeText(phoneNumber); }} onMouseLeave={() => { setIsCopied(false); }}>{updatedNumber}</div>
 
         </div>
 
-        <div className="divider ">Extracted Codes</div>
+
+        <div className="divider">Extracted Codes</div>
 
         {/*Extracted codes container*/}
 
         <div className="container bg-base-100 drop-shadow-xl rounded-lg">
-          <div className="text-center p-5 rounded-md">
+          <div className="text-center p-5 ">
 
             {messages.length > 0 ?
 
@@ -118,10 +116,10 @@ export default function IncomingSMS({
 
             }
 
-
           </div>
         </div>
       </div>
     </div>
+
   );
 }

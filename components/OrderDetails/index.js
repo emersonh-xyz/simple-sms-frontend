@@ -108,18 +108,20 @@ export default function OrderDetails({
 
 
 
-      <div className="card drop-shadow-lg bg-base-300 h-fit md:h-full w-70 m-auto mb-5 md:ml-5 md:mt-0">
+      <div className="card drop-shadow-lg bg-base-300 m-auto mb-5 md:ml-5 md:mt-0 ">
 
         <div className="card-body">
-          <ul className="mx-center w-full ">
+          <ul>
 
             <li className="text-2xl mb-4">
-              Order Receipt
+              Order Details
             </li>
 
             <li className="text-sm base-300 font-bold mt-2">
-              <span>Order</span>
+              <span>Order </span>
             </li>
+
+
 
             <li>
               {orderId}
@@ -138,7 +140,7 @@ export default function OrderDetails({
           <div className="mb-2">
 
             <Icon
-              className="absolute top-50 right-10"
+              className="absolute top-50 right-6 justify-end"
               width={80}
               height={80}
               icon={serviceList.find(element => element.service_name == service).service_icon} />
@@ -157,7 +159,7 @@ export default function OrderDetails({
 
           </div>
 
-          <div className="card-action justify-start">
+          <div className="card-actions justify-start mt-2">
             <label htmlFor="cancel-order-modal" className={(isOrderRefundable && !isOrderExpired && !isCancelPending) ? "btn btn-error btn-sm hover:scale-105 text-white" : "btn btn-disabled btn-sm"}>
               {
                 isCancelPending ? (
@@ -177,7 +179,7 @@ export default function OrderDetails({
                 )
               }
             </label>
-            <a href="google.com" className="flex text-sm mt-2 hover:underline">Have an issue with your order?</a>
+
           </div>
 
         </div>

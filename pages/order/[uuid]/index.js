@@ -126,7 +126,7 @@ const Order = ({ props }) => {
 
 
 
-        <div className="md:flex m-auto  ">
+        <div className="md:flex m-auto p-6">
           <div className="">
             <IncomingSMS
               phoneNumber={phoneNumber}
