@@ -108,20 +108,37 @@ export default function OrderDetails({
 
 
 
-      <div className="card w-96 bg-base-100 drop-shadow-xl relative">
-
+      <div className="card drop-shadow-lg bg-base-300 h-fit md:h-full w-70 m-auto mb-5 md:ml-5 md:mt-0">
 
         <div className="card-body">
-          <div className="card-title drop-shadow-xl">
-            <p className="text-3xl font-bold ">Order Details</p>
-          </div>
-          <p className="card-title text-sm">{orderId}</p>
+          <ul className="mx-center w-full ">
+
+            <li className="text-2xl mb-4">
+              Order Receipt
+            </li>
+
+            <li className="text-sm base-300 font-bold mt-2">
+              <span>Order</span>
+            </li>
+
+            <li>
+              {orderId}
+            </li>
+
+            <li className="text-sm base-300 font-bold mt-2">
+              Total
+            </li>
+
+            <li>
+              ${(service.service_price / 100).toFixed(2)} USD
+            </li>
+          </ul>
 
           <div className="divider"></div>
           <div className="mb-2">
 
             <Icon
-              className="absolute top-40 right-10"
+              className="absolute top-50 right-10"
               width={80}
               height={80}
               icon={serviceList.find(element => element.service_name == service).service_icon} />
@@ -141,7 +158,7 @@ export default function OrderDetails({
           </div>
 
           <div className="card-action justify-start">
-            <label htmlFor="cancel-order-modal" className={(isOrderRefundable && !isOrderExpired && !isCancelPending) ? "btn btn-error btn-sm" : "btn btn-disabled btn-sm"}>
+            <label htmlFor="cancel-order-modal" className={(isOrderRefundable && !isOrderExpired && !isCancelPending) ? "btn btn-error btn-sm hover:scale-105 text-white" : "btn btn-disabled btn-sm"}>
               {
                 isCancelPending ? (
                   <>
@@ -160,7 +177,7 @@ export default function OrderDetails({
                 )
               }
             </label>
-            <a href="google.com" className="flex text-xs mt-2 hover:underline">Have an issue with your order?</a>
+            <a href="google.com" className="flex text-sm mt-2 hover:underline">Have an issue with your order?</a>
           </div>
 
         </div>

@@ -64,7 +64,7 @@ const Order = ({ props }) => {
     // emit: get-order
     if (uuid) {
       socketRef.current.emit("get-order", uuid);
-      
+
       socketRef.current.on('connect', () => {
         socketRef.current.emit("get-order", uuid);
       });
@@ -87,8 +87,12 @@ const Order = ({ props }) => {
   }, [messages]);
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col bg-base-100 min-h-screen">
 
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      </Head>
 
       <Navbar />
 
@@ -103,30 +107,49 @@ const Order = ({ props }) => {
       }
 
 
+      {!isLoading &&
+        <div className="alert alert-warning shadow-lg rounded-none ">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info flex-shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <div>
+              <h3 className="font-bold">New message!</h3>
+              <div className="text-xs">You have 1 unread message</div>
+            </div>
+          </div>
+          <div className="flex-none">
+            <button className="btn btn-sm">See</button>
+          </div>
+        </div>
+      }
+
       {!isLoading ?
 
-        <div className="p-48 bg-base-200 flex h-screen place-items-center mx-auto">
-          <IncomingSMS
-            phoneNumber={phoneNumber}
-            expirationDate={expirationDate}
-            service={service}
-            messages={messages}
-            isOrderExpired={isOrderExpired}
-          />
-          <div className="ml-20">
-            <OrderDetails
+
+
+        <div className="md:flex m-auto  ">
+          <div className="">
+            <IncomingSMS
               phoneNumber={phoneNumber}
               expirationDate={expirationDate}
               service={service}
               messages={messages}
-              orderId={uuid}
-              isOrderRefundable={isOrderRefundable}
-              setOrderRefundable={setOrderRefundable}
               isOrderExpired={isOrderExpired}
-              setOrderExpired={setOrderExpired}
-              socketRef={socketRef}
             />
           </div>
+
+          <OrderDetails
+            phoneNumber={phoneNumber}
+            expirationDate={expirationDate}
+            service={service}
+            messages={messages}
+            orderId={uuid}
+            isOrderRefundable={isOrderRefundable}
+            setOrderRefundable={setOrderRefundable}
+            isOrderExpired={isOrderExpired}
+            setOrderExpired={setOrderExpired}
+            socketRef={socketRef}
+          />
+
         </div>
 
         :
@@ -138,7 +161,6 @@ const Order = ({ props }) => {
           </div>
         </div>
       }
-
 
       <Footer />
     </div>
