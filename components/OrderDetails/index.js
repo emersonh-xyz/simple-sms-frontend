@@ -75,7 +75,7 @@ export default function OrderDetails({
                     isCancelPending ? (
                       <>
                         Cancelling Order
-                        <svg className=" animate-spin h-5 w-5 ml-3" viewBox="0 0 24 24">
+                        <svg className="animate-spin h-5 w-5 ml-3" viewBox="0 0 24 24">
                           <path
                             className=" fill-gray-400"
                             d="M12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5ZM3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z"></path>
@@ -108,7 +108,7 @@ export default function OrderDetails({
 
 
 
-      <div className="card drop-shadow-lg bg-base-300 m-auto mb-5 md:ml-5 md:mt-0 h-full ">
+      <div className="card drop-shadow-lg bg-base-100 m-auto mb-5 md:ml-5 md:mt-0 h-fit ">
 
         <div className="card-body">
           <ul>
@@ -132,7 +132,7 @@ export default function OrderDetails({
             </li>
 
             <li>
-              ${(service.service_price / 100).toFixed(2)} USD
+              ${serviceList.find(element => element.service_name === service).service_price.toFixed(2) / 100} USD
             </li>
           </ul>
 
