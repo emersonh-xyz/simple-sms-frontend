@@ -6,7 +6,7 @@ export default function Footer() {
         <p>Copyright © 2023 - All right reserved by simple-sms.io</p>
       </div>
       <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-        <Icon className="hover:text-primary hover:cursor-pointer" width="20px" icon="ic:baseline-discord"></Icon>
+        <a href="https://discord.gg/YWrdUzDups"><Icon className="hover:text-primary hover:cursor-pointer" width="20px" icon="ic:baseline-discord"></Icon></a>
         <Icon className="hover:text-primary hover:cursor-pointer" width="20px" icon="mdi:twitter"></Icon>
       </div>
     </footer>
