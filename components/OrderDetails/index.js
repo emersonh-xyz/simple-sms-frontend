@@ -75,7 +75,7 @@ export default function OrderDetails({
                     isCancelPending ? (
                       <>
                         Cancelling Order
-                        <svg className=" animate-spin h-5 w-5 ml-3" viewBox="0 0 24 24">
+                        <svg className="animate-spin h-5 w-5 ml-3" viewBox="0 0 24 24">
                           <path
                             className=" fill-gray-400"
                             d="M12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5ZM3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12Z"></path>
@@ -108,18 +108,20 @@ export default function OrderDetails({
 
 
 
-      <div className="card drop-shadow-lg bg-base-300 h-fit md:h-full w-70 m-auto mb-5 md:ml-5 md:mt-0">
+      <div className="card drop-shadow-lg bg-base-100 m-auto mb-5 md:ml-5 md:mt-0 h-fit ">
 
         <div className="card-body">
-          <ul className="mx-center w-full ">
+          <ul>
 
             <li className="text-2xl mb-4">
-              Order Receipt
+              Order Details
             </li>
 
             <li className="text-sm base-300 font-bold mt-2">
-              <span>Order</span>
+              <span>Order </span>
             </li>
+
+
 
             <li>
               {orderId}
@@ -130,7 +132,7 @@ export default function OrderDetails({
             </li>
 
             <li>
-              ${(service.service_price / 100).toFixed(2)} USD
+              ${serviceList.find(element => element.service_name === service).service_price.toFixed(2) / 100} USD
             </li>
           </ul>
 
@@ -138,7 +140,7 @@ export default function OrderDetails({
           <div className="mb-2">
 
             <Icon
-              className="absolute top-50 right-10"
+              className="absolute top-50 right-6 justify-end"
               width={80}
               height={80}
               icon={serviceList.find(element => element.service_name == service).service_icon} />
@@ -157,7 +159,7 @@ export default function OrderDetails({
 
           </div>
 
-          <div className="card-action justify-start">
+          <div className="card-actions justify-start mt-2">
             <label htmlFor="cancel-order-modal" className={(isOrderRefundable && !isOrderExpired && !isCancelPending) ? "btn btn-error btn-sm hover:scale-105 text-white" : "btn btn-disabled btn-sm"}>
               {
                 isCancelPending ? (
@@ -177,7 +179,7 @@ export default function OrderDetails({
                 )
               }
             </label>
-            <a href="google.com" className="flex text-sm mt-2 hover:underline">Have an issue with your order?</a>
+
           </div>
 
         </div>

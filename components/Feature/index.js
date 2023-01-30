@@ -61,7 +61,7 @@ export default function Feature({ featureRef }) {
           <p class="font-light mb-3 text-sm">
             Do not hesitate to reach out to us on our Discord channel for any assistance you may need.
           </p>
-          <a href="/discord" className="text-indigo-600 flex items-center hover:text-indigo-700" >
+          <a href="https://discord.gg/YWrdUzDups" className="text-indigo-600 flex items-center hover:text-indigo-700" >
             Join our Discord
             <svg
               xmlns="http://www.w3.org/2000/svg"

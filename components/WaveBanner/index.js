@@ -15,9 +15,9 @@ export default function WaveBanner({ serviceSelectorRef, featureRef }) {
 
 
             <div className="lg:flex justifyContent flex-col">
-                <div style={{ width: "100%" }} className="lg:absolute lg:left-20  block">
+                <div style={{ width: "100%" }} className="lg:absolute lg:left-20 block">
                     <div className="text-white ">
-                        <p className="text-lg md:text-xl font-medium transform transition-all duration-150 ease-out scale-100">Simple SMS</p>
+                        <p className=" text-lg md:text-xl transform transition-all duration-150 ease-out scale-100">Simple SMS</p>
                     </div>
                 </div>
 

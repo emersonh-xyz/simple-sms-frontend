@@ -2,10 +2,7 @@ import { useState } from "react";
 
 export default function IncomingSMS({
   phoneNumber,
-  expirationDate,
-  service,
   messages,
-  isOrderExpired
 }) {
 
   const [hasMessages, setHasMessages] = useState(false);
@@ -18,19 +15,20 @@ export default function IncomingSMS({
   return (
 
 
-    <div className="card drop-shadow-lg bg-base-300 h-fit w-70 m-auto mt-5 mb-5 md:mt-0">
+    <div className="card drop-shadow-lg bg-base-100 mt-5 mb-5 w-96 md:mt-0 h-full">
       <div className="card-body">
         <div className="card-title drop-shadow-xl">
-          <div className="tooltip text-3xl font-bold mx-auto hover:cursor-pointer" data-tip={isCopied ? "Copied!" : "Click to copy to clipboard"} onClick={() => { setIsCopied(true); navigator.clipboard.writeText(phoneNumber); }} onMouseLeave={() => { setIsCopied(false); }}>{updatedNumber}</div>
+          <div className="tooltip text-3xl mx-auto hover:cursor-pointer" data-tip={isCopied ? "Copied!" : "Click to copy to clipboard"} onClick={() => { setIsCopied(true); navigator.clipboard.writeText(phoneNumber.substring(1)); }} onMouseLeave={() => { setIsCopied(false); }}>{updatedNumber}</div>
 
         </div>
 
-        <div className="divider ">Extracted Codes</div>
+
+        <div className="divider">Extracted Codes</div>
 
         {/*Extracted codes container*/}
 
-        <div className="container bg-base-100 drop-shadow-xl rounded-lg">
-          <div className="text-center p-5 rounded-md">
+        <div className="container bg-base-300 drop-shadow-xl rounded-lg">
+          <div className="text-center p-8 ">
 
             {messages.length > 0 ?
 
@@ -82,8 +80,8 @@ export default function IncomingSMS({
         <div className="divider ">Raw Messages</div>
 
         {/*Raw messages container*/}
-        <div className="container bg-base-100 drop-shadow-xl rounded-lg">
-          <div className="rounded-md text-center p-5">
+        <div className="container bg-base-300 drop-shadow-xl rounded-lg">
+          <div className="rounded-md text-center p-8">
 
             {messages.length > 0 ?
 
@@ -94,14 +92,14 @@ export default function IncomingSMS({
 
                   if (index == 0) {
                     return (
-                      <div key={index} className="rounded-md bg-base-100 drop-shadow-xl">
+                      <div key={index} className="p-2 rounded-md bg-base-100 drop-shadow-xl">
                         {message.fullText}
                       </div>
                     )
                   }
 
                   return (
-                    <div key={index} className="rounded-md bg-base-100 drop-shadow-xl mt-2">
+                    <div key={index} className="rounded-md bg-base-300 drop-shadow-xl mt-2">
                       {message.fullText}
                     </div>
                   )
@@ -118,10 +116,10 @@ export default function IncomingSMS({
 
             }
 
-
           </div>
         </div>
       </div>
     </div>
+
   );
 }
