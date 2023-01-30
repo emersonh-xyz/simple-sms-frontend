@@ -19,28 +19,24 @@ export default function Feature({ featureRef }) {
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3">
-        <div class="p-8">
-          <div
-            class="bg-red-100 rounded-full w-16 h-16 flex justify-center items-center text-red-600 shadow-2xl"
-          >
-            <Icon width="50px" icon="material-symbols:no-accounts"></Icon>
-          </div>
-          <h2 class="uppercase mt-6 text-red-600 font-medium mb-3">
+      <div class="">
+        <div class="p-8 text-center">
+
+          <Icon className="" width="50px" icon="material-symbols:no-accounts"></Icon>
+
+          <h2 class="uppercase mt-6 text-red-600 font-medium mb-3 ">
             No Sign up Required
           </h2>
-          <p class="font-light text mb-3 text-sm">
+          <p class="font-light text mb-3 text-sm ">
             Enjoy privacy benefits and avoid sharing personal information.
           </p>
 
         </div>
 
-        <div class="p-8">
-          <div
-            class="bg-green-100 rounded-full w-16 h-16 flex justify-center items-center text-green-600 shadow-2xl"
-          >
-            <Icon width="50px" icon="mdi:encryption-secure"></Icon>
-          </div>
+        <div class="p-8 text-center">
+
+          <Icon width="50px" icon="mdi:encryption-secure"></Icon>
+
           <h2 class="uppercase mt-6 text-green-600 font-medium mb-3">
             Venmo Secured
           </h2>
@@ -49,35 +45,22 @@ export default function Feature({ featureRef }) {
           </p>
 
         </div>
-        <div class="p-8">
-          <div
-            class="bg-indigo-100 rounded-full w-16 h-16 flex justify-center items-center text-indigo-600 shadow-2xl"
-          >
-            <Icon width="50px" icon="ic:baseline-support-agent"></Icon>
-          </div>
-          <h2 class="uppercase mt-6 text-indigo-500 font-medium mb-3">
+        <div class="p-8 text-center">
+
+          <Icon width="50px" icon="ic:baseline-support-agent"></Icon>
+
+          <h2 class="uppercase mt-6 text-indigo-500 font-medium mb-3 text-center">
             Support Discord
           </h2>
           <p class="font-light mb-3 text-sm">
             Do not hesitate to reach out to us on our Discord channel for any assistance you may need.
           </p>
-          <a href="https://discord.gg/YWrdUzDups" className="text-indigo-600 flex items-center hover:text-indigo-700" >
+          <a href="/discord" className="text-indigo-600 hover:text-indigo-700" >
             Join our Discord
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                clip-rule="evenodd"
-              />
-            </svg>
+
           </a>
         </div>
       </div>
-    </section>
+    </section >
   );
 }
