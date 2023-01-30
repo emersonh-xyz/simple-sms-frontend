@@ -108,7 +108,7 @@ export default function OrderDetails({
 
 
 
-      <div className="card drop-shadow-lg bg-base-100 m-auto mb-5 md:ml-5 md:mt-0 h-fit ">
+      <div className="card drop-shadow-lg bg-base-100 m-auto mb-5 md:ml-5 md:mt-0 md:w-96 w-fit ">
 
         <div className="card-body">
           <ul>

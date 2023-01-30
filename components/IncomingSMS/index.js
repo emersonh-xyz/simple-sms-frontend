@@ -15,7 +15,7 @@ export default function IncomingSMS({
   return (
 
 
-    <div className="card drop-shadow-lg bg-base-100 mt-5 mb-5 w-96 md:mt-0 h-full">
+    <div className="card drop-shadow-lg bg-base-100 mt-5 mb-5 md:w-96 w-fit md:mt-0 h-full">
       <div className="card-body">
         <div className="card-title drop-shadow-xl">
           <div className="tooltip text-3xl mx-auto hover:cursor-pointer" data-tip={isCopied ? "Copied!" : "Click to copy to clipboard"} onClick={() => { setIsCopied(true); navigator.clipboard.writeText(phoneNumber.substring(1)); }} onMouseLeave={() => { setIsCopied(false); }}>{updatedNumber}</div>
