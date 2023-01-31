@@ -11,6 +11,22 @@ export default function CheckoutDetails({ service, startVenmoOrder, venmoRef, is
 
   return (
     <div >
+
+      {/* Put this part before </body> tag */}
+      <input type="checkbox" id="tos" className="modal-toggle" />
+      <div className="modal">
+        <div className="modal-box relative">
+          <label htmlFor="tos" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+          <h3 className="text-lg font-bold">Terms and Conditions</h3>
+          <p className="py-4">vdm vd vdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vd
+            vdm vdvdm vdvdm vdvdm vdvdm vd </p>
+          vdm vdvdm vdvdm vd
+          vdm vdvdm vdvdm vd
+          vdm vdvdm vdvdm vd
+          vdm vdvdm vdvdm vdvdm vdvdm vd
+        </div>
+      </div>
+
       <div className="card drop-shadow-lg bg-base-300 md:ml-5 md:mt-0 mt-5 ">
         <div className="card-body">
           <ul className="mx-center w-full ">
@@ -101,7 +117,7 @@ export default function CheckoutDetails({ service, startVenmoOrder, venmoRef, is
 
           </div>
           <div className="text-sm w-64">
-            By clicking Checkout with Venmo, you agree to our <a href="/tos" className="underline text-primary">Terms and Conditions</a>
+            By clicking Checkout with Venmo, you agree to our <label htmlFor="tos" className="underline text-primary">Terms and Conditions</label>
           </div>
         </div>
       </div>
