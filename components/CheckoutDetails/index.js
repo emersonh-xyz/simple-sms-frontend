@@ -11,6 +11,78 @@ export default function CheckoutDetails({ service, startVenmoOrder, venmoRef, is
 
   return (
     <div >
+
+      {/* Put this part before </body> tag */}
+      <input type="checkbox" id="tos" className="modal-toggle" />
+      <div className="modal">
+        <div className="modal-box relative h-1/2">
+          <label htmlFor="tos" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+          <h3 className="text-lg font-bold">Terms and Conditions</h3>
+          <p className="py-4">
+            <ol type="i">
+              <li>
+                <h1 className="font-bold">1. Introduction</h1>
+                <p className="text-sm">Welcome to Simple SMS, a digital service for receiving text messages at temporary phone numbers. These Terms of Service (“Terms”) govern your use of our service. By using Simple SMS, you agree to be bound by these Terms. If you do not agree to these Terms, you should not use Simple SMS.
+                </p>
+              </li>
+
+              <li className="mt-2">
+                <h1 className="font-bold">2. Service Description</h1>
+                <p className="text-sm">Simple SMS provides a platform for receiving text messages at temporary phone numbers. We strive to maintain high levels of availability and reliability, but we cannot guarantee that our service will always be available or error-free.
+                </p>
+              </li>
+
+              <li className="mt-2">
+                <h1 className="font-bold">3. Fees and Payments</h1>
+                <p className="text-sm">Simple SMS charges a fee for the use of our service. Fees are payable through Venmo. You are responsible for paying all fees associated with using Simple SMS, including any applicable taxes.
+                </p>
+              </li>
+
+              <li className="mt-2">
+                <h1 className="font-bold">4. Refunds</h1>
+                <p className="text-sm">We offer refunds for Simple SMS. If you are dissatisfied with our service for any reason, you may request a refund as long as the phone number associated with your order hasn’t received any texts. Refunds are automatically processed by the system if an order expires or is canceled before receiving a text. In the event of an error processing a refund, requests must be submitted in writing via the Discord server (https://discord.gg/YWrdUzDups) and include a detailed explanation of the reason for the request.
+                </p>
+              </li>
+
+              <li className="mt-2">
+                <h1 className="font-bold">5. User Conduct</h1>
+                <p className="text-sm">You agree to use Simple SMS only for lawful purposes and in accordance with these Terms and the Terms of any service you use one of our phone numbers for. You may not use Simple SMS to send or receive any illegal or harassing messages. You are also prohibited from using Simple SMS to send spam or other unsolicited messages.
+                </p>
+              </li>
+
+              <li className="mt-2">
+                <h1 className="font-bold">6. Modifications to Terms of Service</h1>
+                <p className="text-sm">We reserve the right to modify these Terms at any time. Your continued use of Simple SMS after any changes to these Terms constitutes your acceptance of the new Terms.
+                </p>
+              </li>
+
+              <li className="mt-2">
+                <h1 className="font-bold">7. Disclaimers</h1>
+                <p className="text-sm">Simple SMS is provided on an “as is” basis. We make no representations or warranties of any kind, express or implied, as to the operation of Simple SMS or the information, content, materials, or products included on Simple SMS.
+
+                </p>
+              </li>
+
+              <li className="mt-2">
+                <h1 className="font-bold">8. Limitation of Liability</h1>
+                <p className="text-sm">In no event will we be liable for any damages of any kind arising from the use of Simple SMS, including, but not limited to, indirect, incidental, punitive, and consequential damages.
+                </p>
+              </li>
+
+              <li className="mt-2">
+                <h1 className="font-bold">9. Contact Information</h1>
+                <p className="text-sm">If you have any questions or concerns about Simple SMS or these Terms, please create a ticket on our Discord at https://discord.gg/YWrdUzDups.
+                </p>
+
+              </li>
+
+              <p className="mt-2 font-thin">These Terms were last updated on 01/31/2023.</p>
+
+            </ol>
+          </p>
+        </div>
+      </div>
+
       <div className="card drop-shadow-lg bg-base-300 md:ml-5 md:mt-0 mt-5 ">
         <div className="card-body">
           <ul className="mx-center w-full ">
@@ -101,7 +173,7 @@ export default function CheckoutDetails({ service, startVenmoOrder, venmoRef, is
 
           </div>
           <div className="text-sm w-64">
-            By clicking Checkout with Venmo, you agree to our <a href="/tos" className="underline text-primary">Terms and Conditions</a>
+            By clicking Checkout with Venmo, you agree to our <label htmlFor="tos" className="underline text-primary">Terms and Conditions</label>
           </div>
         </div>
       </div>
