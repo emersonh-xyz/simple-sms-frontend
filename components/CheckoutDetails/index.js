@@ -18,12 +18,17 @@ export default function CheckoutDetails({ service, startVenmoOrder, venmoRef, is
         <div className="modal-box relative">
           <label htmlFor="tos" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
           <h3 className="text-lg font-bold">Terms and Conditions</h3>
-          <p className="py-4">vdm vd vdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vd
-            vdm vdvdm vdvdm vdvdm vdvdm vd </p>
-          vdm vdvdm vdvdm vd
-          vdm vdvdm vdvdm vd
-          vdm vdvdm vdvdm vd
-          vdm vdvdm vdvdm vdvdm vdvdm vd
+          <p className="py-4">
+            vdm vd vdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdv
+            dm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdv
+            dm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vdvd
+            m vdvdm vdvdm vdvdm vdvdm vdvdm vdvdm vd
+            vdm vdvdm vdvdm vdvdm vdvdm vd
+            vdm vdvdm vdvdm vd
+            vdm vdvdm vdvdm vd
+            vdm vdvdm vdvdm vd
+            vdm vdvdm vdvdm vdvdm vdvdm vd
+          </p>
         </div>
       </div>
 
