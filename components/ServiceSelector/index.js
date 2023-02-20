@@ -21,7 +21,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
             <li className="step font-thin">Await Code</li>
           </ul>
         </div>
-        <div className="md:flex md:justify-center mt-5 mb-10 ">
+        <div className="md:flex md:justify-center mt-5 mb-12 ">
           <div className="card w-fit drop-shadow-lg bg-base-300 ">
             <div className="card-body" >
               <input
