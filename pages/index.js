@@ -92,7 +92,14 @@ export default function Home() {
       console.log("Order has been refunded.");
     });
 
+    socket.on("reconnect", () => {
+      alert("Attempting to reconnect")
+    });
+
+
+
     return () => {
+      // Clean up listeners 
       socket.removeAllListeners("invalid-payment");
       socket.removeAllListeners("order-confirmed");
       socket.removeAllListeners("order-phone-number");
