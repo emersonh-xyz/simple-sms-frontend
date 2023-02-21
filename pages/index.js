@@ -85,6 +85,11 @@ export default function Home() {
       window.location.href = `/order/${orderIdRef.current}`;
     });
 
+    socket.on("order", (data) => {
+      console.log("Order processed");
+      window.location.href = `/order/${orderIdRef.current}`;
+    })
+
     // ** Refunded event: refunded
     socket.on("refunded", () => {
       setOrderRefunded(true);
@@ -94,6 +99,7 @@ export default function Home() {
 
     socket.io.on("reconnect", () => {
       socketRef.current.emit("get-order", orderId)
+
     });
 
 
