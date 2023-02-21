@@ -5,8 +5,8 @@ export default function Feature({ featureRef }) {
 
 
 
-      <div class="flex lg:flex-row flex-col justify-center items-center text-center">
-        <div class="p-8 ">
+      <div class="grid lg:grid-cols-4 grid-rows gap-4 text-center tracking-wide">
+        <div class="">
 
           <Icon className="" width="50px" icon="material-symbols:no-accounts"></Icon>
 
@@ -19,7 +19,7 @@ export default function Feature({ featureRef }) {
 
         </div>
 
-        <div class="p-8">
+        <div class="">
 
 
           <Icon class="" width="50px" icon="bxl:venmo"></Icon>
@@ -33,18 +33,46 @@ export default function Feature({ featureRef }) {
 
 
         </div>
-        <div class="p-8">
+        <div class="">
 
           <Icon width="50px" class="" icon="ic:baseline-discord"></Icon>
 
           <h2 class="uppercase text-primary font-medium mb-2">
-            <a class="underline" href="https://discord.gg/YWrdUzDups">Support Discord</a>
+            Support Server
           </h2>
+
           <p class="">
-            Do not hesitate to reach out to us on our Discord channel for any assistance you may need.
+            Do not hesitate to reach out to us on our  <a class="text-primary" href="https://discord.com/invite/YWrdUzDups">Discord channel</a> for any assistance you may need.
           </p>
+
+
+
         </div>
+
+        <div class="">
+
+          <Icon width="50px" class="" icon="ri:refund-2-line"></Icon>
+
+          <h2 class="uppercase text-primary font-medium mb-2">
+            Refund guarantee
+          </h2>
+
+          <p class="">
+            All of our numbers are refundable before being used. If the number is never used, it will be cancelled and refunded automatically.
+          </p>
+
+
+
+        </div>
+
       </div>
+
+      <div class="divider"></div>
+
+      <div class="border border-primary mt-2 scale-50 lg:scale-100">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/O_zBaOqKj_E" title="YouTube video player" frameborder="0" allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
     </section >
   );
 }
