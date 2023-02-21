@@ -87,6 +87,7 @@ export default function Home() {
 
     socket.on("order", (data) => {
       console.log("Order processed");
+      alert("Order processed")
       window.location.href = `/order/${orderIdRef.current}`;
     })
 
@@ -98,8 +99,8 @@ export default function Home() {
     });
 
     socket.io.on("reconnect", () => {
+      alert(orderId);
       socketRef.current.emit("get-order", orderId)
-
     });
 
 
