@@ -99,8 +99,8 @@ export default function Home() {
     });
 
     socket.io.on("reconnect", () => {
-      alert(orderId);
-      socketRef.current.emit("get-order", orderId)
+      alert(orderIdRef.current)
+      socketRef.current.emit("get-order", orderIdRef.current)
     });
 
 
