@@ -93,7 +93,7 @@ export default function Home() {
     });
 
     socket.io.on("reconnect", () => {
-      alert("Attempting to reconnect")
+      socket.emit("get-order", orderIdRef)
     });
 
 
