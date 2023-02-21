@@ -28,7 +28,7 @@ export default function Feature({ featureRef }) {
             Venmo Secured
           </h2>
           <p class="">
-            Checkout is secure and seamless through Venmo, ensuring the safety of your transaction.
+            Checkout is secure and seamless through <a target="_blank" rel="noreferrer" href="https://venmo.com" class="text-primary" rel="noreferrer">Venmo</a>, ensuring the safety of your transaction.
           </p>
 
 
@@ -42,7 +42,7 @@ export default function Feature({ featureRef }) {
           </h2>
 
           <p class="">
-            Do not hesitate to reach out to us on our  <a class="text-primary" href="https://discord.com/invite/YWrdUzDups">Discord channel</a> for any assistance you may need.
+            Do not hesitate to reach out to us on our  <a class="text-primary" rel="noreferrer" target="_blank" href="https://discord.com/invite/YWrdUzDups">Discord channel</a> for any assistance you may need.
           </p>
 
 
