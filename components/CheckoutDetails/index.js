@@ -171,7 +171,7 @@ export default function CheckoutDetails({ service, startVenmoOrder, venmoRef, is
           </div>
 
           {isVenmoCheckout && <button
-            class="btn bg-[#008CFF] text-white"
+            class="btn-wide border-none btn bg-[#008CFF] text-white"
             onClick={() => {
               if (startVenmoOrder(service.service_price, service.service_name)) {
                 setVenmoCheckout(true);
