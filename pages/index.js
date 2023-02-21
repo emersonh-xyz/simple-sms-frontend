@@ -92,7 +92,7 @@ export default function Home() {
       console.log("Order has been refunded.");
     });
 
-    socket.on("reconnect", () => {
+    socket.io.on("reconnect", () => {
       alert("Attempting to reconnect")
     });
 
