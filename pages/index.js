@@ -86,7 +86,6 @@ export default function Home() {
     });
 
     socket.on("order", (data) => {
-
       alert("Your order has been confirmed")
       window.location.href = `/order/${orderIdRef.current}`;
     })
@@ -142,6 +141,7 @@ export default function Home() {
         <meta property="og:image" content="https://cdn.discordapp.com/attachments/751108166284214352/1066915335665631232/logo.png" />
         <meta property="og:description" content="Get premium phone numbers for SMS verification with over 100 services. Securely purchase with Venmo and enjoy full refunds through Simple SMS." />
         <meta name="theme-color" content="#fbbf24"></meta>
+        <meta name="trustpilot-one-time-domain-verification-id" content="88c552ea-7f65-4f68-ba97-0ea9829b9c39" />
         <link rel="icon" href="/static/favicon-144x144.png" />
       </Head>
 
