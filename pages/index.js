@@ -19,6 +19,7 @@ export default function Home() {
   const [isPhoneNumberReady, setPhoneNumberReady] = useState(false);
   const [isOrderRefunded, setOrderRefunded] = useState(false);
   const [orderId, setOrderId] = useState();
+  const [service, setService] = useState("");
 
   // !! THESE REFS ARE OP
   let socketRef = useRef();
@@ -67,6 +68,26 @@ export default function Home() {
     );
     let socket = socketRef.current;
 
+    const updateOrders = () => {
+      // Check for existing orders
+      let existingOrders = JSON.parse(localStorage.getItem("orders"));
+
+      // If no orders exist, create an empty array
+      if (existingOrders == null) existingOrders = [];
+
+      // New order entry
+      let order = {
+        "orderID": orderIdRef.current,
+      }
+
+      // Push new order to existing orders
+      existingOrders.push(order);
+
+      // Update orders
+      localStorage.setItem("orders", JSON.stringify(existingOrders));
+
+    }
+
     // ** Invalid Payment event: invalid-payment
     socket.on("invalid-payment", () => {
       console.log("Invalid payment error has occcured");
@@ -74,17 +95,18 @@ export default function Home() {
 
     // ** Order Confirmed event: order-confirmed
     socket.on("order-confirmed", (data) => {
-      console.log(`Order confirmed ${data}`);
       setOrderConfirmed(true);
       venmoRef.current.closePaymentWindow();
       // router.push(`order/${}`)
     });
 
     // ** Number Ready Event event: order-phone-number
-    socket.on("order-phone-number", (phoneNumber) => {
+    socket.on("order-phone-number", (data) => {
+      updateOrders();
       window.location.href = `/order/${orderIdRef.current}`;
     });
 
+    // Used for get-order event in-case of socket disconnect
     socket.on("order", (data) => {
       alert("Your order has been confirmed")
       window.location.href = `/order/${orderIdRef.current}`;
@@ -97,6 +119,7 @@ export default function Home() {
       console.log("Order has been refunded.");
     });
 
+    // Attempt to reconnect to socket in most cases for mobile
     socket.io.on("reconnect", () => {
       socketRef.current.emit("get-order", orderIdRef.current)
     });
@@ -208,7 +231,7 @@ export default function Home() {
         }
 
         <WaveBanner serviceSelectorRef={serviceSelectorRef} featureRef={featureRef} />
-        <ServiceSelector serviceSelectorRef={serviceSelectorRef} serviceList={data} startVenmoOrder={startVenmoOrder} venmoRef={venmoRef} isOrderConfirmed={isOrderConfirmed} />
+        <ServiceSelector service={service} setService={setService} serviceSelectorRef={serviceSelectorRef} serviceList={data} startVenmoOrder={startVenmoOrder} venmoRef={venmoRef} isOrderConfirmed={isOrderConfirmed} />
         <Feature featureRef={featureRef} />
 
         {/* Pop-up if order confirmation goes through */}

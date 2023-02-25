@@ -1,5 +1,5 @@
 import { Icon } from "@iconify-icon/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 export default function WaveBanner({ serviceSelectorRef, featureRef }) {
 
 
@@ -7,22 +7,28 @@ export default function WaveBanner({ serviceSelectorRef, featureRef }) {
     const executeScrollOnServiceSelector = () => serviceSelectorRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     const executeScrollOnFeature = () => featureRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
+    const [orders, setOrders] = useState([])
+
+    useEffect(() => {
+
+        setOrders(JSON.parse(localStorage.getItem("orders")))
+
+    }, [])
+
 
     return (
         <section style={{ backgroundColor: `#FF3CAC`, background: `linear-gradient(225deg, #2B86C5 0%, #784BA0 50%, #FF3CAC 100%)` }}>
 
 
-
-
-            <div className="lg:flex justifyContent flex-col">
-                <div style={{ width: "100%" }} className="lg:absolute lg:left-20 block">
+            <div className="lg:flex  flex-col">
+                <div className="lg:absolute lg:left-20 block">
                     <div className="text-white ">
-                        <p className=" text-lg md:text-xl transform transition-all duration-150 ease-out scale-100">Simple SMS</p>
+                        <p className="text-lg md:text-xl transform transition-all duration-150 ease-out scale-100">Simple SMS</p>
                     </div>
                 </div>
 
 
-                <p className="lg:text-3xl md:text-2xl  text-md font-medium lg:text-center">The premium <a href="#" className="text-primary">all-in-one</a> SMS number provider</p>
+                <p className="lg:text-3xl md:text-2xl text-md font-medium lg:text-center">The premium <a href="#" className="text-primary">all-in-one</a> SMS number provider</p>
                 <p className="lg:text-lg md:text-md text-sm font-thin lg:text-center">Easily purchase affordable phone numbers quickly. </p>
 
                 <div className="lg:text-center">
@@ -30,15 +36,47 @@ export default function WaveBanner({ serviceSelectorRef, featureRef }) {
                     >
                         <Icon className="mr-1" icon="ic:baseline-shopping-cart"></Icon>Purchase Number
                     </button>
+
+                    {orders &&
+                        <div className="dropdown ">
+                            <button tabIndex={0} class="inline-flex items-center ml-2 text-primary border-2 font-medium border-primary hover:scale-95 hover:bg-primary hover:text-black px-4 py-2 text-sm rounded-full outline-none focus:outline-none mr-1 ease-linear transition-all duration-150">
+                                <Icon className="mr-1" icon="ic:outline-history"></Icon>Order History
+                            </button>
+                            <div tabIndex={0} className="dropdown-content card card-compact w-96 p-2 shadow bg-base-300 mt-2">
+                                <div className="card-body">
+                                    <h3 className="card-title">Order History</h3>
+
+                                    <ol class="justify-start text-left">
+                                        {orders.map((order, idx) => {
+                                            return (
+                                                <div key={idx}>
+                                                    <a class="text-xs hover:text-primary font-bold" href={`/order/${order.orderID}`}><li>#{idx + 1} {order.service} | {order.orderID}</li></a>
+                                                    <div class="divider"></div>
+                                                </div>
+                                            )
+                                        })}
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+
+
                 </div>
 
 
 
+                <div class="lg:absolute right-20 mt-2 lg:mt-0">
 
-                <button onClick={() => executeScrollOnFeature()} className="w-fit inline-flex items-center lg:absolute right-20 mt-2 lg:mt-0 text-[#eab308] border-2 border-[#eab308] font-medium  hover:bg-[#eab308] hover:text-black hover:scale-95 px-4 py-2 text-sm rounded-full outline-none focus:outline-none ease-linear transition-all duration-150" type="button"
-                >
-                    <Icon className="mr-1" icon="ic:baseline-info"></Icon>About
-                </button>
+                    <button onClick={() => executeScrollOnFeature()} className=" text-[#eab308] border-2 border-[#eab308] font-medium items-center inline-flex hover:bg-[#eab308] hover:text-black hover:scale-95 px-4 py-2 text-sm rounded-full outline-none focus:outline-none ease-linear transition-all duration-150" type="button"
+                    >
+                        <Icon className="mr-1" icon="ic:baseline-info"></Icon>About
+                    </button>
+
+
+                </div>
+
 
 
 
