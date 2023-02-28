@@ -22,12 +22,12 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
           </ul>
         </div>
         <div className="md:flex md:justify-center mt-5 mb-12 ">
-          <div className="card w-fit drop-shadow-lg bg-base-300 ">
+          <div className="card drop-shadow-lg bg-base-300 ">
             <div className="card-body" >
               <input
                 type="text"
                 placeholder="Search for services..."
-                className="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full"
                 onChange={(e) => {
                   setSearchTerm(e.target.value);
                 }}
@@ -38,6 +38,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
                   <thead>
                     <tr>
                       <th>Service</th>
+                      <th></th>
                       <th>Price</th>
                     </tr>
                   </thead>
@@ -50,49 +51,39 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
                           : (item.service_name.toLowerCase().includes(searchTerm.toLowerCase())) || item.is_other;
                       })
                       .map((val, index) => {
-
-                        return !val.disabled ?
-
+                        return (
                           <tr
                             key={index}
                             className={
                               service === val
-                                ? "active text-[#eab308] hover:cursor-pointer"
-                                : "hover:scale-95 hover:cursor-pointer"
+                                ? `${val.disabled ? "text-gray-700" : "active text-[#eab308] hover:cursor-pointer"}`
+                                : `${val.disabled ? "hover:cursor-not-allowed" : "hover:scale-95 hover:cursor-pointer"}`
                             }
+
                             onClick={() => {
-                              setService(val);
+                              if (val.disabled) {
+                                return
+                              } else {
+                                setService(val);
+                              }
+
                             }}
                           >
+
                             <th>
                               <a href="#checkout" className="flex items-center">
-                                <Icon width={20} height={20} icon={val.service_icon} className="mr-2 rounded-full" />
-                                <p className="align-middle">
+                                <Icon width={20} height={20} icon={val.service_icon} className={`mr-2 rounded-full ${val.disabled ? "text-gray-700" : ""}`} />
+                                <p className={`align-middle ${val.disabled ? " text-gray-700" : ""}`}>
                                   {val.service_name}
                                 </p>
                               </a>
                             </th>
+
+                            <th><div className={`${val.disabled ? "badge badge-error" : ""}`}>{val.disabled && "offline"}</div></th>
                             <th className="text-xs">${(val.service_price / 100).toFixed(2)} USD</th>
+
                           </tr>
-                          :
-                          <tr
-                            key={index}
-                            className={
-                              service === val
-                                ? "active text-gray hover:cursor-pointer"
-                                : ""
-                            }
-                          >
-                            <th>
-                              <a href="#checkout" className="flex items-center">
-                                <Icon width={20} height={20} icon={val.service_icon} className="line-through mr-2 rounded-full" />
-                                <p className="align-middle line-through  text-neutral-content">
-                                  {val.service_name}
-                                </p> <div className='badge badge-error gap-2 badge-sm'>offline</div>
-                              </a>
-                            </th>
-                            <th className="text-xs">${(val.service_price / 100).toFixed(2)} USD</th>
-                          </tr>
+                        )
                       })}
                   </tbody>
                 </table>
