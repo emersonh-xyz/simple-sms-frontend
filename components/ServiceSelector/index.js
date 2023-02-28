@@ -79,7 +79,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
                               </a>
                             </th>
 
-                            <th><div className={`${val.disabled ? "badge badge-error" : ""}`}>{val.disabled && "offline"}</div></th>
+                            <th><div className={`${val.disabled ? "badge badge-error rounded-md" : ""}`}>{val.disabled && "disabled"}</div></th>
                             <th className="text-xs">${(val.service_price / 100).toFixed(2)} USD</th>
 
                           </tr>
