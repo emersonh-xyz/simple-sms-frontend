@@ -29,19 +29,22 @@
         "service_name": "Google",
         "service_icon": "ri:google-fill",
         "service_price": 99,
-        "service_name_old": "Google,youtube,Gmail"
+        "service_name_old": "Google,youtube,Gmail",
+        "disabled": true
     },
     {
         "service_name": "YouTube",
         "service_icon": "mdi:youtube",
         "service_price": 99,
-        "service_name_old": "Google,youtube,Gmail"
+        "service_name_old": "Google,youtube,Gmail",
+        "disabled": true
     },
     {
         "service_name": "Gmail",
         "service_icon": "simple-icons:gmail",
         "service_price": 99,
-        "service_name_old": "Google,youtube,Gmail"
+        "service_name_old": "Google,youtube,Gmail",
+        "disabled": true
     },
     {
         "service_name": "facebook",
@@ -225,7 +228,8 @@
         "service_name": "Google Voice",
         "service_icon": "arcticons:google-voice",
         "service_price": 99,
-        "service_name_old": "GoogleVoice"
+        "service_name_old": "GoogleVoice",
+        "disabled": true
     },
     {
         "service_name": "Lyft",
