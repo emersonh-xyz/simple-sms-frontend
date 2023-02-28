@@ -1,7 +1,7 @@
 import { Icon } from "@iconify-icon/react";
 export default function Footer() {
   return (
-    <footer className="footer items-center p-1 md:grid-cols-3 text-neutral-content bg-base-100">
+    <footer className="footer items-center  md:grid-cols-3 text-neutral-content bg-base-100">
       <div className="p-2 items-center grid-flow-col">
         <p>Copyright © 2023 - All right reserved by simple-sms.io</p>
       </div>
