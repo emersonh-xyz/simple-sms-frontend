@@ -50,7 +50,9 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
                           : (item.service_name.toLowerCase().includes(searchTerm.toLowerCase())) || item.is_other;
                       })
                       .map((val, index) => {
-                        return (
+
+                        return !val.disabled ?
+
                           <tr
                             key={index}
                             className={
@@ -72,7 +74,25 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
                             </th>
                             <th className="text-xs">${(val.service_price / 100).toFixed(2)} USD</th>
                           </tr>
-                        );
+                          :
+                          <tr
+                            key={index}
+                            className={
+                              service === val
+                                ? "active text-gray hover:cursor-pointer"
+                                : ""
+                            }
+                          >
+                            <th>
+                              <a href="#checkout" className="flex items-center">
+                                <Icon width={20} height={20} icon={val.service_icon} className="line-through mr-2 rounded-full" />
+                                <p className="align-middle line-through  text-neutral-content">
+                                  {val.service_name}
+                                </p> <div className='badge badge-error gap-2 badge-sm'>offline</div>
+                              </a>
+                            </th>
+                            <th className="text-xs">${(val.service_price / 100).toFixed(2)} USD</th>
+                          </tr>
                       })}
                   </tbody>
                 </table>
