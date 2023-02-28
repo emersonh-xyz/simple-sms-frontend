@@ -12,7 +12,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
       <section ref={serviceSelectorRef} className="bg-base-100 p-10">
 
         <div className="w-full flex flex-col justify-center items-center ">
-          <p className=" lg:text-2xl text-xl mb-5 mt-5">Select your service below </p>
+          <p className=" lg:text-2xl font-thin text-xl mb-5 mt-5">Select your service below </p>
           <ul className="steps">
             <li className="step step-primary font-thin">Select Service</li>
             <li className={service !== "" ? "step step-primary font-thin" : "step font-thin"}>
@@ -22,7 +22,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
           </ul>
         </div>
         <div className="md:flex md:justify-center mt-5 mb-12 ">
-          <div className="card drop-shadow-lg bg-base-300 ">
+          <div className="card drop-shadow-lg bg-base-300">
             <div className="card-body" >
               <input
                 type="text"
@@ -33,12 +33,12 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
                 }}
               />
 
-              <div className="overflow-x-auto rounded-md max-h-96 drop-shadow-lg ">
+              <div className="overflow-x-auto rounded-md max-h-96 drop-shadow-lg">
                 <table className="table table-zebra w-full ">
                   <thead>
                     <tr>
                       <th>Service</th>
-                      <th></th>
+                      {/* <th></th> */}
                       <th>Price</th>
                     </tr>
                   </thead>
@@ -79,7 +79,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
                               </a>
                             </th>
 
-                            <th><div className={`${val.disabled ? "badge badge-error rounded-md" : ""}`}>{val.disabled && "disabled"}</div></th>
+                            {/* <th><div className={`${val.disabled ? "badge badge-error rounded-md" : ""}`}>{val.disabled && "disabled"}</div></th> */}
                             <th className="text-xs">${(val.service_price / 100).toFixed(2)} USD</th>
 
                           </tr>

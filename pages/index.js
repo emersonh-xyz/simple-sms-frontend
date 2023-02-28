@@ -153,7 +153,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div >
+    <div className="">
       <Head>
         <title>Home - Simple SMS</title>
         <meta name="description" content="Get premium phone numbers for SMS verification with over 100 services. Securely purchase with Venmo and enjoy full refunds through Simple SMS."></meta>
