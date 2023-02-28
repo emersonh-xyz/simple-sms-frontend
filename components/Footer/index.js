@@ -7,7 +7,7 @@ export default function Footer() {
       </div>
 
       <div className="grid-flow-col gap-4 md:place-self-center p-2 hover:animate-pulse hover:cursor-pointer font-light">
-        <a href="https://www.trustpilot.com/review/simple-sms.io" class="text-lg flex justify-between items-center">  Review us on <Icon width={20} className=" ml-1 mr-1 text-[#007f4e]" icon={"simple-icons:trustpilot"}></Icon>TrustPilot</a>
+        <a href="https://www.trustpilot.com/review/simple-sms.io" className="text-lg flex justify-between items-center">  Review us on <Icon width={20} className=" ml-1 mr-1 text-[#007f4e]" icon={"simple-icons:trustpilot"}></Icon>TrustPilot</a>
       </div>
 
       <div className="p-2 grid-flow-col gap-4 md:place-self-center md:justify-self-end">

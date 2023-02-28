@@ -39,19 +39,19 @@ export default function WaveBanner({ serviceSelectorRef, featureRef }) {
 
                     {orders &&
                         <div className="dropdown ">
-                            <button tabIndex={0} class="inline-flex items-center ml-2 text-primary border-2 font-medium border-primary hover:scale-95 hover:bg-primary hover:text-black px-4 py-2 text-sm rounded-full outline-none focus:outline-none mr-1 ease-linear transition-all duration-150">
+                            <button tabIndex={0} className="inline-flex items-center ml-2 text-primary border-2 font-medium border-primary hover:scale-95 hover:bg-primary hover:text-black px-4 py-2 text-sm rounded-full outline-none focus:outline-none mr-1 ease-linear transition-all duration-150">
                                 <Icon className="mr-1" icon="ic:outline-history"></Icon>Order History
                             </button>
                             <div tabIndex={0} className="dropdown-content card card-compact w-96 p-2 shadow bg-base-300 mt-2">
                                 <div className="card-body">
                                     <h3 className="card-title">Order History</h3>
 
-                                    <ol class="justify-start text-left">
+                                    <ol className="justify-start text-left">
                                         {orders.map((order, idx) => {
                                             return (
                                                 <div key={idx}>
-                                                    <a class="text-xs hover:text-primary font-bold" href={`/order/${order.orderID}`}><li>#{idx + 1} {order.service} | {order.orderID}</li></a>
-                                                    <div class="divider"></div>
+                                                    <a className="text-xs hover:text-primary font-bold" href={`/order/${order.orderID}`}><li>#{idx + 1} {order.service} | {order.orderID}</li></a>
+                                                    <div className="divider"></div>
                                                 </div>
                                             )
                                         })}
@@ -67,7 +67,7 @@ export default function WaveBanner({ serviceSelectorRef, featureRef }) {
 
 
 
-                <div class="lg:absolute right-20 mt-2 lg:mt-0">
+                <div className="lg:absolute right-20 mt-2 lg:mt-0">
 
                     <button onClick={() => executeScrollOnFeature()} className=" text-[#eab308] border-2 border-[#eab308] font-medium items-center inline-flex hover:bg-[#eab308] hover:text-black hover:scale-95 px-4 py-2 text-sm rounded-full outline-none focus:outline-none ease-linear transition-all duration-150" type="button"
                     >
