@@ -108,7 +108,7 @@ export default function OrderDetails({
 
 
 
-      <div className="card drop-shadow-lg bg-base-100 m-auto mb-5 md:ml-5 md:mt-0 md:w-96 w-fit ">
+      <div className="card drop-shadow-lg bg-base-100 m-auto mb-5 md:ml-5 md:mt-0 md:w-96 w-fit  ">
 
         <div className="card-body">
           <ul>
@@ -179,8 +179,10 @@ export default function OrderDetails({
                 )
               }
             </label>
-
           </div>
+
+
+          <a target="_blank" href="https://discord.com/invite/YWrdUzDups" className="text-sm underline text-neutral-content inline-flex items-center" rel="noreferrer"> <Icon icon={"material-symbols:contact-support-outline"}></Icon>Having trouble? Message a support member</a>
 
         </div>
       </div>
