@@ -99,7 +99,7 @@ export default function IncomingSMS({
                   }
 
                   return (
-                    <div key={index} className="rounded-md bg-base-300 drop-shadow-xl mt-2">
+                    <div key={index} className="p-2 rounded-md bg-base-100 drop-shadow-xl mt-2">
                       {message.fullText}
                     </div>
                   )
