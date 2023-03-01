@@ -228,8 +228,8 @@
         "service_name": "Google Voice",
         "service_icon": "arcticons:google-voice",
         "service_price": 99,
-        "service_name_old": "GoogleVoice"
-
+        "service_name_old": "GoogleVoice",
+        "disabled": true
     },
     {
         "service_name": "Lyft",
