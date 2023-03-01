@@ -13,6 +13,7 @@ import rawJSON from "../data/services.json";
 import { config } from "../src/config";
 import VenmoClientAPI from "../src/VenmoClientAPI";
 
+
 export default function Home() {
   const [data, setData] = useState([]);
   const [isOrderConfirmed, setOrderConfirmed] = useState(false);
@@ -28,7 +29,6 @@ export default function Home() {
   let serviceSelectorRef = useRef(null)
   let featureRef = useRef(null)
 
-  const router = useRouter();
 
   // TODO: Invalid Payment event: invalid-payment
 
@@ -153,18 +153,18 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="">
+    <div>
       <Head>
         <title>Home - Simple SMS</title>
-        <meta name="description" content="Get premium phone numbers for SMS verification with over 100 services. Securely purchase with Venmo and enjoy full refunds through Simple SMS."></meta>
-        <meta property="og:title" content="Simple SMS - Premium phone numbers at your disposal" />
+        <meta name="description" content="Order temporary usa based phone numbers for SMS verification with over 100 services. Securely purchase with Venmo and enjoy full refunds through Simple SMS."></meta>
+        <meta property="og:title" content="Simple SMS - Temporary USA Based Phone Numbers" />
         <meta property="og:site_name" content="Simple SMS" ></meta>
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://simple-sms.io" />
         <meta property="og:image" content="https://cdn.discordapp.com/attachments/751108166284214352/1066915335665631232/logo.png" />
-        <meta property="og:description" content="Get premium phone numbers for SMS verification with over 100 services. Securely purchase with Venmo and enjoy full refunds through Simple SMS." />
+        <meta property="og:description" content="Order temporary usa based phone numbers for SMS verification with over 100 services. Securely purchase with Venmo and enjoy full refunds through Simple SMS." />
         <meta name="theme-color" content="#fbbf24"></meta>
-        <meta name="trustpilot-one-time-domain-verification-id" content="88c552ea-7f65-4f68-ba97-0ea9829b9c39" />
+        <meta name="robots" content="all" />
         <link rel="icon" href="/static/favicon-144x144.png" />
       </Head>
 
@@ -241,3 +241,6 @@ export default function Home() {
     </div >
   );
 }
+
+
+
