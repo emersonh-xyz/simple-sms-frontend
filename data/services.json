@@ -59,12 +59,15 @@
     {
         "service_name": "Uber",
         "service_icon": "simple-icons:uber",
-        "service_price": 99
+        "service_price": 99,
+        "disabled": true
+
     },
     {
         "service_name": "Uber Eats",
         "service_icon": "simple-icons:ubereats",
-        "service_price": 99
+        "service_price": 99,
+        "disabled": true
     },
     {
         "service_name": "Instagram",
