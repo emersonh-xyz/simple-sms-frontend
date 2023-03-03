@@ -72,7 +72,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
                           >
 
                             <th>
-                              <div className={`${val.disabled && "tooltip tooltip-error"}`} data-tip="Unavaliable">
+                              <div className={`${val.disabled && "tooltip tooltip-error "}`} data-tip="Service offline">
                                 <a href="#checkout" className="flex items-center">
                                   <Icon width={20} height={20} icon={val.service_icon} className={`mr-2 rounded-full ${val.disabled ? "text-gray-700" : ""}`} />
                                   <p className={`align-middle ${val.disabled ? " text-gray-700" : ""}`}>
