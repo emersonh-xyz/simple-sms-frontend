@@ -52,6 +52,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
                       })
                       .map((val, index) => {
                         return (
+
                           <tr
                             key={index}
                             className={
@@ -71,14 +72,15 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
                           >
 
                             <th>
-                              <a href="#checkout" className="flex items-center">
-                                <Icon width={20} height={20} icon={val.service_icon} className={`mr-2 rounded-full ${val.disabled ? "text-gray-700" : ""}`} />
-                                <p className={`align-middle ${val.disabled ? " text-gray-700" : ""}`}>
-                                  {val.service_name}
-                                </p>
-                              </a>
+                              <div className={`${val.disabled && "tooltip tooltip-error"}`} data-tip="Unavaliable">
+                                <a href="#checkout" className="flex items-center">
+                                  <Icon width={20} height={20} icon={val.service_icon} className={`mr-2 rounded-full ${val.disabled ? "text-gray-700" : ""}`} />
+                                  <p className={`align-middle ${val.disabled ? " text-gray-700" : ""}`}>
+                                    {val.service_name}
+                                  </p>
+                                </a>
+                              </div>
                             </th>
-
                             {/* <th><div className={`${val.disabled ? "badge badge-error rounded-md" : ""}`}>{val.disabled && "disabled"}</div></th> */}
                             <th className="text-xs">${(val.service_price / 100).toFixed(2)} USD</th>
 
