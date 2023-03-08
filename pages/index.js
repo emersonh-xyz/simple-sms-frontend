@@ -163,6 +163,7 @@ export default function Home() {
         <meta property="og:url" content="http://simple-sms.io" />
         <meta property="og:image" content="https://cdn.discordapp.com/attachments/751108166284214352/1066915335665631232/logo.png" />
         <meta property="og:description" content="Order temporary usa based phone numbers for SMS verification with over 100 services. Securely purchase with Venmo and enjoy full refunds through Simple SMS." />
+        <meta name="google-site-verification" content="MkgnxwuisU_aFGdAAhPXgQr2IUiqtX0m-g-vcFg5VXo" />
         <meta name="theme-color" content="#fbbf24"></meta>
         <meta name="robots" content="all" />
         <link rel="icon" href="/static/favicon-144x144.png" />
