@@ -1,6 +1,3 @@
-import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Icon } from "@iconify-icon/react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
@@ -11,7 +8,7 @@ import Navbar from "../../../components/Navbar";
 import OrderDetails from "../../../components/OrderDetails";
 import { config } from "../../../src/config";
 
-const Order = ({ props }) => {
+const Order = () => {
   const router = useRouter();
   const { uuid } = router.query;
 

@@ -1,12 +1,9 @@
 import Head from "next/head";
-import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { io } from "socket.io-client";
-import { themeChange } from "theme-change";
 import { v4 as uuidv4 } from "uuid";
 import Feature from "../components/Feature";
 import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 import ServiceSelector from "../components/ServiceSelector";
 import WaveBanner from "../components/WaveBanner";
 import rawJSON from "../data/services.json";

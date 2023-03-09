@@ -1,7 +1,6 @@
 
 import { Icon } from "@iconify-icon/react"
 import Head from "next/head"
-import Image from "next/image"
 import Footer from "../../components/Footer/index"
 import Navbar from "../../components/Navbar"
 
