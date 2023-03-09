@@ -21,6 +21,7 @@ export default function Home() {
   const [isOrderRefunded, setOrderRefunded] = useState(false);
   const [orderId, setOrderId] = useState();
   const [service, setService] = useState("");
+  const [isMaintenanceMode, setMaintenanceMode] = useState(true);
 
   // !! THESE REFS ARE OP
   let socketRef = useRef();
@@ -150,6 +151,12 @@ export default function Home() {
     // Call sort data and update our data state
     sortServicesAlphabetically();
     setData(rawJSON);
+
+    if (isMaintenanceMode) {
+      window.location.href = `/maintenance`;
+    }
+
+
   }, []);
 
   return (
@@ -170,6 +177,10 @@ export default function Home() {
       </Head>
 
       <>
+
+        {isMaintenanceMode
+
+        }
 
 
         {/* Banner popup */}
