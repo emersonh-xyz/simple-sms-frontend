@@ -20,7 +20,7 @@ export default function Maintenance() {
                     <div>
                         <Icon className="flex justify-center" width={100} alt="A sad face" icon={"mdi:scheduled-maintenance"} />
                         <h1 className="text-3xl font-bold text-center mb-2">Maintenance</h1>
-                        <h1 className="text-xl  mb-2">We are currently in Maintenance while we update our providers</h1>
+                        <h1 className="text-xl  mb-2">We are currently in maintenance while we update our providers.</h1>
                         <h2 className="text-xl text-center mb-2">Please try again soon, we apologize for any inconvenience.</h2>
 
                     </div>
