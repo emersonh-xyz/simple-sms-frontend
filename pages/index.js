@@ -15,7 +15,7 @@ export default function Home() {
   const [data, setData] = useState([]);
   const [isOrderConfirmed, setOrderConfirmed] = useState(false);
   const [isPhoneNumberReady, setPhoneNumberReady] = useState(false);
-  const [isOrderRefunded, setOrderRefunded] = useState(false);
+  const [isOrderRefunded, setOrderRefunded] = useState(true);
   const [orderId, setOrderId] = useState();
   const [service, setService] = useState("");
   const [isMaintenanceMode, setMaintenanceMode] = useState(false);
@@ -149,9 +149,6 @@ export default function Home() {
     sortServicesAlphabetically();
     setData(rawJSON);
 
-    if (isMaintenanceMode) {
-      window.location.href = `/maintenance`;
-    }
 
 
   }, []);
@@ -221,7 +218,7 @@ export default function Home() {
             <div className="modal modal-open modal-bottom sm:modal-middle">
               <div className="modal-box">
                 <h3 className="font-bold text-lg">
-                  There was a problem completing your order.
+                  The selected service is currently unavaliable
                 </h3>
                 <p className="py-4">
                   Your order <span className="font-bold">#{orderId}</span> has
@@ -230,6 +227,9 @@ export default function Home() {
                 <div className="modal-action">
                   <label onClick={() => location.reload()} htmlFor="order-refunded-modal" className="btn">
                     Close
+                  </label>
+                  <label htmlFor="order-refunded-modal" className="btn">
+                    <a target="_blank" href="https://discord.gg/YWrdUzDups">Support</a>
                   </label>
 
                 </div>
