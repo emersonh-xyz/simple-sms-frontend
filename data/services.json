@@ -30,21 +30,21 @@
         "service_icon": "ri:google-fill",
         "service_price": 99,
         "service_name_old": "Google,youtube,Gmail",
-        "disabled": true
+        "disabled": false
     },
     {
         "service_name": "YouTube",
         "service_icon": "mdi:youtube",
         "service_price": 99,
         "service_name_old": "Google,youtube,Gmail",
-        "disabled": true
+        "disabled": false
     },
     {
         "service_name": "Gmail",
         "service_icon": "simple-icons:gmail",
         "service_price": 99,
         "service_name_old": "Google,youtube,Gmail",
-        "disabled": true
+        "disabled": false
     },
     {
         "service_name": "facebook",
@@ -60,14 +60,14 @@
         "service_name": "Uber",
         "service_icon": "simple-icons:uber",
         "service_price": 99,
-        "disabled": true
+        "disabled": false
 
     },
     {
         "service_name": "Uber Eats",
         "service_icon": "simple-icons:ubereats",
         "service_price": 99,
-        "disabled": true
+        "disabled": false
     },
     {
         "service_name": "Instagram",

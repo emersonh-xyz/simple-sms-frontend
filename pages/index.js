@@ -18,7 +18,7 @@ export default function Home() {
   const [isOrderRefunded, setOrderRefunded] = useState(false);
   const [orderId, setOrderId] = useState();
   const [service, setService] = useState("");
-  const [isMaintenanceMode, setMaintenanceMode] = useState(true);
+  const [isMaintenanceMode, setMaintenanceMode] = useState(false);
 
   // !! THESE REFS ARE OP
   let socketRef = useRef();
