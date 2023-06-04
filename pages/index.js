@@ -15,7 +15,7 @@ export default function Home() {
   const [data, setData] = useState([]);
   const [isOrderConfirmed, setOrderConfirmed] = useState(false);
   const [isPhoneNumberReady, setPhoneNumberReady] = useState(false);
-  const [isOrderRefunded, setOrderRefunded] = useState(true);
+  const [isOrderRefunded, setOrderRefunded] = useState(false);
   const [orderId, setOrderId] = useState();
   const [service, setService] = useState("");
   const [isMaintenanceMode, setMaintenanceMode] = useState(false);
