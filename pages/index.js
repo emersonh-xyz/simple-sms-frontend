@@ -119,7 +119,7 @@ export default function Home() {
 
     // Attempt to reconnect to socket in most cases for mobile
     socket.io.on("reconnect", () => {
-      socketRef.current.emit("get-order", orderIdRef.current)
+      socketRef.current.emit("reconnect-order", orderIdRef.current)
     });
 
 
