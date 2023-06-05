@@ -229,7 +229,7 @@ export default function Home() {
                     Close
                   </label>
                   <label htmlFor="order-refunded-modal" className="btn">
-                    <a target="_blank" href="https://discord.gg/YWrdUzDups">Support</a>
+                    <a target="_blank" rel="noreferrer" href="https://discord.gg/YWrdUzDups">Support</a>
                   </label>
 
                 </div>
