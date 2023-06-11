@@ -37,7 +37,7 @@ export default function WaveBanner({ serviceSelectorRef, featureRef }) {
                         <Icon className="mr-1" icon="ic:baseline-shopping-cart"></Icon>Purchase Number
                     </button>
 
-                    {!orders &&
+                    {orders &&
                         <div className="dropdown ">
                             <button tabIndex={0} className="mt-2 lg:mt-0 inline-flex items-center lg:ml-2 text-primary border-2 font-medium border-primary hover:scale-95 hover:bg-primary hover:text-black px-4 py-2 text-sm rounded-full outline-none focus:outline-none mr-1 ease-linear transition-all duration-150">
                                 <Icon className="mr-1" icon="ic:outline-history"></Icon>Order History
