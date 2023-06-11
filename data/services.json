@@ -255,6 +255,11 @@
         "service_price": 99
     },
     {
+        "service_name": "Venmo",
+        "service_icon": "ion:logo-venmo",
+        "service_price": 99
+    },
+    {
         "service_name": "Other (Unlisted)",
         "service_icon": "zondicons:dial-pad",
         "service_price": 99,
