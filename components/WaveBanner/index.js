@@ -37,9 +37,9 @@ export default function WaveBanner({ serviceSelectorRef, featureRef }) {
                         <Icon className="mr-1" icon="ic:baseline-shopping-cart"></Icon>Purchase Number
                     </button>
 
-                    {orders &&
+                    {!orders &&
                         <div className="dropdown ">
-                            <button tabIndex={0} className="inline-flex items-center ml-2 text-primary border-2 font-medium border-primary hover:scale-95 hover:bg-primary hover:text-black px-4 py-2 text-sm rounded-full outline-none focus:outline-none mr-1 ease-linear transition-all duration-150">
+                            <button tabIndex={0} className="mt-2 lg:mt-0 inline-flex items-center lg:ml-2 text-primary border-2 font-medium border-primary hover:scale-95 hover:bg-primary hover:text-black px-4 py-2 text-sm rounded-full outline-none focus:outline-none mr-1 ease-linear transition-all duration-150">
                                 <Icon className="mr-1" icon="ic:outline-history"></Icon>Order History
                             </button>
                             <div tabIndex={0} className="dropdown-content card card-compact w-96 p-2 shadow bg-base-300 mt-2">
@@ -47,14 +47,7 @@ export default function WaveBanner({ serviceSelectorRef, featureRef }) {
                                     <h3 className="card-title">Order History</h3>
 
                                     <ol className="justify-start text-left">
-                                        {orders.map((order, idx) => {
-                                            return (
-                                                <div key={idx}>
-                                                    <a className="text-xs hover:text-primary font-bold" href={`/order/${order.orderID}`}><li>#{idx + 1} {order.service} | {order.orderID}</li></a>
-                                                    <div className="divider"></div>
-                                                </div>
-                                            )
-                                        })}
+
                                     </ol>
                                 </div>
                             </div>
