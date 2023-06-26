@@ -260,6 +260,11 @@
         "service_price": 99
     },
     {
+        "service_name": "Adidas",
+        "service_icon": "gg:adidas",
+        "service_price": 99
+    },
+    {
         "service_name": "Other (Unlisted)",
         "service_icon": "zondicons:dial-pad",
         "service_price": 99,
