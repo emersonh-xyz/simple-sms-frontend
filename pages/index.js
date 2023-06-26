@@ -156,15 +156,14 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Home - Simple SMS</title>
-        <meta name="description" content="Order temporary usa based phone numbers for SMS verification with over 100 services. Securely purchase with Venmo and enjoy full refunds through Simple SMS."></meta>
-        <meta property="og:title" content="Simple SMS - Temporary USA Based Phone Numbers" />
+        <title>Simple SMS | Real USA Phone Numbers for SMS Text Verifying</title>
+        <meta name="description" content="Buy temporary USA phone numbers for sms account verification. Over 100+ services offered. Tired of topups and wallets? No account or balance required. Instant payments and refunds offered exclusively through Venmo."></meta>
+        <meta property="og:title" content="Simple SMS | Real USA Phone Numbers for SMS Text Verification" />
         <meta property="og:site_name" content="Simple SMS" ></meta>
         <meta property="og:type" content="website" />
         <meta property="og:url" content="http://simple-sms.io" />
         <meta property="og:image" content="https://cdn.discordapp.com/attachments/751108166284214352/1066915335665631232/logo.png" />
-        <meta property="og:description" content="Order temporary usa based phone numbers for SMS verification with over 100 services. Securely purchase with Venmo and enjoy full refunds through Simple SMS." />
-        <meta name="google-site-verification" content="MkgnxwuisU_aFGdAAhPXgQr2IUiqtX0m-g-vcFg5VXo" />
+        <meta property="og:description" content="Buy temporary USA phone numbers for sms account verification. Over 100+ services offered. Tired of topups and wallets? No account or balance required. Instant payments and refunds offered exclusively through Venmo." />
         <meta name="theme-color" content="#fbbf24"></meta>
         <meta name="robots" content="all" />
         <link rel="icon" href="/static/favicon-144x144.png" />
