@@ -67,7 +67,7 @@ export default function OrderDetails({
           {!isOrderExpired ?
 
             <div>
-              <p className="py-4">Are you sure you want to refund this order?</p>
+              <p className="py-4">Are you sure you want to refund and cancel this order?</p>
               <p className="">You will no longer be able to use this number for new accounts. </p>
               <div className="modal-action">
                 <div className={(isOrderRefundable && !isOrderExpired && !isCancelPending) ? "btn btn-error flex justify-evenly" : "btn btn-disabled flex justify-evenly"} onClick={() => { setIsCancelPending(true); socketRef.current.emit('cancel-order', orderId) }}>
@@ -85,7 +85,7 @@ export default function OrderDetails({
                         </svg>
                       </>
                     ) : (
-                      "Cancel Order"
+                      "Refund Order"
                     )
                   }
                 </div>
@@ -175,7 +175,7 @@ export default function OrderDetails({
                     </svg>
                   </>
                 ) : (
-                  "Cancel Order"
+                  "Refund Order"
                 )
               }
             </label>
