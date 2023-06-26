@@ -171,11 +171,6 @@ export default function Home() {
 
       <>
 
-        {isMaintenanceMode
-
-        }
-
-
         {/* Banner popup */}
         {isOrderConfirmed && (
 
@@ -241,8 +236,6 @@ export default function Home() {
         <WaveBanner serviceSelectorRef={serviceSelectorRef} featureRef={featureRef} />
         <ServiceSelector service={service} setService={setService} serviceSelectorRef={serviceSelectorRef} serviceList={data} startVenmoOrder={startVenmoOrder} venmoRef={venmoRef} isOrderConfirmed={isOrderConfirmed} />
         <Feature featureRef={featureRef} />
-
-        {/* Pop-up if order confirmation goes through */}
       </>
 
       <Footer />
