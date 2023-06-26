@@ -9,7 +9,7 @@ export default function ServiceSelector({ serviceList, startVenmoOrder, serviceS
 
   return (
     <>
-      <section ref={serviceSelectorRef} className="bg-base-100 p-10">
+      <section ref={serviceSelectorRef} className="p-10">
 
         <div className="w-full flex flex-col justify-center items-center ">
           <p className=" lg:text-2xl font-thin text-xl mb-5 mt-5">Select your service below </p>

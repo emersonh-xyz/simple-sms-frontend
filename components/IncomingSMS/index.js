@@ -15,7 +15,7 @@ export default function IncomingSMS({
   return (
 
 
-    <div className="card drop-shadow-lg bg-base-100 mt-5 mb-5 md:w-96 w-fit md:mt-0 h-full">
+    <div className="card drop-shadow-lg bg-base-300 mt-5 mb-5 md:w-96 w-fit md:mt-0 h-fit pb-16 m-auto">
       <div className="card-body">
         <div className="card-title drop-shadow-xl">
           <div className="tooltip text-3xl mx-auto hover:cursor-pointer" data-tip={isCopied ? "Copied!" : "Click to copy to clipboard"} onClick={() => { setIsCopied(true); navigator.clipboard.writeText(phoneNumber.substring(1)); }} onMouseLeave={() => { setIsCopied(false); }}>{updatedNumber}</div>
@@ -27,8 +27,8 @@ export default function IncomingSMS({
 
         {/*Extracted codes container*/}
 
-        <div className="container bg-base-300 drop-shadow-xl rounded-lg">
-          <div className="text-center p-8 ">
+        <div className="container bg-base-200 drop-shadow-xl rounded-lg">
+          <div className="text-center p-6">
 
             {messages.length > 0 ?
 
@@ -65,11 +65,9 @@ export default function IncomingSMS({
 
               :
 
-              <>
-                <div className="animate-pulse mx-center">
-                  Waiting for new messages...
-                </div>
-              </>
+              <div className="flex justify-center">
+                <span className="loading loading-bars loading-sm"></span>
+              </div>
 
             }
 
@@ -80,8 +78,8 @@ export default function IncomingSMS({
         <div className="divider ">Raw Messages</div>
 
         {/*Raw messages container*/}
-        <div className="container bg-base-300 drop-shadow-xl rounded-lg">
-          <div className="rounded-md text-center p-8">
+        <div className="container bg-base-200 drop-shadow-xl rounded-lg">
+          <div className="rounded-md text-center p-6">
 
             {messages.length > 0 ?
 
@@ -105,15 +103,11 @@ export default function IncomingSMS({
                   )
 
                 })}
-
-
-
               </>
               :
-              <>
-                <div className="animate-pulse ">Waiting for new messages...</div>
-              </>
-
+              <div className="flex justify-center">
+                <span className="loading loading-bars loading-sm"></span>
+              </div>
             }
 
           </div>
