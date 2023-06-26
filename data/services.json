@@ -265,7 +265,7 @@
         "service_price": 99
     },
     {
-        "service_name": "AWS (Amazon Web Services)",
+        "service_name": "AWS",
         "service_icon": "fa6-brands:aws",
         "service_price": 99
     },
