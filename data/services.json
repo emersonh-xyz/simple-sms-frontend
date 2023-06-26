@@ -265,6 +265,191 @@
         "service_price": 99
     },
     {
+        "service_name": "AWS (Amazon Web Services)",
+        "service_icon": "fa6-brands:aws",
+        "service_price": 99
+    },
+    {
+        "service_name": "CashApp",
+        "service_icon": "simple-icons:cashapp",
+        "service_price": 99
+    },
+    {
+        "service_name": "Coinbase",
+        "service_icon": "simple-icons:coinbase",
+        "service_price": 99
+    },
+    {
+        "service_name": "Crypto.com",
+        "service_icon": "arcticons:cryptocom",
+        "service_price": 99
+    },
+    {
+        "service_name": "Discover",
+        "service_icon": "fa6-brands:cc-discover",
+        "service_price": 99
+    },
+    {
+        "service_name": "Fiverr",
+        "service_icon": "jam:fiverr",
+        "service_price": 99
+    },
+    {
+        "service_name": "G2A",
+        "service_icon": "simple-icons:g2a",
+        "service_price": 99
+    },
+    {
+        "service_name": "Privacy",
+        "service_icon": "bi:p-square-fill",
+        "service_price": 99
+    },
+    {
+        "service_name": "GoFundMe",
+        "service_icon": "simple-icons:gofundme",
+        "service_price": 99
+    },
+    {
+        "service_name": "Grailed",
+        "service_icon": "healthicons:g-negative",
+        "service_price": 99
+    },
+    {
+        "service_name": "GroupMe",
+        "service_icon": "simple-icons:groupme",
+        "service_price": 99
+    },
+    {
+        "service_name": "Hinge",
+        "service_icon": "arcticons:hinge",
+        "service_price": 99
+    },
+    {
+        "service_name": "Indeed",
+        "service_icon": "simple-icons:indeed",
+        "service_price": 99
+    },
+    {
+        "service_name": "Instacart",
+        "service_icon": "simple-icons:instacart",
+        "service_price": 99
+    },
+    {
+        "service_name": "Intuit",
+        "service_icon": "mdi:alpha-i-box",
+        "service_price": 99
+    },
+    {
+        "service_name": "Klarna",
+        "service_icon": "simple-icons:klarna",
+        "service_price": 99
+    },
+    {
+        "service_name": "Affirm",
+        "service_icon": "tabler:xbox-a",
+        "service_price": 99
+    },
+    {
+        "service_name": "Match",
+        "service_icon": "mdi:heart-outline",
+        "service_price": 99
+    },
+    {
+        "service_name": "Mercari",
+        "service_icon": "arcticons:mercari",
+        "service_price": 99
+    },
+    {
+        "service_name": "MoneyGram",
+        "service_icon": "simple-icons:moneygram",
+        "service_price": 99
+    },
+    {
+        "service_name": "MoonPay",
+        "service_icon": "material-symbols:circles",
+        "service_price": 99
+    },
+    {
+        "service_name": "OkCupid",
+        "service_icon": "simple-icons:okcupid",
+        "service_price": 99
+    },
+    {
+        "service_name": "OpenAI",
+        "service_icon": "ri:openai-fill",
+        "service_price": 99
+    },
+    {
+        "service_name": "Oracle",
+        "service_icon": "fontisto:oracle",
+        "service_price": 99
+    },
+    {
+        "service_name": "Payoneer",
+        "service_icon": "simple-icons:payoneer",
+        "service_price": 99
+    },
+    {
+        "service_name": "Postmates",
+        "service_icon": "simple-icons:postmates",
+        "service_price": 99
+    },
+    {
+        "service_name": "SamsungPay",
+        "service_icon": "simple-icons:samsungpay",
+        "service_price": 99
+    },
+    {
+        "service_name": "Signal",
+        "service_icon": "cib:signal",
+        "service_price": 99
+    },
+    {
+        "service_name": "Square",
+        "service_icon": "simple-icons:square",
+        "service_price": 99
+    },
+    {
+        "service_name": "Stripe",
+        "service_icon": "simple-icons:stripe",
+        "service_price": 99
+    },
+    {
+        "service_name": "Target",
+        "service_icon": "simple-icons:target",
+        "service_price": 99
+    },
+    {
+        "service_name": "TurboTax",
+        "service_icon": "ep:circle-check-filled",
+        "service_price": 99
+    },
+    {
+        "service_name": "Twilio",
+        "service_icon": "simple-icons:twilio",
+        "service_price": 99
+    },
+    {
+        "service_name": "Upwork",
+        "service_icon": "simple-icons:upwork",
+        "service_price": 99
+    },
+    {
+        "service_name": "Walmart",
+        "service_icon": "tabler:brand-walmart",
+        "service_price": 99
+    },
+    {
+        "service_name": "Webull",
+        "service_icon": "healthicons:w",
+        "service_price": 99
+    },
+    {
+        "service_name": "YikYak",
+        "service_icon": "healthicons:y-negative",
+        "service_price": 99
+    },
+    {
         "service_name": "Other (Unlisted)",
         "service_icon": "zondicons:dial-pad",
         "service_price": 99,
