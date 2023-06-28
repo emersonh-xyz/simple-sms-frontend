@@ -85,7 +85,7 @@ const Order = () => {
   }, [messages]);
 
   return (
-    <div className="flex flex-col min-h-screen justify-between">
+    <div className="flex flex-col min-h-screen">
 
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -123,7 +123,7 @@ const Order = () => {
 
 
 
-        <div className="md:flex m-auto p-10 ">
+        <div className="md:flex m-auto">
           <div className="">
             <IncomingSMS
               phoneNumber={phoneNumber}
@@ -165,7 +165,7 @@ const Order = () => {
         </div>
       }
 
-      <Footer />
+      <Footer props={"test"} />
     </div>
   );
 };
