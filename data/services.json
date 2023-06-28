@@ -2,230 +2,229 @@
     {
         "service_name": "VKontakte",
         "service_icon": "uil:vk",
-        "service_price": 99,
+        "service_price": 50,
         "service_name_old": "vk.com"
     },
     {
         "service_name": "Whatsapp",
         "service_icon": "mingcute:whatsapp-fill",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "Viber",
         "service_icon": "simple-icons:viber",
-        "service_price": 99
+        "service_price": 70
     },
     {
         "service_name": "Telegram",
         "service_icon": "ic:baseline-telegram",
-        "service_price": 99
+        "service_price": 75
     },
     {
         "service_name": "WeChat",
         "service_icon": "ic:baseline-wechat",
-        "service_price": 99
+        "service_price": 60
     },
     {
         "service_name": "Google",
         "service_icon": "ri:google-fill",
-        "service_price": 99,
+        "service_price": 75,
         "service_name_old": "Google,youtube,Gmail",
         "disabled": false
     },
     {
         "service_name": "YouTube",
         "service_icon": "mdi:youtube",
-        "service_price": 99,
+        "service_price": 75,
         "service_name_old": "Google,youtube,Gmail",
         "disabled": false
     },
     {
         "service_name": "Gmail",
         "service_icon": "simple-icons:gmail",
-        "service_price": 99,
+        "service_price": 75,
         "service_name_old": "Google,youtube,Gmail",
         "disabled": false
     },
     {
         "service_name": "facebook",
         "service_icon": "ic:baseline-facebook",
-        "service_price": 99
+        "service_price": 70
     },
     {
         "service_name": "Twitter",
         "service_icon": "mdi:twitter",
-        "service_price": 99
+        "service_price": 75
     },
     {
         "service_name": "Uber",
         "service_icon": "simple-icons:uber",
-        "service_price": 99,
+        "service_price": 85,
         "disabled": false
-
     },
     {
         "service_name": "Uber Eats",
         "service_icon": "simple-icons:ubereats",
-        "service_price": 99,
+        "service_price": 85,
         "disabled": false
     },
     {
         "service_name": "Instagram",
         "service_icon": "mdi:instagram",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "Microsoft",
         "service_icon": "uil:microsoft",
-        "service_price": 99
+        "service_price": 70
     },
     {
         "service_name": "Airbnb",
         "service_icon": "mingcute:airbnb-line",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Line",
         "service_icon": "ri:line-line",
-        "service_price": 99
+        "service_price": 70
     },
     {
         "service_name": "Yahoo",
         "service_icon": "mdi:yahoo",
-        "service_price": 99
+        "service_price": 45
     },
     {
         "service_name": "Steam",
         "service_icon": "mdi:steam",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Tinder",
         "service_icon": "simple-icons:tinder",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "AOL",
         "service_icon": "simple-icons:aol",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "LinkedIN",
         "service_icon": "ion:logo-linkedin",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Tencent QQ",
         "service_icon": "icon-park-outline:tencent-qq",
-        "service_price": 99
+        "service_price": 55
     },
     {
         "service_name": "Netflix",
         "service_icon": "mdi:netflix",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "Discord",
         "service_icon": "ic:baseline-discord",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "TikTok",
         "service_icon": "ic:baseline-tiktok",
-        "service_price": 99,
+        "service_price": 80,
         "service_name_old": "TikTok/Douyin"
     },
     {
         "service_name": "Zoho",
         "service_icon": "simple-icons:zoho",
-        "service_price": 99
+        "service_price": 55
     },
     {
         "service_name": "Ticketmaster",
         "service_icon": "simple-icons:ticketmaster",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "Amazon",
         "service_icon": "ri:amazon-fill",
-        "service_price": 99
+        "service_price": 75
     },
     {
         "service_name": "ProtonMail",
         "service_icon": "arcticons:proton-mail",
-        "service_price": 99
+        "service_price": 55
     },
     {
         "service_name": "Snapchat",
         "service_icon": "ic:baseline-snapchat",
-        "service_price": 99
+        "service_price": 75
     },
     {
         "service_name": "Alipay",
         "service_icon": "ri:alipay-fill",
-        "service_price": 99,
+        "service_price": 75,
         "service_name_old": "Alipay/Alibaba"
     },
     {
         "service_name": "Alibaba",
         "service_icon": "simple-icons:alibabadotcom",
-        "service_price": 99,
+        "service_price": 75,
         "service_name_old": "Alipay/Alibaba"
     },
     {
         "service_name": "Nike",
         "service_icon": "simple-icons:nike",
-        "service_price": 99
+        "service_price": 70
     },
     {
         "service_name": "eBay",
         "service_icon": "jam:ebay",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "Grindr",
         "service_icon": "tabler:brand-grindr",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "PayPal",
         "service_icon": "ic:baseline-paypal",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "Blizzard",
         "service_icon": "simple-icons:activision",
-        "service_price": 99
+        "service_price": 70
     },
     {
         "service_name": "Craigslist",
         "service_icon": "arcticons:craigslist",
-        "service_price": 99
+        "service_price": 75
     },
     {
         "service_name": "OfferUp",
         "service_icon": "arcticons:offerup",
-        "service_price": 99
+        "service_price": 70
     },
     {
         "service_name": "Apple",
         "service_icon": "ic:baseline-apple",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Twitch",
         "service_icon": "mdi:twitch",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Wise",
         "service_icon": "simple-icons:wise",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "CourseHero",
         "service_icon": "tabler:badge",
-        "service_price": 99
+        "service_price": 55
     },
     {
         "service_name": "Google Voice",
@@ -237,222 +236,222 @@
     {
         "service_name": "Lyft",
         "service_icon": "simple-icons:lyft",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "Skype",
         "service_icon": "mdi:skype",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Bumble",
         "service_icon": "tabler:brand-bumble",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "DoorDash",
         "service_icon": "simple-icons:doordash",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "Venmo",
         "service_icon": "ion:logo-venmo",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "Adidas",
         "service_icon": "gg:adidas",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "AWS",
         "service_icon": "fa6-brands:aws",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "CashApp",
         "service_icon": "simple-icons:cashapp",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "Coinbase",
         "service_icon": "simple-icons:coinbase",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "Crypto.com",
         "service_icon": "arcticons:cryptocom",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "Discover",
         "service_icon": "fa6-brands:cc-discover",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Fiverr",
         "service_icon": "jam:fiverr",
-        "service_price": 99
+        "service_price": 50
     },
     {
         "service_name": "G2A",
         "service_icon": "simple-icons:g2a",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Privacy",
         "service_icon": "bi:p-square-fill",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "GoFundMe",
         "service_icon": "simple-icons:gofundme",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Grailed",
         "service_icon": "healthicons:g-negative",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "GroupMe",
         "service_icon": "simple-icons:groupme",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Hinge",
         "service_icon": "arcticons:hinge",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "Indeed",
         "service_icon": "simple-icons:indeed",
-        "service_price": 99
+        "service_price": 70
     },
     {
         "service_name": "Instacart",
         "service_icon": "simple-icons:instacart",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Intuit",
         "service_icon": "mdi:alpha-i-box",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Klarna",
         "service_icon": "simple-icons:klarna",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Affirm",
         "service_icon": "tabler:xbox-a",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Match",
         "service_icon": "mdi:heart-outline",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "Mercari",
         "service_icon": "arcticons:mercari",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "MoneyGram",
         "service_icon": "simple-icons:moneygram",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "MoonPay",
         "service_icon": "material-symbols:circles",
-        "service_price": 99
+        "service_price": 75
     },
     {
         "service_name": "OkCupid",
         "service_icon": "simple-icons:okcupid",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "OpenAI",
         "service_icon": "ri:openai-fill",
-        "service_price": 99
+        "service_price": 75
     },
     {
         "service_name": "Oracle",
         "service_icon": "fontisto:oracle",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Payoneer",
         "service_icon": "simple-icons:payoneer",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Postmates",
         "service_icon": "simple-icons:postmates",
-        "service_price": 99
+        "service_price": 85
     },
     {
         "service_name": "SamsungPay",
         "service_icon": "simple-icons:samsungpay",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Signal",
         "service_icon": "cib:signal",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Square",
         "service_icon": "simple-icons:square",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Stripe",
         "service_icon": "simple-icons:stripe",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Target",
         "service_icon": "simple-icons:target",
-        "service_price": 99
+        "service_price": 75
     },
     {
         "service_name": "TurboTax",
         "service_icon": "ep:circle-check-filled",
-        "service_price": 99
+        "service_price": 75
     },
     {
         "service_name": "Twilio",
         "service_icon": "simple-icons:twilio",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Upwork",
         "service_icon": "simple-icons:upwork",
-        "service_price": 99
+        "service_price": 75
     },
     {
         "service_name": "Walmart",
         "service_icon": "tabler:brand-walmart",
-        "service_price": 99
+        "service_price": 75
     },
     {
         "service_name": "Webull",
         "service_icon": "healthicons:w",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "YikYak",
         "service_icon": "healthicons:y-negative",
-        "service_price": 99
+        "service_price": 80
     },
     {
         "service_name": "Other (Unlisted)",
         "service_icon": "zondicons:dial-pad",
-        "service_price": 99,
+        "service_price": 85,
         "service_name_old": "Any other",
         "is_other": true
     }
