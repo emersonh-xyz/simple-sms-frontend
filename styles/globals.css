@@ -42,7 +42,7 @@ section {
 }
 
 .custom-shape-divider-bottom-1674077680 .shape-fill {
-  fill: #272935;
+  fill: hsl(var(--b2));
   pointer-events: none;
 }
 

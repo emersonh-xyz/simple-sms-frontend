@@ -2,9 +2,6 @@ import { Icon } from "@iconify-icon/react";
 export default function Feature({ featureRef }) {
   return (
     <section ref={featureRef} className="bg-base-300">
-
-
-
       <div className="grid lg:grid-cols-4 grid-rows gap-12 text-center tracking-wide ">
         <div className="">
 
@@ -20,7 +17,6 @@ export default function Feature({ featureRef }) {
         </div>
 
         <div className="">
-
 
           <Icon className="" width="50px" icon="bxl:venmo"></Icon>
 
