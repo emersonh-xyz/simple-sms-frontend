@@ -123,7 +123,7 @@ const Order = () => {
 
 
 
-        <div className="md:flex m-auto">
+        <div className="md:flex m-auto p-20">
           <div className="">
             <IncomingSMS
               phoneNumber={phoneNumber}
