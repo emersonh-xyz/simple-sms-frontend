@@ -7,6 +7,7 @@ import IncomingSMS from "../../../components/IncomingSMS";
 import Navbar from "../../../components/Navbar";
 import OrderDetails from "../../../components/OrderDetails";
 import { config } from "../../../src/config";
+import { Icon } from "@iconify-icon/react";
 
 const Order = () => {
   const router = useRouter();
@@ -96,10 +97,9 @@ const Order = () => {
 
       {isOrderExpired &&
 
-        <div className="alert alert-error shadow-xl rounded-none">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-current flex-shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-          <span >This order has been cancelled.</span>
-
+        <div className="flex justify-start alert alert-error shadow-xl rounded-none">
+          <Icon icon={"icon-park-solid:error"}></Icon>
+          <p className="alig">This order has been cancelled.</p>
         </div>
       }
 
