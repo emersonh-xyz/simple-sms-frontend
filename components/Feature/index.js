@@ -1,7 +1,7 @@
 import { Icon } from "@iconify-icon/react";
 export default function Feature({ featureRef }) {
   return (
-    <section className="bg-base-300">
+    <section ref={featureRef} className="bg-base-300">
 
       <div>
 
