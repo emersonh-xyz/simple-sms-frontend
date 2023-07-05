@@ -30,21 +30,21 @@
         "service_icon": "ri:google-fill",
         "service_price": 75,
         "service_name_old": "Google,youtube,Gmail",
-        "disabled": false
+        "disabled": true
     },
     {
         "service_name": "YouTube",
         "service_icon": "mdi:youtube",
         "service_price": 75,
         "service_name_old": "Google,youtube,Gmail",
-        "disabled": false
+        "disabled": true
     },
     {
         "service_name": "Gmail",
         "service_icon": "simple-icons:gmail",
         "service_price": 75,
         "service_name_old": "Google,youtube,Gmail",
-        "disabled": false
+        "disabled": true
     },
     {
         "service_name": "facebook",
